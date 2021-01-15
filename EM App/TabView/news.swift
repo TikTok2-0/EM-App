@@ -24,26 +24,29 @@ struct news: View {
             VStack {
                 List {
                     ForEach(news.reversed(), id: \.self) { item in
-                        NavigationLink(destination: home()) {
-                            ZStack(alignment: .bottomLeading) {
-                                Image(item)
-                                    .resizable()
-                                    .frame(width: nil, height: 150)
-                                Rectangle().fill(gradient)
-                                VStack(alignment: .leading) {
-                                    Text(item)
-                                        .font(.title3)
-                                        .bold()
-                                    Text(item)
-                                        .font(.subheadline)
-                                }
-                                .padding()
+                        ZStack(alignment: .bottomLeading) {
+                            NavigationLink(destination: home()) {
+                            }.hidden()
+                            Image(item)
+                                .resizable()
+                                .frame(width: nil, height: 150)
+                                //.shadow(color: .red, radius: 5, x: 20, y: 20)
+                            Rectangle().fill(gradient)
+                            VStack(alignment: .leading) {
+                                Text(item)
+                                    .font(.title3)
+                                    .bold()
+                                Text(item)
+                                    .font(.subheadline)
                             }
-                            .foregroundColor(.white)
+                            .padding()
                         }
+                        .foregroundColor(.white)
+                        .cornerRadius(15)
                     }
+                    //.listRowBackground(Color.red)
                     .listRowInsets(EdgeInsets())
-                    .padding(.bottom, 10)
+                    .padding(.bottom, 15)
                 }
             }
             .navigationTitle("News")

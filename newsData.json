@@ -1,0 +1,16 @@
+[
+    {
+        "title": "Corona",
+        "imageTitle": "Corona",
+        "id": 1001,
+        "subLine": "Plötzlich alles anders",
+        "text": "Corona hat unser alles Leben drastisch verändert!"
+    },
+    {
+        "title": "Moodle",
+        "imageTitle": "Moodle",
+        "id": 1002,
+        "subLine": "LMS am HLG",
+        "text": "Mit Moodle werden wir entgültig den digitalen Anschluss verlieren!"
+    }
+]
