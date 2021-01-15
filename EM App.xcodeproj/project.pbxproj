@@ -15,6 +15,9 @@
 		F607124625AE49D9005E4647 /* EM_App.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = F607124425AE49D9005E4647 /* EM_App.xcdatamodeld */; };
 		F607125125AE49D9005E4647 /* EM_AppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F607125025AE49D9005E4647 /* EM_AppTests.swift */; };
 		F607125C25AE49D9005E4647 /* EM_AppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F607125B25AE49D9005E4647 /* EM_AppUITests.swift */; };
+		F623E3DE25B1CCB900E5D34A /* home.swift in Sources */ = {isa = PBXBuildFile; fileRef = F623E3DD25B1CCB900E5D34A /* home.swift */; };
+		F623E3E725B1CCCF00E5D34A /* news.swift in Sources */ = {isa = PBXBuildFile; fileRef = F623E3E625B1CCCF00E5D34A /* news.swift */; };
+		F623E3EC25B1CCDD00E5D34A /* settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = F623E3EB25B1CCDD00E5D34A /* settings.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +52,9 @@
 		F607125725AE49D9005E4647 /* EM AppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "EM AppUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F607125B25AE49D9005E4647 /* EM_AppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EM_AppUITests.swift; sourceTree = "<group>"; };
 		F607125D25AE49D9005E4647 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F623E3DD25B1CCB900E5D34A /* home.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = home.swift; sourceTree = "<group>"; };
+		F623E3E625B1CCCF00E5D34A /* news.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = news.swift; sourceTree = "<group>"; };
+		F623E3EB25B1CCDD00E5D34A /* settings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = settings.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,6 +107,7 @@
 			children = (
 				F607123925AE49D8005E4647 /* EM_AppApp.swift */,
 				F607123B25AE49D8005E4647 /* ContentView.swift */,
+				F623E3E225B1CCC000E5D34A /* TabView */,
 				F607123D25AE49D9005E4647 /* Assets.xcassets */,
 				F607124225AE49D9005E4647 /* Persistence.swift */,
 				F607124725AE49D9005E4647 /* Info.plist */,
@@ -134,6 +141,16 @@
 				F607125D25AE49D9005E4647 /* Info.plist */,
 			);
 			path = "EM AppUITests";
+			sourceTree = "<group>";
+		};
+		F623E3E225B1CCC000E5D34A /* TabView */ = {
+			isa = PBXGroup;
+			children = (
+				F623E3DD25B1CCB900E5D34A /* home.swift */,
+				F623E3E625B1CCCF00E5D34A /* news.swift */,
+				F623E3EB25B1CCDD00E5D34A /* settings.swift */,
+			);
+			path = TabView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -265,9 +282,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F623E3E725B1CCCF00E5D34A /* news.swift in Sources */,
 				F607124325AE49D9005E4647 /* Persistence.swift in Sources */,
 				F607124625AE49D9005E4647 /* EM_App.xcdatamodeld in Sources */,
 				F607123C25AE49D8005E4647 /* ContentView.swift in Sources */,
+				F623E3DE25B1CCB900E5D34A /* home.swift in Sources */,
+				F623E3EC25B1CCDD00E5D34A /* settings.swift in Sources */,
 				F607123A25AE49D8005E4647 /* EM_AppApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
