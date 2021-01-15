@@ -9,11 +9,42 @@ import SwiftUI
 
 struct news: View {
     @State private var showPage: Bool = false
+    @State private var news = ["Austauschprogramm", "Corona", "MINT am HLG", "Moodle", "Grafiti"]
+    
+    var gradient: LinearGradient {
+        LinearGradient(
+            gradient: Gradient(
+                colors: [Color.black.opacity(0.6), Color.black.opacity(0.4), Color.black.opacity(0)]),
+            startPoint: .bottom,
+            endPoint: .center)
+    }
     
     var body: some View {
         NavigationView {
             VStack {
-                Text("")
+                List {
+                    ForEach(news.reversed(), id: \.self) { item in
+                        NavigationLink(destination: home()) {
+                            ZStack(alignment: .bottomLeading) {
+                                Image(item)
+                                    .resizable()
+                                    .frame(width: nil, height: 150)
+                                Rectangle().fill(gradient)
+                                VStack(alignment: .leading) {
+                                    Text(item)
+                                        .font(.title3)
+                                        .bold()
+                                    Text(item)
+                                        .font(.subheadline)
+                                }
+                                .padding()
+                            }
+                            .foregroundColor(.white)
+                        }
+                    }
+                    .listRowInsets(EdgeInsets())
+                    .padding(.bottom, 10)
+                }
             }
             .navigationTitle("News")
             .toolbar(content: {
