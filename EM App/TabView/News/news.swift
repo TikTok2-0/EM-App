@@ -9,7 +9,7 @@ import SwiftUI
 
 struct news: View {
     @State private var showPage: Bool = false
-    @State private var news = ["Austauschprogramm", "Corona", "MINT am HLG", "Moodle", "Graffiti"]
+    @State private var news = ["Austauschprogramm", "Corona", "MINT am HLG", "Moodle", "Graffiti", "'It is easier to criticize than to praise.'", "Ballade meets Lego", "Anmeldung für die neuen fünften Klassen"]
     
     
     var gradient: LinearGradient {
@@ -57,7 +57,7 @@ struct news: View {
                 }
             })
             .sheet(isPresented: $showPage, content: {
-                //Show filters
+                Text("Filters")
             })
         }
     }

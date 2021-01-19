@@ -8,37 +8,26 @@
 import SwiftUI
 
 struct settings: View {
-    @State private var showPage: Bool = false
-    @State private var selectedFlavor = Flavor.Student
+    @State private var selectedChar = userType.Student
     
-    enum Flavor: String, CaseIterable, Codable {
+    enum userType: String, CaseIterable, Codable {
         case Student
         case Teacher
         case Parent
+        case Guest
     }
     
     var body: some View {
         NavigationView {
             VStack {
-                Spacer()
-                Picker("Flavor", selection: $selectedFlavor) {
-                    Text("Student").tag(Flavor.Student)
-                    Text("Teacher").tag(Flavor.Teacher)
-                    Text("Parent").tag(Flavor.Parent)
+                Picker("Flavor", selection: $selectedChar) {
+                    Text("Student").tag(userType.Student)
+                    Text("Teacher").tag(userType.Teacher)
+                    Text("Parent").tag(userType.Parent)
+                    Text("Guest").tag(userType.Guest)
                 }
-                Spacer()
-                Text("Selected flavor: \(selectedFlavor.rawValue)")
-                Spacer()
             }
             .navigationTitle("Settings")
-            .toolbar(content: {
-                Button(action: { showPage.toggle() }) {
-                    Image(systemName: "person.circle")
-                }
-            })
-            .sheet(isPresented: $showPage, content: {
-                //Show filters
-            })
         }
     }
 }

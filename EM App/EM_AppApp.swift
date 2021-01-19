@@ -15,6 +15,7 @@ struct EM_AppApp: App {
         WindowGroup {
             ContentView()
                 .environment(\.managedObjectContext, persistenceController.container.viewContext)
+                .environmentObject(SourceOfTruth())
         }
     }
 }

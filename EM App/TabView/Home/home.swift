@@ -12,18 +12,20 @@ struct home: View {
     
     var body: some View {
         NavigationView {
-            VStack {
-                Text("")
+            VStack(alignment: .leading) {
+                Image("Logo")
+                    .border(Color.black, width: 1)
+                Spacer()
             }
             .navigationTitle("Home")
             .toolbar(content: {
                 Button(action: { showPage.toggle() }) {
-                    Image("Logo")
+                    Image(systemName: "bell")
                 }
                 .frame(alignment: .trailing)
             })
             .sheet(isPresented: $showPage, content: {
-                //Show filters
+                Text("Notifications")
             })
         }
     }
