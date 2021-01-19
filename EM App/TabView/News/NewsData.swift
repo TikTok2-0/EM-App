@@ -20,9 +20,9 @@ struct NewsData: Hashable, Codable, Identifiable {
     
     var category: Category
     enum Category: String, CaseIterable, Codable {
-        case lakes = "Lakes"
-        case rivers = "Rivers"
-        case mountains = "Mountains"
+        case hg = "Hauptgebäude"
+        case em = "Oberstufenhaus"
+        case c19 = "Corona"
     }
     
     private var imageName: String

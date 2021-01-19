@@ -9,7 +9,8 @@ import SwiftUI
 
 struct news: View {
     @State private var showPage: Bool = false
-    @State private var news = ["Austauschprogramm", "Corona", "MINT am HLG", "Moodle", "Grafiti"]
+    @State private var news = ["Austauschprogramm", "Corona", "MINT am HLG", "Moodle", "Graffiti"]
+    
     
     var gradient: LinearGradient {
         LinearGradient(
@@ -25,7 +26,7 @@ struct news: View {
                 List {
                     ForEach(news.reversed(), id: \.self) { item in
                         ZStack(alignment: .bottomLeading) {
-                            NavigationLink(destination: home()) {
+                            NavigationLink(destination: newsDetail()) {
                             }.hidden()
                             Image(item)
                                 .resizable()
@@ -54,6 +55,9 @@ struct news: View {
                 Button(action: { showPage.toggle() }) {
                     Image(systemName: "line.horizontal.3.circle")
                 }
+            })
+            .sheet(isPresented: $showPage, content: {
+                //Show filters
             })
         }
     }

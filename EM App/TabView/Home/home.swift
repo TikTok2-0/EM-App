@@ -18,8 +18,12 @@ struct home: View {
             .navigationTitle("Home")
             .toolbar(content: {
                 Button(action: { showPage.toggle() }) {
-                    Image(systemName: "gear")
+                    Image("Logo")
                 }
+                .frame(alignment: .trailing)
+            })
+            .sheet(isPresented: $showPage, content: {
+                //Show filters
             })
         }
     }

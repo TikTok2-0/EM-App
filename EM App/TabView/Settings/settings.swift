@@ -9,12 +9,12 @@ import SwiftUI
 
 struct settings: View {
     @State private var showPage: Bool = false
-    @State private var selectedFlavor = Flavor.Chocolate
+    @State private var selectedFlavor = Flavor.Student
     
     enum Flavor: String, CaseIterable, Codable {
-        case Chocolate
-        case Vanilla
-        case Strawberry
+        case Student
+        case Teacher
+        case Parent
     }
     
     var body: some View {
@@ -22,9 +22,9 @@ struct settings: View {
             VStack {
                 Spacer()
                 Picker("Flavor", selection: $selectedFlavor) {
-                    Text("Chocolate").tag(Flavor.Chocolate)
-                    Text("Vanilla").tag(Flavor.Vanilla)
-                    Text("Strawberry").tag(Flavor.Strawberry)
+                    Text("Student").tag(Flavor.Student)
+                    Text("Teacher").tag(Flavor.Teacher)
+                    Text("Parent").tag(Flavor.Parent)
                 }
                 Spacer()
                 Text("Selected flavor: \(selectedFlavor.rawValue)")
@@ -35,6 +35,9 @@ struct settings: View {
                 Button(action: { showPage.toggle() }) {
                     Image(systemName: "person.circle")
                 }
+            })
+            .sheet(isPresented: $showPage, content: {
+                //Show filters
             })
         }
     }
