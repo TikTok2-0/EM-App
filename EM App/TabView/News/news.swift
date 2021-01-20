@@ -30,8 +30,8 @@ struct news: View {
                             }.hidden()
                             Image(item)
                                 .resizable()
-                                .frame(width: nil, height: 150)
-                                //.shadow(color: .red, radius: 5, x: 20, y: 20)
+                                .frame(width: nil, height: 250)
+                                //.shadow(color: .red, radius: 5, x: 20, y: 20) //WIE FUNKTIONIEREN SHADOWS
                             Rectangle().fill(gradient)
                             VStack(alignment: .leading) {
                                 Text(item)
