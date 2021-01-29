@@ -168,7 +168,7 @@
 				F6DF1AF825B248D9000B1CC8 /* ModelData.swift */,
 				F636EDE725B57D0600972C83 /* Home */,
 				F636EDE325B57CE800972C83 /* News */,
-				F636EDE825B57D1000972C83 /* Settings */,
+				F636EDE825B57D1000972C83 /* Profile */,
 			);
 			path = TabView;
 			sourceTree = "<group>";
@@ -192,13 +192,13 @@
 			path = Home;
 			sourceTree = "<group>";
 		};
-		F636EDE825B57D1000972C83 /* Settings */ = {
+		F636EDE825B57D1000972C83 /* Profile */ = {
 			isa = PBXGroup;
 			children = (
-				F623E3EB25B1CCDD00E5D34A /* settings.swift */,
 				F687047725B7278E006B37B6 /* profile.swift */,
+				F623E3EB25B1CCDD00E5D34A /* settings.swift */,
 			);
-			path = Settings;
+			path = Profile;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

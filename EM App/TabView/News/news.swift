@@ -37,8 +37,10 @@ struct news: View {
                                 Text(item)
                                     .font(.title3)
                                     .bold()
+                                    .lineLimit(1)
                                 Text(item)
                                     .font(.subheadline)
+                                    .lineLimit(1)
                             }
                             .padding()
                         }
