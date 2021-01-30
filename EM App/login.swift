@@ -12,52 +12,11 @@ struct login: View {
     @State var showLoginView: Bool = false
     @State private var acceptTerms: Bool = false
     
-    @State private var username: String = ""
-    @State private var email: String = ""
-    @State private var firstName: String = ""
-    @State private var lastName: String = ""
     @State private var password: String = ""
     @State private var confirmPass: String = ""
     @State private var passConfirmed: Bool = false
     
-    @State private var selectedChar = userType.Student
-    enum userType: String, CaseIterable, Codable {
-        case Student
-        case Teacher
-        case Parent
-        case Guest
-    }
-    
-    @State private var selectedClass = userClass.Twelve
-    enum userClass: Int, CaseIterable, Codable {
-        case FiveA
-        case FiveB
-        case FiveC
-        case FiveD
-        case FiveE
-        case SixA
-        case SixB
-        case SixC
-        case SixD
-        case SevenA
-        case SevenB
-        case SevenC
-        case SevenD
-        case EightA
-        case EightB
-        case EightC
-        case EightD
-        case NineA
-        case NineB
-        case NineC
-        case NineD
-        case TenA
-        case TenB
-        case TenC
-        case TenD
-        case Eleven
-        case Twelve
-    }
+    @ObservedObject var userSettings = UserSettings()
     
     var body: some View {
         VStack {
@@ -69,10 +28,19 @@ struct login: View {
                 NavigationView {
                     Form {
                         Section(header: Text("Your Info")) {
-                            TextField("First Name", text: $firstName)
-                            TextField("Last Name", text: $lastName)
-                            TextField("Username", text: $username)
-                            TextField("E-Mail", text: $email)
+                            TextField("First Name", text: $userSettings.firstName)
+                            TextField("Last Name", text: $userSettings.lastName)
+                            TextField("Username", text: $userSettings.username)
+                            TextField("E-Mail", text: $userSettings.email)
+                            Toggle(isOn: $userSettings.isPrivate) {
+                                Text("Private Account")
+                            }
+                            
+                            Picker(selection: $userSettings.ringtone, label: Text("Ringtone")) {
+                                ForEach(userSettings.ringtones, id: \.self) { ringtone in
+                                    Text(ringtone)
+                                }
+                            }
                         }
                         
                         Section(header: Text("Password")) {
@@ -81,56 +49,15 @@ struct login: View {
                         }
                         
                         Section(header: Text("School")) {
-                            Picker("User", selection: $selectedChar) {
-                                Text("Student").tag(userType.Student)
-                                Text("Teacher").tag(userType.Teacher)
-                                Text("Parent").tag(userType.Parent)
-                                Text("Guest").tag(userType.Guest)
+                            Picker(selection: $userSettings.userType, label: Text("Type")) {
+                                ForEach(userSettings.types, id: \.self) { userType in
+                                    Text(userType)
+                                }
                             }
                             
-                            Picker("Class", selection: $selectedClass) {
-                                Group {
-                                    Text("5a").tag(userClass.FiveA)
-                                    Text("5b").tag(userClass.FiveB)
-                                    Text("5c").tag(userClass.FiveC)
-                                    Text("5d").tag(userClass.FiveD)
-                                    Text("5e").tag(userClass.FiveE)
-                                }
-                                Group {
-                                    Text("6a").tag(userClass.SixA)
-                                    Text("6b").tag(userClass.SixB)
-                                    Text("6c").tag(userClass.SixC)
-                                    Text("6d").tag(userClass.SixD)
-                                }
-                                Group {
-                                    Text("7a").tag(userClass.SevenA)
-                                    Text("7b").tag(userClass.SevenB)
-                                    Text("7c").tag(userClass.SevenC)
-                                    Text("7d").tag(userClass.SevenD)
-                                }
-                                Group {
-                                    Text("8a").tag(userClass.EightA)
-                                    Text("8b").tag(userClass.EightB)
-                                    Text("8c").tag(userClass.EightC)
-                                    Text("8d").tag(userClass.EightD)
-                                }
-                                Group {
-                                    Text("9a").tag(userClass.NineA)
-                                    Text("9b").tag(userClass.NineB)
-                                    Text("9c").tag(userClass.NineC)
-                                    Text("9d").tag(userClass.NineD)
-                                }
-                                Group {
-                                    Text("10a").tag(userClass.TenA)
-                                    Text("10b").tag(userClass.TenB)
-                                    Text("10c").tag(userClass.TenC)
-                                    Text("10d").tag(userClass.TenD)
-                                }
-                                Group {
-                                    Text("11").tag(userClass.Eleven)
-                                }
-                                Group {
-                                    Text("12").tag(userClass.Twelve)
+                            Picker(selection: $userSettings.userClass, label: Text("UserClass")) {
+                                ForEach(userSettings.classes, id: \.self) { userClass in
+                                    Text(userClass)
                                 }
                             }
                         }
@@ -163,6 +90,70 @@ struct login: View {
                 }
             }
         }
+    }
+}
+
+class UserSettings: ObservableObject {
+    @Published var firstName: String {
+        didSet {
+            UserDefaults.standard.set(firstName, forKey: "firstName")
+        }
+    }
+    
+    @Published var lastName: String {
+        didSet {
+            UserDefaults.standard.set(lastName, forKey: "lastName")
+        }
+    }
+    
+    @Published var username: String {
+        didSet {
+            UserDefaults.standard.set(username, forKey: "username")
+        }
+    }
+    
+    @Published var email: String {
+        didSet {
+            UserDefaults.standard.set(email, forKey: "email")
+        }
+    }
+    
+    @Published var isPrivate: Bool {
+        didSet {
+            UserDefaults.standard.set(isPrivate, forKey: "isAccountPrivate")
+        }
+    }
+    
+    @Published var ringtone: String {
+        didSet {
+            UserDefaults.standard.set(ringtone, forKey: "ringtone")
+        }
+    }
+    public var ringtones = ["Chimes", "Signal", "Waves"]
+    
+    @Published var userClass: String {
+        didSet {
+            UserDefaults.standard.set(classes, forKey: "userClass")
+        }
+    }
+    public var classes = ["5a", "5b", "5c", "5d", "5e", "6a", "6b", "6c", "6d", "6e", "7", "8", "9", "10", "11", "12"]
+    
+    @Published var userType: String {
+        didSet {
+            UserDefaults.standard.set(types, forKey: "userType")
+        }
+    }
+    public var types = ["Student", "Teacher", "Parent", "Guest"]
+    
+    init() {
+        self.firstName = UserDefaults.standard.object(forKey: "firstName") as? String ?? ""
+        self.lastName = UserDefaults.standard.object(forKey: "lastName") as? String ?? ""
+        self.username = UserDefaults.standard.object(forKey: "username") as? String ?? ""
+        self.email = UserDefaults.standard.object(forKey: "email") as? String ?? ""
+        self.isPrivate = UserDefaults.standard.object(forKey: "isAccountPrivate") as? Bool ?? true
+        self.ringtone = UserDefaults.standard.object(forKey: "ringtone") as? String ?? ""
+        self.userClass = UserDefaults.standard.object(forKey: "userClass") as? String ?? ""
+        self.userType = UserDefaults.standard.object(forKey: "userType") as? String ?? ""
     }
 }
 

@@ -34,10 +34,6 @@ struct tabView: View {
                     Label("Profile", systemImage: "person.circle")
                 }
                 .tag(Tab.profile)
-            testingArea()
-                .tabItem {
-                    Label("Testing", systemImage: "hammer")
-                }
         }
     }
 }

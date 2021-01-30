@@ -22,7 +22,6 @@
 		F687046E25B6F139006B37B6 /* tabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F687046D25B6F139006B37B6 /* tabView.swift */; };
 		F687047325B6F197006B37B6 /* login.swift in Sources */ = {isa = PBXBuildFile; fileRef = F687047225B6F197006B37B6 /* login.swift */; };
 		F687047825B7278E006B37B6 /* profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = F687047725B7278E006B37B6 /* profile.swift */; };
-		F687047D25B73B94006B37B6 /* testingArea.swift in Sources */ = {isa = PBXBuildFile; fileRef = F687047C25B73B94006B37B6 /* testingArea.swift */; };
 		F6DF1AEF25B2479B000B1CC8 /* newsData.json in Resources */ = {isa = PBXBuildFile; fileRef = F6DF1AEE25B2479B000B1CC8 /* newsData.json */; };
 		F6DF1AF425B24835000B1CC8 /* NewsData.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6DF1AF325B24835000B1CC8 /* NewsData.swift */; };
 		F6DF1AF925B248D9000B1CC8 /* ModelData.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6DF1AF825B248D9000B1CC8 /* ModelData.swift */; };
@@ -67,7 +66,6 @@
 		F687046D25B6F139006B37B6 /* tabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = tabView.swift; sourceTree = "<group>"; };
 		F687047225B6F197006B37B6 /* login.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = login.swift; sourceTree = "<group>"; };
 		F687047725B7278E006B37B6 /* profile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = profile.swift; sourceTree = "<group>"; };
-		F687047C25B73B94006B37B6 /* testingArea.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = testingArea.swift; sourceTree = "<group>"; };
 		F6DF1AEE25B2479B000B1CC8 /* newsData.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = newsData.json; sourceTree = "<group>"; };
 		F6DF1AF325B24835000B1CC8 /* NewsData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsData.swift; sourceTree = "<group>"; };
 		F6DF1AF825B248D9000B1CC8 /* ModelData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelData.swift; sourceTree = "<group>"; };
@@ -101,7 +99,6 @@
 		F607122D25AE49D8005E4647 = {
 			isa = PBXGroup;
 			children = (
-				F687047C25B73B94006B37B6 /* testingArea.swift */,
 				F607123825AE49D8005E4647 /* EM App */,
 				F607124F25AE49D9005E4647 /* EM AppTests */,
 				F607125A25AE49D9005E4647 /* EM AppUITests */,
@@ -342,7 +339,6 @@
 				F607123C25AE49D8005E4647 /* ContentView.swift in Sources */,
 				F687047825B7278E006B37B6 /* profile.swift in Sources */,
 				F623E3DE25B1CCB900E5D34A /* home.swift in Sources */,
-				F687047D25B73B94006B37B6 /* testingArea.swift in Sources */,
 				F623E3EC25B1CCDD00E5D34A /* settings.swift in Sources */,
 				F607123A25AE49D8005E4647 /* EM_AppApp.swift in Sources */,
 			);
@@ -506,7 +502,7 @@
 				DEVELOPMENT_TEAM = 2Q47C6R257;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = "EM App/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.3;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -528,7 +524,7 @@
 				DEVELOPMENT_TEAM = 2Q47C6R257;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = "EM App/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.3;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

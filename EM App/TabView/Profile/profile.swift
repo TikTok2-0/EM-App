@@ -38,6 +38,5 @@ struct profile: View {
 struct profile_Previews: PreviewProvider {
     static var previews: some View {
         profile()
-            .environmentObject(SourceOfTruth())
     }
 }
