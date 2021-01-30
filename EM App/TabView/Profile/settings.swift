@@ -8,23 +8,33 @@
 import SwiftUI
 
 struct settings: View {
-    @State private var selectedChar = userType.Student
-    
-    enum userType: String, CaseIterable, Codable {
-        case Student
-        case Teacher
-        case Parent
-        case Guest
-    }
+    @ObservedObject var userSettings = UserSettings()
     
     var body: some View {
         NavigationView {
-            VStack {
-                Picker("Flavor", selection: $selectedChar) {
-                    Text("Student").tag(userType.Student)
-                    Text("Teacher").tag(userType.Teacher)
-                    Text("Parent").tag(userType.Parent)
-                    Text("Guest").tag(userType.Guest)
+            Form {
+                Section(header: Text("Important")) {
+                    Text("Restart the App to apply the changes")
+                        .font(.caption)
+                        .frame(width: nil, height: 50, alignment: .center)
+                }
+                
+                Section(header: Text("Your Info")) {
+                    TextField("First Name", text: $userSettings.firstName)
+                    TextField("Last Name", text: $userSettings.lastName)
+                    TextField("Username", text: $userSettings.username)
+                    TextField("E-Mail", text: $userSettings.email)
+                    Toggle(isOn: $userSettings.isPrivate) {
+                        Text("Private Account")
+                    }
+                    Toggle(isOn: $userSettings.prefersNotifications) {
+                        Text("Notifications")
+                    }
+                    Picker(selection: $userSettings.ringtone, label: Text("Ringtone")) {
+                        ForEach(userSettings.ringtones, id: \.self) { ringtone in
+                            Text(ringtone)
+                        }
+                    }
                 }
             }
             .navigationTitle("Settings")

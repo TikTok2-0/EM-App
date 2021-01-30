@@ -49,8 +49,11 @@ struct news: View {
                     }
                     //.listRowBackground(Color.red)
                     .listRowInsets(EdgeInsets())
-                    .padding(.bottom, 15)
+                    .padding(.bottom, 10)
+                    .padding(.top, 10)
                 }
+                .listStyle(InsetListStyle())
+                .padding()
             }
             .navigationTitle("News")
             .toolbar(content: {
