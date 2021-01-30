@@ -12,7 +12,6 @@ struct login: View {
     @State var showLoginView: Bool = false
     @State private var acceptTerms: Bool = false
     
-    @State private var password: String = ""
     @State private var confirmPass: String = ""
     @State private var passConfirmed: Bool = false
     
@@ -35,7 +34,9 @@ struct login: View {
                             Toggle(isOn: $userSettings.isPrivate) {
                                 Text("Private Account")
                             }
-                            
+                            Toggle(isOn: $userSettings.prefersNotifications) {
+                                Text("Notifications")
+                            }
                             Picker(selection: $userSettings.ringtone, label: Text("Ringtone")) {
                                 ForEach(userSettings.ringtones, id: \.self) { ringtone in
                                     Text(ringtone)
@@ -44,7 +45,10 @@ struct login: View {
                         }
                         
                         Section(header: Text("Password")) {
-                            SecureField("Password", text: $password)
+                            HStack {
+                                SecureField("Password", text: $userSettings.password)
+                                Image(systemName: "eye")
+                            }
                             SecureField("Confirm Password", text: $confirmPass)
                         }
                         
@@ -55,7 +59,7 @@ struct login: View {
                                 }
                             }
                             
-                            Picker(selection: $userSettings.userClass, label: Text("UserClass")) {
+                            Picker(selection: $userSettings.userClass, label: Text("Class")) {
                                 ForEach(userSettings.classes, id: \.self) { userClass in
                                     Text(userClass)
                                 }
@@ -124,6 +128,12 @@ class UserSettings: ObservableObject {
         }
     }
     
+    @Published var prefersNotifications: Bool {
+        didSet {
+            UserDefaults.standard.set(prefersNotifications, forKey: "prefersNotifications")
+        }
+    }
+    
     @Published var ringtone: String {
         didSet {
             UserDefaults.standard.set(ringtone, forKey: "ringtone")
@@ -131,16 +141,22 @@ class UserSettings: ObservableObject {
     }
     public var ringtones = ["Chimes", "Signal", "Waves"]
     
+    @Published var password: String {
+        didSet {
+            UserDefaults.standard.set(password, forKey: "password")
+        }
+    }
+    
     @Published var userClass: String {
         didSet {
-            UserDefaults.standard.set(classes, forKey: "userClass")
+            UserDefaults.standard.set(userClass, forKey: "userClass")
         }
     }
     public var classes = ["5a", "5b", "5c", "5d", "5e", "6a", "6b", "6c", "6d", "6e", "7", "8", "9", "10", "11", "12"]
     
     @Published var userType: String {
         didSet {
-            UserDefaults.standard.set(types, forKey: "userType")
+            UserDefaults.standard.set(userType, forKey: "userType")
         }
     }
     public var types = ["Student", "Teacher", "Parent", "Guest"]
@@ -151,7 +167,9 @@ class UserSettings: ObservableObject {
         self.username = UserDefaults.standard.object(forKey: "username") as? String ?? ""
         self.email = UserDefaults.standard.object(forKey: "email") as? String ?? ""
         self.isPrivate = UserDefaults.standard.object(forKey: "isAccountPrivate") as? Bool ?? true
+        self.prefersNotifications = UserDefaults.standard.object(forKey: "prefersNotifications") as? Bool ?? false
         self.ringtone = UserDefaults.standard.object(forKey: "ringtone") as? String ?? ""
+        self.password = UserDefaults.standard.object(forKey: "password") as? String ?? ""
         self.userClass = UserDefaults.standard.object(forKey: "userClass") as? String ?? ""
         self.userType = UserDefaults.standard.object(forKey: "userType") as? String ?? ""
     }
