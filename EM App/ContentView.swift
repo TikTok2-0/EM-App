@@ -18,19 +18,8 @@ struct ContentView: View {
         } else {
             tabView()
         }
-        /*VStack {
-            if viewRouter.currentPage == "onboardingView" {
-                login()
-            } else if viewRouter.currentPage == "homeView" {
-                tabView()
-            }
-        }*/
     }
 }
-/*
-class ViewRouter: ObservableObject {
-    @Published var currentPage: String
-}*/
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {

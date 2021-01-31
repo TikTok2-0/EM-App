@@ -12,12 +12,45 @@ struct home: View {
     
     var body: some View {
         NavigationView {
-            VStack(alignment: .leading) {
-                Image("Logo")
-                    .border(Color.black, width: 1)
+            VStack {
+                HStack {
+                    Text("Start")
+                    VStack {
+                        Divider()
+                            .background(Color.primary)
+                    }
+                }
+                
+                List {
+                    Image("Logo")
+                        //.border(Color.black, width: 1)
+                    
+                }
+                .listStyle(InsetListStyle())
+                
+                HStack {
+                    Text("Apps")
+                    VStack {
+                        Divider()
+                            .background(Color.primary)
+                    }
+                }
+                
                 Spacer()
+                
+                List {
+                    NavigationLink(destination: Text("Notenrechner")) {
+                        Label("Notenrechner", systemImage: "function")
+                    }
+                    
+                    NavigationLink(destination: Text("Untis")) {
+                        Label("Vertretungsplan", systemImage: "message")
+                    }
+                }
+                .listStyle(InsetListStyle())
             }
             .navigationTitle("Home")
+            .padding()
             .toolbar(content: {
                 Button(action: { showPage.toggle() }) {
                     Image(systemName: "bell")
@@ -26,7 +59,7 @@ struct home: View {
             })
             .sheet(isPresented: $showPage, content: {
                 Text("Notifications")
-            })
+        })
         }
     }
 }
