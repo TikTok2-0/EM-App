@@ -9,6 +9,7 @@ import SwiftUI
 
 struct home: View {
     @State private var showPage: Bool = false
+    @ObservedObject var userSettings = UserSettings()
     
     var body: some View {
         NavigationView {
@@ -52,10 +53,29 @@ struct home: View {
             .navigationTitle("Home")
             .padding()
             .toolbar(content: {
-                Button(action: { showPage.toggle() }) {
-                    Image(systemName: "bell")
+                ToolbarItem(placement: .primaryAction) {
+                    Menu {
+                        Section {
+                            Button(action: { showPage.toggle() }) {
+                                Label("Notifications", systemImage: "bell")
+                            }
+                        }
+                        Section(header: Text("Apps")) {
+                            Text("Notenrechner (coming soon)")
+                            Text("Vertretungsplan (coming soon)")
+                        }
+                        Section {
+                            Button(action: { userSettings.firstLogin.toggle() }) {
+                                Label("Logout", systemImage: "person.crop.circle.badge.xmark")
+                                    //.foregroundColor(.red)
+                            }
+                        }
+                    }
+                    label: {
+                        Label("Menu", systemImage: "line.horizontal.3")
+                            .font(.title3)
+                    }
                 }
-                .frame(alignment: .trailing)
             })
             .sheet(isPresented: $showPage, content: {
                 Text("Notifications")

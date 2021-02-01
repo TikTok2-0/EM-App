@@ -77,7 +77,7 @@ class UserSettings: ObservableObject {
             UserDefaults.standard.set(ringtone, forKey: "ringtone")
         }
     }
-    public var ringtones = ["Chimes", "Signal", "Waves"]
+    public var ringtones = ["Note", "Popcorn", "Chord", "Aurora", "Synth"]
     
     @Published var password: String {
         didSet {
@@ -107,7 +107,7 @@ class UserSettings: ObservableObject {
         self.email = UserDefaults.standard.object(forKey: "email") as? String ?? ""
         self.isPrivate = UserDefaults.standard.object(forKey: "isAccountPrivate") as? Bool ?? true
         self.prefersNotifications = UserDefaults.standard.object(forKey: "prefersNotifications") as? Bool ?? false
-        self.ringtone = UserDefaults.standard.object(forKey: "ringtone") as? String ?? ""
+        self.ringtone = UserDefaults.standard.object(forKey: "ringtone") as? String ?? "Note"
         self.password = UserDefaults.standard.object(forKey: "password") as? String ?? ""
         self.userClass = UserDefaults.standard.object(forKey: "userClass") as? String ?? ""
         self.userType = UserDefaults.standard.object(forKey: "userType") as? String ?? ""

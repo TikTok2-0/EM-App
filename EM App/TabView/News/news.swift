@@ -57,13 +57,29 @@ struct news: View {
             }
             .navigationTitle("News")
             .toolbar(content: {
+                ToolbarItem(placement: .primaryAction) {
+                    Menu {
+                        Button(action: {}) {
+                            Label("Corona", systemImage: "staroflife")
+                        }
+                        Button(action: {}) {
+                            Label("Oberstufe", systemImage: "house.fill")
+                        }
+                        Button(action: {}) {
+                            Label("Mittelstufe", systemImage: "house")
+                        }
+                    }
+                    label: {
+                        Label("Filters", systemImage: "slider.horizontal.3")
+                            .font(.title3)
+                    }
+                }
+            })
+            /*.sheet(isPresented: $showPage, content: {
                 Button(action: { showPage.toggle() }) {
                     Image(systemName: "line.horizontal.3.circle")
                 }
-            })
-            .sheet(isPresented: $showPage, content: {
-                Text("Filters")
-            })
+            })*/
         }
     }
 }

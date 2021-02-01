@@ -49,7 +49,8 @@ struct profile: View {
             .listStyle(InsetListStyle())
             .toolbar(content: {
                 Button(action: { showPage.toggle() }) {
-                    Image(systemName: "gear")
+                    Label("", systemImage: "gear")
+                        .font(.title3)
                 }
             })
             .sheet(isPresented: $showPage, content: {
