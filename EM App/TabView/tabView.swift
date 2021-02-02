@@ -41,5 +41,6 @@ struct tabView: View {
 struct tabView_Previews: PreviewProvider {
     static var previews: some View {
         tabView()
+            .environmentObject(ModelData())
     }
 }

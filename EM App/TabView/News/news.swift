@@ -8,43 +8,24 @@
 import SwiftUI
 
 struct news: View {
-    @State private var showPage: Bool = false
-    @State private var news = ["Austauschprogramm", "Corona", "MINT am HLG", "Moodle", "Graffiti", "'It is easier to criticize than to praise.'", "Ballade meets Lego", "Anmeldung für die neuen fünften Klassen"]
+    @EnvironmentObject var modelData: ModelData
+    @State private var showFavoritesOnly = false
     
-    
-    var gradient: LinearGradient {
-        LinearGradient(
-            gradient: Gradient(
-                colors: [Color.black.opacity(0.6), Color.black.opacity(0.4), Color.black.opacity(0)]),
-            startPoint: .bottom,
-            endPoint: .center)
+    var filteredNews: [NewsData] {
+        modelData.newsData.filter { newsData in
+            (!showFavoritesOnly || newsData.isFavorite)
+        }
     }
     
     var body: some View {
         NavigationView {
             VStack {
                 List {
-                    ForEach(news.reversed(), id: \.self) { item in
-                        ZStack(alignment: .bottomLeading) {
-                            NavigationLink(destination: newsDetail()) {
-                            }.hidden()
-                            Image(item)
-                                .resizable()
-                                .frame(width: nil, height: 250)
-                            Rectangle().fill(gradient)
-                            VStack(alignment: .leading) {
-                                Text(item)
-                                    .font(.title3)
-                                    .bold()
-                                    .lineLimit(1)
-                                Text(item)
-                                    .font(.subheadline)
-                                    .lineLimit(1)
-                            }
-                            .padding()
-                        }
-                        .foregroundColor(.white)
-                        .cornerRadius(15)
+                    /*Toggle(isOn: $showFavoritesOnly) {
+                        Text("Favorites only")
+                    }*/
+                    ForEach(ModelData().newsData, id: \.self) { newsData in
+                        newsRow(newsData: newsData)
                     }
                     //.listRowBackground(Color.red)
                     .listRowInsets(EdgeInsets())
@@ -94,17 +75,15 @@ struct news: View {
                     }
                 }
             })
-            /*.sheet(isPresented: $showPage, content: {
-                Button(action: { showPage.toggle() }) {
-                    Image(systemName: "line.horizontal.3.circle")
-                }
-            })*/
         }
     }
 }
 
 struct news_Previews: PreviewProvider {
+    static let modelData = ModelData()
+    
     static var previews: some View {
         news()
+            .environmentObject(modelData)
     }
 }

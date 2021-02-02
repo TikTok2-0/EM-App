@@ -9,12 +9,11 @@ import Foundation
 import SwiftUI
 import CoreLocation
 
-struct NewsData: Hashable, Codable, Identifiable {
-    var id: Int
+struct NewsData: Hashable, Decodable, Identifiable {
     var title: String
-    var imageTitle: String
+    var id: Int
     var subLine: String
-    var Text: String
+    var text: String
     var isFavorite: Bool
     var isFeatured: Bool
     
@@ -25,13 +24,17 @@ struct NewsData: Hashable, Codable, Identifiable {
         case c19 = "Corona"
     }
     
-    private var imageName: String
+    var features: [NewsData] {
+        newsData.filter { $0.isFeatured }
+    }
+    
+    private var imageTitle: String
     var image: Image {
-        Image(imageName)
+        Image(imageTitle)
     }
     
     var featureImage: Image? {
-        isFeatured ? Image(imageName + "_feature") : nil
+        isFeatured ? Image(imageTitle + "_feature") : nil
     }
 }
 
