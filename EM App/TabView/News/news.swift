@@ -31,7 +31,6 @@ struct news: View {
                             Image(item)
                                 .resizable()
                                 .frame(width: nil, height: 250)
-                                //.shadow(color: .red, radius: 5, x: 20, y: 20) //WIE FUNKTIONIEREN SHADOWS
                             Rectangle().fill(gradient)
                             VStack(alignment: .leading) {
                                 Text(item)
@@ -59,14 +58,34 @@ struct news: View {
             .toolbar(content: {
                 ToolbarItem(placement: .primaryAction) {
                     Menu {
-                        Button(action: {}) {
-                            Label("Corona", systemImage: "staroflife")
+                        Section {
+                            Button(action: {}) {
+                                Label("All", systemImage: "rectangle.stack")
+                            }
                         }
-                        Button(action: {}) {
-                            Label("Oberstufe", systemImage: "house.fill")
+                        
+                        Section {
+                            Button(action: {}) {
+                                Label("Corona", systemImage: "staroflife")
+                            }
+                            Button(action: {}) {
+                                Label("Oberstufe", systemImage: "house.fill")
+                            }
+                            Button(action: {}) {
+                                Label("Mittelstufe", systemImage: "house")
+                            }
                         }
-                        Button(action: {}) {
-                            Label("Mittelstufe", systemImage: "house")
+                        
+                        Section {
+                            Button(action: {}) {
+                                Label("2021", systemImage: "21.square")
+                            }
+                            Button(action: {}) {
+                                Label("2020", systemImage: "20.square")
+                            }
+                            Button(action: {}) {
+                                Label("2019", systemImage: "19.square")
+                            }
                         }
                     }
                     label: {
