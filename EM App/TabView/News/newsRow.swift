@@ -24,7 +24,10 @@ struct newsRow: View {
             }.hidden()
             newsData.image
                 .resizable()
-                .frame(width: nil, height: 250)
+                //.scaledToFill()
+                //.scaleEffect(x: 1.0, y: 1.0)
+                .aspectRatio(CGSize(width: 16, height: 9), contentMode: .fill)
+                //.frame(width: nil, height: nil)
             Rectangle().fill(gradient)
             VStack(alignment: .leading) {
                 Text(newsData.title)

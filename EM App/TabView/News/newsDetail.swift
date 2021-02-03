@@ -12,14 +12,37 @@ struct newsDetail: View {
     var newsData: NewsData
     
     var body: some View {
-        VStack {
+        ScrollView {
             newsData.image
                 .resizable()
-                .frame(width: nil, height: 250, alignment: .top)
-            Text(newsData.title)
-                .font(.title)
+                //.frame(width: nil, height: 250, alignment: .top)
+                .aspectRatio(CGSize(width: 16, height: 9), contentMode: .fill)
             
+            VStack(alignment: .leading) {
+                HStack {
+                    Text(newsData.title)
+                        .font(.title)
+                        .foregroundColor(.primary)
+                }
+                
+                HStack {
+                    Text(newsData.subLine)
+                    //Spacer()
+                    //Text(newsData.title)
+                }
+                .font(.subheadline)
+                .foregroundColor(.secondary)
+                
+                Divider()
+                
+                Text("About \(newsData.title)")
+                    .font(.title2)
+                Text(newsData.text)
+            }
+            .padding()
         }
+        .navigationTitle(newsData.title)
+        .navigationBarTitleDisplayMode(.inline)
     }
 }
 
