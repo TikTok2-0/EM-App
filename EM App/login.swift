@@ -44,13 +44,14 @@ struct login: View {
                             }
                         }
                         
+                        /*
                         Section(header: Text("Password")) {
                             HStack {
                                 SecureField("Password", text: $userSettings.password)
                                 Image(systemName: "eye")
                             }
                             SecureField("Confirm Password", text: $confirmPass)
-                        }
+                        }*/
                         
                         Section(header: Text("School")) {
                             Picker(selection: $userSettings.userType, label: Text("Type")) {
@@ -84,7 +85,7 @@ struct login: View {
                                 userSettings.firstLogin.toggle()
                                 
                             }) {
-                                Text("Access Beta")
+                                Text("V0.1")
                             }.disabled(!acceptTerms)
                         }
                         
@@ -109,7 +110,8 @@ struct MasterView: View {
 
 struct TaC: View {
     var body: some View {
-        Text("Read through our terms and conditions")
+        Text("Our terms and conditions \nare under construction")
+            .padding()
     }
 }
 

@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import URLImage
 
 struct newsRow: View {
     var newsData: NewsData
@@ -22,19 +23,25 @@ struct newsRow: View {
         ZStack(alignment: .bottomLeading) {
             NavigationLink(destination: newsDetail(newsData: newsData)) {
             }.hidden()
+            
+            /*
+            URLImage(url: URL(string: newsData.imageURL)!) { image in
+                image
+                    .resizable()
+                    .aspectRatio(CGSize(width: 16, height: 9), contentMode: .fill)
+            }*/
+            
             newsData.image
                 .resizable()
-                //.scaledToFill()
-                //.scaleEffect(x: 1.0, y: 1.0)
                 .aspectRatio(CGSize(width: 16, height: 9), contentMode: .fill)
-                //.frame(width: nil, height: nil)
+            
             Rectangle().fill(gradient)
             VStack(alignment: .leading) {
                 Text(newsData.title)
                     .font(.title3)
                     .bold()
                     .lineLimit(1)
-                Text(newsData.subLine)
+                Text(newsData.caption)
                     .font(.subheadline)
                     .lineLimit(1)
             }

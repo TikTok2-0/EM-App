@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import URLImage
 
 struct home: View {
     @State private var showPage: Bool = false
@@ -25,7 +26,6 @@ struct home: View {
                 List {
                     Image("Logo")
                         //.border(Color.black, width: 1)
-                    
                 }
                 .listStyle(InsetListStyle())
                 

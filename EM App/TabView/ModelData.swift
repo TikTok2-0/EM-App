@@ -9,11 +9,7 @@ import Foundation
 import Combine
 
 final class ModelData: ObservableObject {
-    @Published var newsData: [NewsData] = load("newsData.json")
-    
-    var features: [NewsData] {
-        newsData.filter { $0.isFeatured }
-    }
+    @Published var newsData: [NewsData] = load("jsonExports.json")
     
     var categories: [String: [NewsData]] {
         Dictionary (
@@ -23,7 +19,7 @@ final class ModelData: ObservableObject {
     }
 }
 
-var newsData: [NewsData] = load("newsData.json")
+var newsData: [NewsData] = load("jsonExports.json")
 
 func load<T: Decodable>(_ filename: String) -> T {
     let data: Data

@@ -6,24 +6,16 @@
 //
 
 import SwiftUI
+import URLImage
 
 struct news: View {
     @EnvironmentObject var modelData: ModelData
     @State private var showFavoritesOnly = false
     
-    var filteredNews: [NewsData] {
-        modelData.newsData.filter { newsData in
-            (!showFavoritesOnly || newsData.isFavorite)
-        }
-    }
-    
     var body: some View {
         NavigationView {
             VStack {
                 List {
-                    /*Toggle(isOn: $showFavoritesOnly) {
-                        Text("Favorites only")
-                    }*/
                     ForEach(ModelData().newsData, id: \.self) { newsData in
                         newsRow(newsData: newsData)
                     }

@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -19,10 +19,12 @@
 		F623E3E725B1CCCF00E5D34A /* news.swift in Sources */ = {isa = PBXBuildFile; fileRef = F623E3E625B1CCCF00E5D34A /* news.swift */; };
 		F623E3EC25B1CCDD00E5D34A /* settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = F623E3EB25B1CCDD00E5D34A /* settings.swift */; };
 		F636EDDF25B57CD800972C83 /* newsDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = F636EDDE25B57CD800972C83 /* newsDetail.swift */; };
+		F63DB2CF25CB47EF00BAB78C /* URLImage in Frameworks */ = {isa = PBXBuildFile; productRef = F63DB2CE25CB47EF00BAB78C /* URLImage */; };
 		F6745CF825C9BBC000A3A5F1 /* newsRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6745CF725C9BBC000A3A5F1 /* newsRow.swift */; };
 		F687046E25B6F139006B37B6 /* tabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F687046D25B6F139006B37B6 /* tabView.swift */; };
 		F687047325B6F197006B37B6 /* login.swift in Sources */ = {isa = PBXBuildFile; fileRef = F687047225B6F197006B37B6 /* login.swift */; };
 		F687047825B7278E006B37B6 /* profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = F687047725B7278E006B37B6 /* profile.swift */; };
+		F687183625CC8E540035A09D /* jsonExports.json in Resources */ = {isa = PBXBuildFile; fileRef = F687183525CC8E540035A09D /* jsonExports.json */; };
 		F6DF1AEF25B2479B000B1CC8 /* newsData.json in Resources */ = {isa = PBXBuildFile; fileRef = F6DF1AEE25B2479B000B1CC8 /* newsData.json */; };
 		F6DF1AF425B24835000B1CC8 /* NewsData.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6DF1AF325B24835000B1CC8 /* NewsData.swift */; };
 		F6DF1AF925B248D9000B1CC8 /* ModelData.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6DF1AF825B248D9000B1CC8 /* ModelData.swift */; };
@@ -68,6 +70,7 @@
 		F687046D25B6F139006B37B6 /* tabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = tabView.swift; sourceTree = "<group>"; };
 		F687047225B6F197006B37B6 /* login.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = login.swift; sourceTree = "<group>"; };
 		F687047725B7278E006B37B6 /* profile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = profile.swift; sourceTree = "<group>"; };
+		F687183525CC8E540035A09D /* jsonExports.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = jsonExports.json; sourceTree = "<group>"; };
 		F6DF1AEE25B2479B000B1CC8 /* newsData.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = newsData.json; sourceTree = "<group>"; };
 		F6DF1AF325B24835000B1CC8 /* NewsData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsData.swift; sourceTree = "<group>"; };
 		F6DF1AF825B248D9000B1CC8 /* ModelData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelData.swift; sourceTree = "<group>"; };
@@ -78,6 +81,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F63DB2CF25CB47EF00BAB78C /* URLImage in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -180,6 +184,7 @@
 				F636EDDE25B57CD800972C83 /* newsDetail.swift */,
 				F6DF1AF325B24835000B1CC8 /* NewsData.swift */,
 				F6DF1AEE25B2479B000B1CC8 /* newsData.json */,
+				F687183525CC8E540035A09D /* jsonExports.json */,
 			);
 			path = News;
 			sourceTree = "<group>";
@@ -217,6 +222,9 @@
 			dependencies = (
 			);
 			name = "EM App";
+			packageProductDependencies = (
+				F63DB2CE25CB47EF00BAB78C /* URLImage */,
+			);
 			productName = "EM App";
 			productReference = F607123625AE49D8005E4647 /* EM App.app */;
 			productType = "com.apple.product-type.application";
@@ -288,6 +296,9 @@
 				Base,
 			);
 			mainGroup = F607122D25AE49D8005E4647;
+			packageReferences = (
+				F63DB2CD25CB47EF00BAB78C /* XCRemoteSwiftPackageReference "url-image" */,
+			);
 			productRefGroup = F607123725AE49D8005E4647 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -307,6 +318,7 @@
 				F607124125AE49D9005E4647 /* Preview Assets.xcassets in Resources */,
 				F6DF1AEF25B2479B000B1CC8 /* newsData.json in Resources */,
 				F607123E25AE49D9005E4647 /* Assets.xcassets in Resources */,
+				F687183625CC8E540035A09D /* jsonExports.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -664,6 +676,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		F63DB2CD25CB47EF00BAB78C /* XCRemoteSwiftPackageReference "url-image" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/dmytro-anokhin/url-image.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.2.3;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		F63DB2CE25CB47EF00BAB78C /* URLImage */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F63DB2CD25CB47EF00BAB78C /* XCRemoteSwiftPackageReference "url-image" */;
+			productName = URLImage;
+		};
+/* End XCSwiftPackageProductDependency section */
 
 /* Begin XCVersionGroup section */
 		F607124425AE49D9005E4647 /* EM_App.xcdatamodeld */ = {
