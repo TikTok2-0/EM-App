@@ -6,7 +6,6 @@
 //
 
 import SwiftUI
-import URLImage
 
 struct newsDetail: View {
     @EnvironmentObject var modelData: ModelData
@@ -15,20 +14,7 @@ struct newsDetail: View {
     var body: some View {
         ScrollView {
             
-            /*
-            URLImage(url: URL(string: newsData.imageURL)!) { image in
-                image
-                    .resizable()
-                    .aspectRatio(CGSize(width: 16, height: 9), contentMode: .fill)
-            }
-            
-            Divider()
-            */
-            
-            newsData.image
-                .resizable()
-                .frame(width: nil, height: 250, alignment: .top)
-                //.aspectRatio(CGSize(width: 16, height: 9), contentMode: .fill)
+            ImageView(withURL: newsData.imageURL)
             
             VStack(alignment: .leading) {
                 HStack {
@@ -38,7 +24,7 @@ struct newsDetail: View {
                 }
                 
                 HStack {
-                    Text(newsData.caption)
+                    Text(newsData.dates)
                     //Spacer()
                     //Text(newsData.title)
                 }

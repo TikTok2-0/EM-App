@@ -24,16 +24,9 @@ struct newsRow: View {
             NavigationLink(destination: newsDetail(newsData: newsData)) {
             }.hidden()
             
-            /*
-            URLImage(url: URL(string: newsData.imageURL)!) { image in
-                image
-                    .resizable()
-                    .aspectRatio(CGSize(width: 16, height: 9), contentMode: .fill)
-            }*/
+            //ImageView(withURL: newsData.imageURL)
             
-            newsData.image
-                .resizable()
-                .aspectRatio(CGSize(width: 16, height: 9), contentMode: .fill)
+            RemoteImage(url: newsData.imageURL)
             
             Rectangle().fill(gradient)
             VStack(alignment: .leading) {
@@ -49,6 +42,7 @@ struct newsRow: View {
         }
         .foregroundColor(.white)
         .cornerRadius(15)
+        .aspectRatio(CGSize(width: 3.6, height: 2), contentMode: .fill)
     }
 }
 

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F6015ADB25D1A6E700697659 /* jsonExports.json in Resources */ = {isa = PBXBuildFile; fileRef = F6015ADA25D1A6E700697659 /* jsonExports.json */; };
 		F607123A25AE49D8005E4647 /* EM_AppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F607123925AE49D8005E4647 /* EM_AppApp.swift */; };
 		F607123C25AE49D8005E4647 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F607123B25AE49D8005E4647 /* ContentView.swift */; };
 		F607123E25AE49D9005E4647 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F607123D25AE49D9005E4647 /* Assets.xcassets */; };
@@ -24,7 +25,6 @@
 		F687046E25B6F139006B37B6 /* tabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F687046D25B6F139006B37B6 /* tabView.swift */; };
 		F687047325B6F197006B37B6 /* login.swift in Sources */ = {isa = PBXBuildFile; fileRef = F687047225B6F197006B37B6 /* login.swift */; };
 		F687047825B7278E006B37B6 /* profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = F687047725B7278E006B37B6 /* profile.swift */; };
-		F687183625CC8E540035A09D /* jsonExports.json in Resources */ = {isa = PBXBuildFile; fileRef = F687183525CC8E540035A09D /* jsonExports.json */; };
 		F6DF1AEF25B2479B000B1CC8 /* newsData.json in Resources */ = {isa = PBXBuildFile; fileRef = F6DF1AEE25B2479B000B1CC8 /* newsData.json */; };
 		F6DF1AF425B24835000B1CC8 /* NewsData.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6DF1AF325B24835000B1CC8 /* NewsData.swift */; };
 		F6DF1AF925B248D9000B1CC8 /* ModelData.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6DF1AF825B248D9000B1CC8 /* ModelData.swift */; };
@@ -48,6 +48,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		F6015ADA25D1A6E700697659 /* jsonExports.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = jsonExports.json; sourceTree = "<group>"; };
 		F607123625AE49D8005E4647 /* EM App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "EM App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F607123925AE49D8005E4647 /* EM_AppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EM_AppApp.swift; sourceTree = "<group>"; };
 		F607123B25AE49D8005E4647 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -70,7 +71,6 @@
 		F687046D25B6F139006B37B6 /* tabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = tabView.swift; sourceTree = "<group>"; };
 		F687047225B6F197006B37B6 /* login.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = login.swift; sourceTree = "<group>"; };
 		F687047725B7278E006B37B6 /* profile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = profile.swift; sourceTree = "<group>"; };
-		F687183525CC8E540035A09D /* jsonExports.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = jsonExports.json; sourceTree = "<group>"; };
 		F6DF1AEE25B2479B000B1CC8 /* newsData.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = newsData.json; sourceTree = "<group>"; };
 		F6DF1AF325B24835000B1CC8 /* NewsData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsData.swift; sourceTree = "<group>"; };
 		F6DF1AF825B248D9000B1CC8 /* ModelData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelData.swift; sourceTree = "<group>"; };
@@ -184,7 +184,7 @@
 				F636EDDE25B57CD800972C83 /* newsDetail.swift */,
 				F6DF1AF325B24835000B1CC8 /* NewsData.swift */,
 				F6DF1AEE25B2479B000B1CC8 /* newsData.json */,
-				F687183525CC8E540035A09D /* jsonExports.json */,
+				F6015ADA25D1A6E700697659 /* jsonExports.json */,
 			);
 			path = News;
 			sourceTree = "<group>";
@@ -318,7 +318,7 @@
 				F607124125AE49D9005E4647 /* Preview Assets.xcassets in Resources */,
 				F6DF1AEF25B2479B000B1CC8 /* newsData.json in Resources */,
 				F607123E25AE49D9005E4647 /* Assets.xcassets in Resources */,
-				F687183625CC8E540035A09D /* jsonExports.json in Resources */,
+				F6015ADB25D1A6E700697659 /* jsonExports.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
