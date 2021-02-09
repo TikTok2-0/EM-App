@@ -15,7 +15,7 @@ struct untisRowPreview: View {
             RoundedRectangle(cornerSize: CGSize(width: 15, height: 15)).fill(Color(UIColor.systemBackground))
                 .frame(width: nil, height: 60, alignment: .center)
                 .clipped()
-                .border(Color.gray, width: 1)
+                //.border(Color.gray, width: 1)
                 .shadow(radius: 1, x: 0, y: 2)
             HStack {
                 Ellipse()
@@ -29,6 +29,7 @@ struct untisRowPreview: View {
                     .frame(width: 50, alignment: .leading)
                 Spacer()
                 Text(untisData.teacher)
+                    .frame(width: 30, alignment: .trailing)
             }.padding()
         }
         .cornerRadius(15)

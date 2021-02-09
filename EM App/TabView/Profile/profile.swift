@@ -15,38 +15,49 @@ struct profile: View {
     var body: some View {
         NavigationView {
             List {
-                HStack {
-                    Text("Username")
-                    Spacer()
-                    Text("\(userSettings.username)")
+                Section {
+                    HStack {
+                        Text("Username")
+                        Spacer()
+                        Text("\(userSettings.username)")
+                    }
+                    HStack {
+                        Text("Name")
+                        Spacer()
+                        Text("\(userSettings.firstName) \(userSettings.lastName)")
+                    }
+                    HStack {
+                        Text("E-Mail")
+                        Spacer()
+                        Text("\(userSettings.email)")
+                    }
+                    HStack {
+                        Text("Private Account")
+                        Spacer()
+                        Ellipse()
+                            .frame(width: 25, height: 25, alignment: .center)
+                            .foregroundColor(userSettings.isPrivate ? .green : .red)
+                    }
+                    HStack {
+                        Text("Notifications")
+                        Spacer()
+                        Ellipse()
+                            .frame(width: 25, height: 25, alignment: .center)
+                            .foregroundColor(userSettings.prefersNotifications ? .green : .red)
+                    }
                 }
-                HStack {
-                    Text("Name")
-                    Spacer()
-                    Text("\(userSettings.firstName) \(userSettings.lastName)")
-                }
-                HStack {
-                    Text("E-Mail")
-                    Spacer()
-                    Text("\(userSettings.email)")
-                }
-                HStack {
-                    Text("Private Account")
-                    Spacer()
-                    Ellipse()
-                        .frame(width: 25, height: 25, alignment: .center)
-                        .foregroundColor(userSettings.isPrivate ? .green : .red)
-                }
-                HStack {
-                    Text("Notifications")
-                    Spacer()
-                    Ellipse()
-                        .frame(width: 25, height: 25, alignment: .center)
-                        .foregroundColor(userSettings.prefersNotifications ? .green : .red)
+                
+                Section {
+                    NavigationLink(destination: untisList()) {
+                        Label("Untis", systemImage: "gear")
+                    }
+                    NavigationLink(destination: Text("soon")) {
+                        Label("Notenrechner", systemImage: "gear")
+                    }
                 }
             }
             .navigationTitle("Profile")
-            .listStyle(InsetListStyle())
+            .listStyle(GroupedListStyle())
             .toolbar(content: {
                 Button(action: { showPage.toggle() }) {
                     Label("", systemImage: "gear")

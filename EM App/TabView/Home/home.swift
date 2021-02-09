@@ -12,11 +12,14 @@ struct home: View {
     @State private var showPage: Bool = false
     @ObservedObject var userSettings = UserSettings()
     @EnvironmentObject var modelData: ModelData
+    @State private var showUntis: Bool = false
+    
+    @State private var gradeAverage: Double = 1.4
     
     var body: some View {
         NavigationView {
             ScrollView {
-                NavigationLink(destination: Text("big rip")) {
+                NavigationLink(destination: untisList()) {
                     Text("Stundenplan")
                         .foregroundColor(.primary)
                     Text("powered by Untis®")
@@ -30,11 +33,8 @@ struct home: View {
                 }
                 
                 ForEach(ModelData().untisData, id: \.self) { item in
-                    //Text("Hello")
                     untisRowPreview(untisData: item)
                 }
-                
-                //Spacer()
                 
                 HStack {
                     Text("Hot Story 🔥")
@@ -43,16 +43,23 @@ struct home: View {
                             .background(Color.primary)
                     }
                 }
-                
-                ZStack {
-                    RoundedRectangle(cornerSize: CGSize(width: 15, height: 15)).fill(Color(.white))
-                        .shadow(radius: 1, x: 0, y: 2)
                     
-                    NavigationLink(destination: newsDetail(newsData: ModelData().newsData[0]) ) {
-                        hottestStory(newsData: ModelData().newsData[0])
-                            .padding()
+                NavigationLink(destination: newsDetail(newsData: ModelData().newsData[0]) ) {
+                    hottestStory(newsData: ModelData().newsData[0])
+                        .padding()
+                }
+                
+                NavigationLink(destination: Text("soon")) {
+                    Text("Grades")
+                        .foregroundColor(.primary)
+                    VStack {
+                        Divider()
+                            .background(Color.primary)
                     }
-                }.padding()
+                }
+                
+                Text("Schnitt: \(gradeAverage)")
+                    .font(.title)
                 
             }
             .navigationTitle("Hallo, \(userSettings.firstName)")
@@ -68,6 +75,9 @@ struct home: View {
                         Section(header: Text("Apps")) {
                             Text("Notenrechner (coming soon)")
                             Text("Vertretungsplan (coming soon)")
+                            Button(action: { showUntis.toggle() }) {
+                                Label("Untis", systemImage: "")
+                            }
                         }
                         Section {
                             Button(action: { userSettings.firstLogin.toggle() }) {
@@ -84,7 +94,10 @@ struct home: View {
             })
             .sheet(isPresented: $showPage, content: {
                 Text("Notifications")
-        })
+            })
+            .sheet(isPresented: $showUntis, content: {
+                untisList()
+            })
         }
     }
 }
