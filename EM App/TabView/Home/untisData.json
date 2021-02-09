@@ -1,0 +1,34 @@
+[
+    {
+        "subject": "Mathe",
+        "room": "R102",
+        "teacher": "Ho",
+        "color": "red",
+        "cover": "true",
+        "id": "1"
+    },
+    {
+        "subject": "English",
+        "room": "R303",
+        "teacher": "vB",
+        "color": "yellow",
+        "cover": "true",
+        "id": "2"
+    },
+    {
+        "subject": "Deutsch",
+        "room": "R205",
+        "teacher": "Ve",
+        "color": "blue",
+        "cover": "true",
+        "id": "3"
+    },
+    {
+        "subject": "Psychologie",
+        "room": "R306",
+        "teacher": "Do",
+        "color": "gray",
+        "cover": "true",
+        "id": "4"
+    }
+]

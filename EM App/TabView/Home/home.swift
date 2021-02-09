@@ -11,46 +11,50 @@ import URLImage
 struct home: View {
     @State private var showPage: Bool = false
     @ObservedObject var userSettings = UserSettings()
+    @EnvironmentObject var modelData: ModelData
     
     var body: some View {
         NavigationView {
-            VStack {
-                HStack {
-                    Text("Start")
+            ScrollView {
+                NavigationLink(destination: Text("big rip")) {
+                    Text("Stundenplan")
+                        .foregroundColor(.primary)
+                    Text("powered by Untis®")
+                        .font(.caption2)
+                        .foregroundColor(.accentColor)
+                        .frame(width: nil, height: nil, alignment: .bottom)
                     VStack {
                         Divider()
                             .background(Color.primary)
                     }
                 }
                 
-                List {
-                    Image("Logo")
-                        //.border(Color.black, width: 1)
+                ForEach(ModelData().untisData, id: \.self) { item in
+                    untisRowPreview(untisData: item)
                 }
-                .listStyle(InsetListStyle())
+                
+                //Spacer()
                 
                 HStack {
-                    Text("Apps")
+                    Text("Hottest Story 🔥")
                     VStack {
                         Divider()
                             .background(Color.primary)
                     }
                 }
                 
-                Spacer()
-                
-                List {
-                    NavigationLink(destination: Text("Notenrechner")) {
-                        Label("Notenrechner", systemImage: "function")
-                    }
+                ZStack {
+                    RoundedRectangle(cornerSize: CGSize(width: 15, height: 15)).fill(Color(.white))
+                        .shadow(radius: 1, x: 0, y: 2)
                     
-                    NavigationLink(destination: Text("Untis")) {
-                        Label("Vertretungsplan", systemImage: "message")
+                    NavigationLink(destination: newsDetail(newsData: ModelData().newsData[0]) ) {
+                        hottestStory(newsData: ModelData().newsData[0])
+                            .padding()
                     }
-                }
-                .listStyle(InsetListStyle())
+                }.padding()
+                
             }
-            .navigationTitle("Home")
+            .navigationTitle("Hello, \(userSettings.firstName)")
             .padding()
             .toolbar(content: {
                 ToolbarItem(placement: .primaryAction) {
@@ -85,7 +89,10 @@ struct home: View {
 }
 
 struct home_Previews: PreviewProvider {
+    static let modelData = ModelData()
+    
     static var previews: some View {
         home()
+            .environmentObject(modelData)
     }
 }

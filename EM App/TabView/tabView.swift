@@ -39,8 +39,10 @@ struct tabView: View {
 }
 
 struct tabView_Previews: PreviewProvider {
+    static let modelData = ModelData()
+    
     static var previews: some View {
         tabView()
-            .environmentObject(ModelData())
+            .environmentObject(modelData)
     }
 }

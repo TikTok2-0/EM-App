@@ -21,6 +21,7 @@ struct NewsData: Hashable, Decodable, Identifiable {
         case Allgemein = "Allgemein"
         case Beobachtungsstufe = "Beobachtungsstufe"
         case Deutsch = "Deutsch"
+        case UNESCO = "UNESCO"
     }
     
     var text: String

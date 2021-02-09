@@ -10,6 +10,7 @@ import Combine
 
 final class ModelData: ObservableObject {
     @Published var newsData: [NewsData] = load("jsonExports.json")
+    @Published var untisData: [UntisData] = load("untisData.json")
     
     var categories: [String: [NewsData]] {
         Dictionary (
@@ -41,6 +42,7 @@ class ImageLoader: ObservableObject {
 
 
 var newsData: [NewsData] = load("jsonExports.json")
+var untisData: [UntisData] = load("untisData.json")
 
 func load<T: Decodable>(_ filename: String) -> T {
     let data: Data
