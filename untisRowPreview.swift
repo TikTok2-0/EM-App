@@ -6,7 +6,6 @@
 //
 
 import SwiftUI
-import URLImage
 
 struct untisRowPreview: View {
     var untisData: UntisData
@@ -31,7 +30,6 @@ struct untisRowPreview: View {
                 Text(untisData.teacher)
             }.padding()
         }
-        .foregroundColor(.white)
         .cornerRadius(15)
         .aspectRatio(CGSize(width: 3.6, height: 2), contentMode: .fill)
     }
@@ -42,6 +40,10 @@ struct untisRowPreview_Previews: PreviewProvider {
     
     static var previews: some View {
         untisRowPreview(untisData: untisData[0])
-            //.environmentObject(ModelData())
     }
 }
+
+
+/*
+ 
+ */

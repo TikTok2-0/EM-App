@@ -30,13 +30,14 @@ struct home: View {
                 }
                 
                 ForEach(ModelData().untisData, id: \.self) { item in
+                    //Text("Hello")
                     untisRowPreview(untisData: item)
                 }
                 
                 //Spacer()
                 
                 HStack {
-                    Text("Hottest Story 🔥")
+                    Text("Hot Story 🔥")
                     VStack {
                         Divider()
                             .background(Color.primary)

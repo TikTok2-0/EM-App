@@ -48,6 +48,9 @@ struct news: View {
                             Button(action: {}) {
                                 Label("Beobachtungsstufe", systemImage: "dot.radiowaves.left.and.right")
                             }
+                            Button(action: {}) {
+                                Label("UNESCO", systemImage: "leaf.fill")
+                            }
                         }
                         
                         Section {
