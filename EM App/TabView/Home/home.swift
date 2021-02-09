@@ -55,7 +55,7 @@ struct home: View {
                 }.padding()
                 
             }
-            .navigationTitle("Hello, \(userSettings.firstName)")
+            .navigationTitle("Hallo, \(userSettings.firstName)")
             .padding()
             .toolbar(content: {
                 ToolbarItem(placement: .primaryAction) {
