@@ -11,6 +11,7 @@ import URLImage
 struct news: View {
     @EnvironmentObject var modelData: ModelData
     @State private var showFavoritesOnly = false
+    @State private var showArchive = false
     
     var body: some View {
         NavigationView {
@@ -39,13 +40,13 @@ struct news: View {
                         
                         Section {
                             Button(action: {}) {
-                                Label("Corona", systemImage: "staroflife")
+                                Label("Allgemein", systemImage: "gearshape")
                             }
                             Button(action: {}) {
-                                Label("Oberstufe", systemImage: "house.fill")
+                                Label("Deutsch", systemImage: "textformat.abc")
                             }
                             Button(action: {}) {
-                                Label("Mittelstufe", systemImage: "house")
+                                Label("Beobachtungsstufe", systemImage: "dot.radiowaves.left.and.right")
                             }
                         }
                         
@@ -60,12 +61,21 @@ struct news: View {
                                 Label("2019", systemImage: "19.square")
                             }
                         }
+                        
+                        Section {
+                            Button(action: { showArchive.toggle() }) {
+                                Label("Archive", systemImage: "archivebox")
+                            }
+                        }
                     }
                     label: {
                         Label("Filters", systemImage: "slider.horizontal.3")
                             .font(.title3)
                     }
                 }
+            })
+            .sheet(isPresented: $showArchive, content: {
+                Text("Archive coming in V1")
             })
         }
     }

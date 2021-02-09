@@ -34,7 +34,7 @@ struct newsRow: View {
                     .font(.title3)
                     .bold()
                     .lineLimit(1)
-                Text(newsData.caption)
+                Text(newsData.dates)
                     .font(.subheadline)
                     .lineLimit(1)
             }

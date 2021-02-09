@@ -25,8 +25,8 @@ struct newsDetail: View {
                 
                 HStack {
                     Text(newsData.dates)
-                    //Spacer()
-                    //Text(newsData.title)
+                    Spacer()
+                    Text(newsData.category.rawValue)
                 }
                 .font(.subheadline)
                 .foregroundColor(.secondary)
