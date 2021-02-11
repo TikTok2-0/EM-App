@@ -49,10 +49,13 @@ struct profile: View {
                 
                 Section {
                     NavigationLink(destination: untisList()) {
-                        Label("Untis", systemImage: "gear")
+                        Label("Untis", systemImage: "clock")
                     }
                     NavigationLink(destination: Text("soon")) {
-                        Label("Notenrechner", systemImage: "gear")
+                        Label("Notenrechner", systemImage: "function")
+                    }
+                    NavigationLink(destination: newsArchive()) {
+                        Label("News Archive", systemImage: "archivebox")
                     }
                 }
             }

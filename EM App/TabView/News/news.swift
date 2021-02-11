@@ -78,7 +78,7 @@ struct news: View {
                 }
             })
             .sheet(isPresented: $showArchive, content: {
-                Text("Archive coming in V1")
+                newsArchive()
             })
         }
     }
