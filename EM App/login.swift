@@ -31,17 +31,17 @@ struct login: View {
                             TextField("Last Name", text: $userSettings.lastName)
                             TextField("Username", text: $userSettings.username)
                             TextField("E-Mail", text: $userSettings.email)
-                            Toggle(isOn: $userSettings.isPrivate) {
+                            /*Toggle(isOn: $userSettings.isPrivate) {
                                 Text("Private Account")
-                            }
+                            }*/
                             Toggle(isOn: $userSettings.prefersNotifications) {
                                 Text("Notifications")
                             }
-                            Picker(selection: $userSettings.ringtone, label: Text("Ringtone")) {
+                            /*Picker(selection: $userSettings.ringtone, label: Text("Ringtone")) {
                                 ForEach(userSettings.ringtones, id: \.self) { ringtone in
                                     Text(ringtone)
                                 }
-                            }
+                            }*/
                         }
                         
                         /*
@@ -85,7 +85,7 @@ struct login: View {
                                 userSettings.firstLogin.toggle()
                                 
                             }) {
-                                Text("V0.1")
+                                Text("V0.9")
                             }.disabled(!acceptTerms)
                         }
                         

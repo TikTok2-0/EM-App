@@ -58,6 +58,12 @@ struct profile: View {
                         Label("News Archive", systemImage: "archivebox")
                     }
                 }
+                
+                Section {
+                    NavigationLink(destination: roadmap()) {
+                        Label("Roadmap", systemImage: "airplane")
+                    }
+                }
             }
             .navigationTitle("Profile")
             .listStyle(GroupedListStyle())

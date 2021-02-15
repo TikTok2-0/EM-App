@@ -47,7 +47,7 @@ struct newsRow: View {
 }
 
 struct newsRow_Previews: PreviewProvider {
-    static var newsData = ModelData().newsData
+    static var newsData = ArticlesFetcher().articles
     
     static var previews: some View {
         newsRow(newsData: newsData[0])

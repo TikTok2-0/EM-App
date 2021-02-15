@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct hottestStory: View {
+    @ObservedObject var fetcher = ArticlesFetcher()
     var newsData: NewsData
     
     var gradient: LinearGradient {
@@ -41,7 +42,7 @@ struct hottestStory: View {
 }
 
 struct hottestStory_Previews: PreviewProvider {
-    static var newsData = ModelData().newsData
+    static var newsData = ArticlesFetcher().articles
     
     static var previews: some View {
         hottestStory(newsData: newsData[5])

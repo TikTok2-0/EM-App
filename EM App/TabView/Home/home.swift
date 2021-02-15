@@ -12,6 +12,7 @@ struct home: View {
     @State private var showPage: Bool = false
     @ObservedObject var userSettings = UserSettings()
     @EnvironmentObject var modelData: ModelData
+    @ObservedObject var fetcher = ArticlesFetcher()
     @State private var showUntis: Bool = false
     
     @State private var gradeAverage: Double = 1.4
@@ -20,12 +21,8 @@ struct home: View {
         NavigationView {
             ScrollView {
                 NavigationLink(destination: untisList()) {
-                    Text("Stundenplan")
+                    Text("Timetable")
                         .foregroundColor(.primary)
-                    Text("powered by Untis®")
-                        .font(.caption2)
-                        .foregroundColor(.accentColor)
-                        .frame(width: nil, height: nil, alignment: .bottom)
                     VStack {
                         Divider()
                             .background(Color.primary)
@@ -44,8 +41,8 @@ struct home: View {
                     }
                 }
                     
-                NavigationLink(destination: newsDetail(newsData: ModelData().newsData[0]) ) {
-                    hottestStory(newsData: ModelData().newsData[0])
+                NavigationLink(destination: newsDetail(newsData: fetcher.articles[0])) {
+                    hottestStory(newsData: fetcher.articles[0])
                         .padding()
                 }
                 

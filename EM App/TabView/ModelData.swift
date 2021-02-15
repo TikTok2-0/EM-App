@@ -9,7 +9,6 @@ import Foundation
 import Combine
 
 final class ModelData: ObservableObject {
-    @Published var newsData: [NewsData] = load("jsonExports.json")
     @Published var archiveData: [NewsData] = load("jsonArchive.json")
     @Published var untisData: [UntisData] = load("untisData.json")
     
@@ -38,6 +37,35 @@ class ImageLoader: ObservableObject {
             }
         }
         task.resume()
+    }
+}
+
+class ArticlesFetcher: ObservableObject {
+    @Published var articles = [NewsData]()
+    
+    init(){
+        load()
+    }
+    
+    func load() {
+        let url = URL(string: "https://raw.githubusercontent.com/TikTok2-0/ScreenScrape/main/jsonExportsMAC.json")!
+    
+        URLSession.shared.dataTask(with: url) {(data,response,error) in
+            do {
+                if let d = data {
+                    let decodedLists = try JSONDecoder().decode([NewsData].self, from: d)
+                    DispatchQueue.main.async {
+                       self.articles = decodedLists
+                    }
+                }else {
+                    print("No Data")
+                }
+            } catch {
+                print(error)
+            }
+            
+        }.resume()
+         
     }
 }
 

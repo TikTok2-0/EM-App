@@ -10,6 +10,7 @@ import URLImage
 
 struct news: View {
     @EnvironmentObject var modelData: ModelData
+    @ObservedObject var fetcher = ArticlesFetcher()
     @State private var showFavoritesOnly = false
     @State private var showArchive = false
     
@@ -17,7 +18,7 @@ struct news: View {
         NavigationView {
             VStack {
                 List {
-                    ForEach(ModelData().newsData, id: \.self) { newsData in
+                    ForEach(fetcher.articles, id: \.self) { newsData in
                         newsRow(newsData: newsData)
                     }
                     //.listRowBackground(Color.red)
