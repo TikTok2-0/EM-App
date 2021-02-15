@@ -31,13 +31,13 @@ struct profile: View {
                         Spacer()
                         Text("\(userSettings.email)")
                     }
-                    HStack {
+                    /*HStack {
                         Text("Private Account")
                         Spacer()
                         Ellipse()
                             .frame(width: 25, height: 25, alignment: .center)
                             .foregroundColor(userSettings.isPrivate ? .green : .red)
-                    }
+                    }*/
                     HStack {
                         Text("Notifications")
                         Spacer()
