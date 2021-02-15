@@ -15,6 +15,8 @@ struct home: View {
     @ObservedObject var fetcher = ArticlesFetcher()
     @State private var showUntis: Bool = false
     
+    @Environment(\.colorScheme) var colorScheme
+    
     @State private var gradeAverage: Double = 1.4
     
     var body: some View {
@@ -41,9 +43,19 @@ struct home: View {
                     }
                 }
                     
-                NavigationLink(destination: newsDetail(newsData: fetcher.articles[0])) {
-                    hottestStory(newsData: fetcher.articles[0])
-                        .padding()
+                if colorScheme == .dark {
+                    NavigationLink(destination: newsDetail(newsData: fetcher.articles[0])) {
+                        hottestStory(newsData: fetcher.articles[0])
+                            .shadow(color: Color("superiorGray"), radius: 3, x: 1, y: 3)
+                            .padding()
+                    }
+                }
+                else if colorScheme == .light {
+                    NavigationLink(destination: newsDetail(newsData: fetcher.articles[0])) {
+                        hottestStory(newsData: fetcher.articles[0])
+                            .shadow(color: Color("superiorGray"), radius: 3, x: 1, y: 3)
+                            .padding()
+                    }
                 }
                 
                 NavigationLink(destination: Text("soon")) {
