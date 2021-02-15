@@ -14,17 +14,25 @@ struct news: View {
     @State private var showFavoritesOnly = false
     @State private var showArchive = false
     
+    @Environment(\.colorScheme) var colorScheme
+    
     var body: some View {
         NavigationView {
             VStack {
                 List {
                     ForEach(fetcher.articles, id: \.self) { newsData in
-                        newsRow(newsData: newsData)
+                        if colorScheme == .dark {
+                            newsRow(newsData: newsData)
+                                .shadow(color: Color("superiorGray"), radius: 3, x: 1, y: 3)
+                        }
+                        else if colorScheme == .light {
+                            newsRow(newsData: newsData)
+                                .shadow(color: Color("superiorGray"), radius: 3, x: 1, y: 3)
+                        }
                     }
                     //.listRowBackground(Color.red)
                     .listRowInsets(EdgeInsets())
-                    .padding(.bottom, 10)
-                    .padding(.top, 10)
+                    .padding()
                 }
                 .listStyle(InsetListStyle())
                 .padding()
