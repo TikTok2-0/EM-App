@@ -9,6 +9,9 @@ import SwiftUI
 
 struct hottestStory: View {
     @ObservedObject var fetcher = ArticlesFetcher()
+    
+    @Environment(\.colorScheme) var colorScheme
+    
     var newsData: NewsData
     
     var gradient: LinearGradient {
@@ -20,24 +23,57 @@ struct hottestStory: View {
     }
     
     var body: some View {
-        ZStack(alignment: .bottomLeading) {
-            RemoteImage(url: newsData.imageURL)
-            
-            //Rectangle().fill(gradient)
-            VStack(alignment: .leading) {
-                Text(newsData.title)
-                    .font(.title3)
-                    .bold()
-                    .lineLimit(1)
-                Text(newsData.dates)
-                    .font(.subheadline)
-                    .lineLimit(1)
+        if colorScheme == .dark{
+            VStack{
+                ZStack(alignment: .bottomLeading) {
+                    RemoteImage(url: newsData.imageURL)
+                }
+                .foregroundColor(.white)
+                .cornerRadius(15)
+                .aspectRatio(CGSize(width: 3.6, height: 2), contentMode: .fill)
+                .shadow(color: Color("superiorGray"), radius: 3, x: 1, y: 3)
+                
+                
+                VStack(alignment: .leading) {
+                    Text(newsData.title)
+                        .font(.title3)
+                        .bold()
+                        .lineLimit(1)
+                        .padding(.bottom, 2)
+                        .padding(.top, 3)
+                    Text(newsData.dates)
+                        .font(.subheadline)
+                        .lineLimit(1)
+                }
+                .foregroundColor(.white)
+                .padding(5)
             }
-            .padding()
         }
-        .foregroundColor(.white)
-        .cornerRadius(15)
-        .aspectRatio(CGSize(width: 3.6, height: 2), contentMode: .fill)
+        if colorScheme == .light{
+            VStack{
+                ZStack(alignment: .bottomLeading) {
+                    RemoteImage(url: newsData.imageURL)
+                }
+                .foregroundColor(.white)
+                .cornerRadius(15)
+                .aspectRatio(CGSize(width: 3.6, height: 2), contentMode: .fill)
+                .shadow(color: Color("superiorGray"), radius: 3, x: 1, y: 3)
+                
+                VStack(alignment: .leading) {
+                    Text(newsData.title)
+                        .font(.title3)
+                        .bold()
+                        .lineLimit(1)
+                        .padding(.bottom, 2)
+                        .padding(.top, 3)
+                    Text(newsData.dates)
+                        .font(.subheadline)
+                        .lineLimit(1)
+                }
+                .foregroundColor(.black)
+                .padding(5)
+            }
+        }
     }
 }
 

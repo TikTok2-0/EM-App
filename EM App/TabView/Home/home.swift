@@ -41,7 +41,7 @@ struct home: View {
                     ForEach(ModelData().untisData, id: \.self) { item in
                         untisRowPreview(untisData: item)
                     }
-                    .shadow(color: Color("whiteCardShadow"), radius: 3, x: 1, y: 3)
+                    .shadow(color: Color("superiorWhiteCardShadow"), radius: 3, x: 1, y: 3)
                     .padding(5)
                 }
                 
@@ -54,17 +54,29 @@ struct home: View {
                 }
                     
                 if colorScheme == .dark {
-                    NavigationLink(destination: newsDetail(newsData: fetcher.articles[0])) {
-                        hottestStory(newsData: fetcher.articles[0])
-                            .shadow(color: Color("superiorGray"), radius: 3, x: 1, y: 3)
+                    ZStack {
+                        RoundedRectangle (cornerSize: CGSize(width: 20, height:20)).fill(Color("superiorCardColor"))
                             .padding(5)
+                        VStack {
+                            NavigationLink(destination: newsDetail(newsData: fetcher.articles[0])) {
+                                hottestStory(newsData: fetcher.articles[0])
+                                    //.shadow(color: Color("superiorGray"), radius: 3, x: 1, y: 3)
+                                    .padding(17)
+                            }
+                        }
                     }
                 }
                 else if colorScheme == .light {
-                    NavigationLink(destination: newsDetail(newsData: fetcher.articles[0])) {
-                        hottestStory(newsData: fetcher.articles[0])
-                            .shadow(color: Color("superiorGray"), radius: 3, x: 1, y: 3)
+                    ZStack{
+                        RoundedRectangle (cornerSize: CGSize(width: 20, height:20)).fill(Color("superiorCardColor"))
                             .padding(5)
+                            .shadow(color: Color("superiorWhiteCardShadow"), radius: 3, x: 1, y: 3)
+                        VStack{
+                            NavigationLink(destination: newsDetail(newsData: fetcher.articles[0])) {
+                                hottestStory(newsData: fetcher.articles[0])
+                                    .padding(17)
+                            }
+                        }
                     }
                 }
                 

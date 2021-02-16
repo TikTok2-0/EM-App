@@ -12,7 +12,7 @@ struct untisRowPreview: View {
     
     var body: some View {
         ZStack {
-            RoundedRectangle(cornerSize: CGSize(width: 15, height: 15)).fill(Color("cardColor"))
+            RoundedRectangle(cornerSize: CGSize(width: 15, height: 15)).fill(Color("superiorCardColor"))
                 .frame(width: nil, height: 60, alignment: .center)
                 .clipped()
                 //.border(Color.gray, width: 1)

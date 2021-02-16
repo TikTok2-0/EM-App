@@ -22,20 +22,36 @@ struct news: View {
                 List {
                     ForEach(fetcher.articles, id: \.self) { newsData in
                         if colorScheme == .dark {
-                            newsRow(newsData: newsData)
-                                .shadow(color: Color("superiorGray"), radius: 3, x: 1, y: 3)
+                            ZStack{
+                                RoundedRectangle (cornerSize: CGSize(width: 20, height:20)).fill(Color("superiorCardColor"))
+                                    .shadow(color: Color("superiorWhiteCardShadow"), radius: 3, x: 1, y: 3)
+                                
+                                newsRow(newsData: newsData)
+                                    .shadow(color: Color("superiorGray"), radius: 3, x: 1, y: 3)
+                                    .padding(12)
+                            }
                         }
                         else if colorScheme == .light {
-                            newsRow(newsData: newsData)
-                                .shadow(color: Color("superiorGray"), radius: 3, x: 1, y: 3)
+                            ZStack{
+                                RoundedRectangle (cornerSize: CGSize(width: 20, height:20)).fill(Color("superiorCardColor"))
+                                    .shadow(color: Color("superiorWhiteCardShadow"), radius: 3, x: 1, y: 3)
+                                
+                                newsRow(newsData: newsData)
+                                    .shadow(color: Color("superiorGray"), radius: 3, x: 1, y: 3)
+                                    .padding(12)
+                            }
                         }
                     }
-                    //.listRowBackground(Color.red)
+                    
+                    
                     .listRowInsets(EdgeInsets())
-                    .padding()
+                    .padding(.leading, 5)
+                    .padding(.trailing, 5)
+                    .padding(.bottom, 10)
+                    .padding(.top, 10)
                 }
                 .listStyle(InsetListStyle())
-                .padding()
+                .padding(15)
             }
             .navigationTitle("News")
             .toolbar(content: {

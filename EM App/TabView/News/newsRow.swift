@@ -41,7 +41,7 @@ struct newsRow: View {
             .padding()
         }
         .foregroundColor(.white)
-        .cornerRadius(15)
+        .cornerRadius(16)
         .aspectRatio(CGSize(width: 3.6, height: 2), contentMode: .fill)
     }
 }
