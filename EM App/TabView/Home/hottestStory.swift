@@ -37,7 +37,7 @@ struct hottestStory: View {
         }
         .foregroundColor(.white)
         .cornerRadius(15)
-        .aspectRatio(CGSize(width: 3.6, height: 2), contentMode: .fill)
+        //.aspectRatio(CGSize(width: 3.6, height: 2), contentMode: .fill)
     }
 }
 

@@ -27,6 +27,7 @@ struct newsRow: View {
             //ImageView(withURL: newsData.imageURL)
             
             RemoteImage(url: newsData.imageURL)
+                .aspectRatio(contentMode: .fill)
             
             Rectangle().fill(gradient)
             VStack(alignment: .leading) {
@@ -42,7 +43,7 @@ struct newsRow: View {
         }
         .foregroundColor(.white)
         .cornerRadius(15)
-        .aspectRatio(CGSize(width: 3.6, height: 2), contentMode: .fill)
+        //.aspectRatio(CGSize(width: 3.6, height: 2), contentMode: .fill)
     }
 }
 

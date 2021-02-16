@@ -33,9 +33,9 @@ struct ImageView: View {
 
             Image(uiImage: image)
                 .resizable()
-                .aspectRatio(CGSize(width: 3.6, height: 2), contentMode: .fill)
+                //.aspectRatio(CGSize(width: 3.6, height: 2), contentMode: .fit)
                 //.frame(width: nil, height: 250, alignment: .top)
-                .cornerRadius(10)
+                //.cornerRadius(10)
                 .shadow(color: Color("superiorBlack"), radius: 6, x: 1, y: 5)
                 .onReceive(imageLoader.didChange) { data in
                 self.image = UIImage(data: data) ?? UIImage()
@@ -78,6 +78,7 @@ struct RemoteImage: View {
     var body: some View {
         selectImage()
             .resizable()
+            .aspectRatio(contentMode: .fill)
     }
 
     init(url: String, loading: Image = Image(systemName: "photo"), failure: Image = Image(systemName: "multiply.circle")) {
