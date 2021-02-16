@@ -12,31 +12,91 @@ struct newsDetail: View {
     @ObservedObject var fetcher = ArticlesFetcher()
     var newsData: NewsData
     
+    @Environment(\.colorScheme) var colorScheme
+    
     var body: some View {
         ScrollView {
             VStack(alignment: .leading) {
-                HStack {
-                    Text(newsData.title)
-                        .font(.title2)
-                        .fontWeight(.bold)
-                        .foregroundColor(.primary)
+                // DAS BILD MIT SCHATTEN AUF EINER KARTE, DIE SCHATTEN HAT
+                // RESTLICHER TEXT IN EIN KARTE, DAS AUCH SCHATTEN HAT
+                
+                if colorScheme == .dark {
+                    ZStack {
+                        RoundedRectangle(cornerSize: CGSize(width: 20, height: 20)).fill(Color.black)
+                            .shadow(color: Color("superiorGray"), radius: 3, x: 1, y: 3)
+                        
+                        ImageView(withURL: newsData.imageURL)
+                            .padding()
+                    }
+                }
+                else if colorScheme == .light {
+                    ZStack {
+                        RoundedRectangle(cornerSize: CGSize(width: 20, height: 20)).fill(Color(.white))
+                            .shadow(color: Color("superiorGray"), radius: 3, x: 1, y: 3)
+                        
+                        ImageView(withURL: newsData.imageURL)
+                            .padding()
+                    }
                 }
                 
-                ImageView(withURL: newsData.imageURL)
-                    .padding(.leading, -20)
-                    .padding(.trailing, -20)
                 
-                HStack {
-                    Text(newsData.dates)
-                    Spacer()
-                    Text(newsData.category.rawValue)
+                
+                if colorScheme == .dark {
+                    ZStack {
+                        RoundedRectangle(cornerSize: CGSize(width: 10, height: 10)).fill(Color.black)
+                            .shadow(color: Color("superiorGray"), radius: 3, x: 1, y: 3)
+                        
+                        VStack {
+                            HStack {
+                                Text(newsData.title)
+                                    .font(.title2)
+                                    .fontWeight(.bold)
+                                    .foregroundColor(.primary)
+                            }
+                            
+                            HStack {
+                                Text(newsData.dates)
+                                Spacer()
+                                Text(newsData.category.rawValue)
+                            }
+                            .font(.subheadline)
+                            .foregroundColor(.secondary)
+                            
+                            Divider()
+                            
+                            Text(newsData.text)
+                        }
+                        .padding()
+                    }
                 }
-                .font(.subheadline)
-                .foregroundColor(.secondary)
-                
-                Divider()
-                
-                Text(newsData.text)
+                else if colorScheme == .light {
+                    ZStack {
+                        RoundedRectangle(cornerSize: CGSize(width: 10, height: 10)).fill(Color.white)
+                            .shadow(color: Color("superiorGray"), radius: 3, x: 1, y: 3)
+                        
+                        VStack {
+                            HStack {
+                                Text(newsData.title)
+                                    .font(.title2)
+                                    .fontWeight(.bold)
+                                    .foregroundColor(.primary)
+                            }
+                            
+                            HStack {
+                                Text(newsData.dates)
+                                Spacer()
+                                Text(newsData.category.rawValue)
+                            }
+                            .font(.subheadline)
+                            .foregroundColor(.secondary)
+                            
+                            Divider()
+                            
+                            Text(newsData.text)
+                        }
+                        .padding()
+                    }
+                }
             }
             .padding()
         }

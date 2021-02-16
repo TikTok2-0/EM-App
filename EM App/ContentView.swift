@@ -35,6 +35,8 @@ struct ImageView: View {
                 .resizable()
                 //.aspectRatio(contentMode: .fill)
                 .frame(width: nil, height: 250, alignment: .top)
+                .cornerRadius(10)
+                .shadow(color: Color("superiorBlack"), radius: 6, x: 1, y: 5)
                 .onReceive(imageLoader.didChange) { data in
                 self.image = UIImage(data: data) ?? UIImage()
         }
