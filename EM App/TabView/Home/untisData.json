@@ -8,7 +8,7 @@
             "green": 0,
             "blue": 0
         },
-        "cover": "true",
+        "cover": ".purple",
         "id": "1"
     },
     {
@@ -20,7 +20,7 @@
             "green": 255,
             "blue": 0
         },
-        "cover": "true",
+        "cover": ".red",
         "id": "2"
     },
     {
@@ -32,7 +32,7 @@
             "green": 0,
             "blue": 0
         },
-        "cover": "true",
+        "cover": ".systemBackground",
         "id": "3"
     },
     {
@@ -44,7 +44,7 @@
             "green": 0,
             "blue": 0
         },
-        "cover": "true",
+        "cover": ".systemBackground",
         "id": "4"
     }
 ]

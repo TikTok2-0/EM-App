@@ -33,6 +33,9 @@ struct home: View {
                 
                 ForEach(ModelData().untisData, id: \.self) { item in
                     untisRowPreview(untisData: item)
+                        .padding(.leading, 20)
+                        .padding(.trailing, 20)
+                        .shadow(color: Color("superiorGray"), radius: 3, x: 1, y: 3)
                 }
                 
                 HStack {

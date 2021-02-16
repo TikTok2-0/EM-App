@@ -30,13 +30,10 @@ struct news: View {
                                 .shadow(color: Color("superiorGray"), radius: 3, x: 1, y: 3)
                         }
                     }
-                    //.listRowBackground(Color.red)
                     .listRowInsets(EdgeInsets())
                     .padding()
                 }
-                .listStyle(InsetListStyle())
-                .padding()
-            }
+                .listStyle(InsetListStyle())            }
             .navigationTitle("News")
             .toolbar(content: {
                 ToolbarItem(placement: .primaryAction) {

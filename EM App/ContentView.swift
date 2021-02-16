@@ -33,8 +33,8 @@ struct ImageView: View {
 
             Image(uiImage: image)
                 .resizable()
-                //.aspectRatio(contentMode: .fill)
-                .frame(width: nil, height: 250, alignment: .top)
+                .aspectRatio(CGSize(width: 3.6, height: 2), contentMode: .fill)
+                //.frame(width: nil, height: 250, alignment: .top)
                 .cornerRadius(10)
                 .shadow(color: Color("superiorBlack"), radius: 6, x: 1, y: 5)
                 .onReceive(imageLoader.didChange) { data in
