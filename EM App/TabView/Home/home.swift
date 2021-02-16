@@ -31,8 +31,18 @@ struct home: View {
                     }
                 }
                 
-                ForEach(ModelData().untisData, id: \.self) { item in
-                    untisRowPreview(untisData: item)
+                if colorScheme == .dark {
+                    ForEach(ModelData().untisData, id: \.self) { item in
+                        untisRowPreview(untisData: item)
+                    }
+                    .padding(5)
+                }
+                else if colorScheme == .light {
+                    ForEach(ModelData().untisData, id: \.self) { item in
+                        untisRowPreview(untisData: item)
+                    }
+                    .shadow(color: Color("whiteCardShadow"), radius: 3, x: 1, y: 3)
+                    .padding(5)
                 }
                 
                 HStack {
@@ -47,14 +57,14 @@ struct home: View {
                     NavigationLink(destination: newsDetail(newsData: fetcher.articles[0])) {
                         hottestStory(newsData: fetcher.articles[0])
                             .shadow(color: Color("superiorGray"), radius: 3, x: 1, y: 3)
-                            .padding()
+                            .padding(5)
                     }
                 }
                 else if colorScheme == .light {
                     NavigationLink(destination: newsDetail(newsData: fetcher.articles[0])) {
                         hottestStory(newsData: fetcher.articles[0])
                             .shadow(color: Color("superiorGray"), radius: 3, x: 1, y: 3)
-                            .padding()
+                            .padding(5)
                     }
                 }
                 
