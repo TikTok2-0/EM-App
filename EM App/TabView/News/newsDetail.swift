@@ -16,36 +16,31 @@ struct newsDetail: View {
     
     var body: some View {
         ScrollView {
-            if colorScheme == .light {
-                RemoteImage(url: newsData.imageURL)
-                    .padding(.leading, -20)
-                    .padding(.trailing, -20)
-                    .aspectRatio(CGSize(width: 3.6, height: 2), contentMode: .fit)
-                    .ignoresSafeArea(edges: .top)
+            RemoteImage(url: newsData.imageURL)
+                .padding(.leading, -20)
+                .padding(.trailing, -20)
+                .aspectRatio(CGSize(width: 3.6, height: 2), contentMode: .fit)
+                .ignoresSafeArea(edges: .top)
+            
+            VStack(alignment: .leading) {
+                Text(newsData.title)
+                    .font(.title3)
+                    .fontWeight(.bold)
                 
-                VStack(alignment: .leading) {
-                    Text(newsData.title)
-                        .font(.title3)
-                        .fontWeight(.bold)
-                    
-                    Spacer()
-                    
-                    Text(newsData.text)
-                    
-                    Spacer()
-                    
-                    HStack {
-                        Text(newsData.dates)
-                        Spacer()
-                        Text(newsData.category.rawValue)
-                    }
-                    .font(.caption)
-                    .foregroundColor(.secondary)
-                }.padding()
-            }
-            else if colorScheme == .dark {
+                Spacer()
                 
-            }
+                Text(newsData.text)
+                
+                Spacer()
+                
+                HStack {
+                    Text(newsData.dates)
+                    Spacer()
+                    Text(newsData.category.rawValue)
+                }
+                .font(.caption)
+                .foregroundColor(.secondary)
+            }.padding()
         }
         .navigationBarTitleDisplayMode(.inline)
     }

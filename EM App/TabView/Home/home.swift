@@ -55,7 +55,7 @@ struct home: View {
                 }
                 else if colorScheme == .light {
                     NavigationLink(destination: newsDetail(newsData: fetcher.articles[0])) {
-                        hottestStory(newsData: fetcher.articles[1])
+                        hottestStory(newsData: fetcher.articles[0])
                             .shadow(color: Color("superiorGray"), radius: 3, x: 1, y: 3)
                             .padding()
                     }
