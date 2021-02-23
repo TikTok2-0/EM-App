@@ -31,12 +31,14 @@ struct home: View {
                     }
                 }
                 
-                ForEach(ModelData().untisData, id: \.self) { item in
-                    untisRowPreview(untisData: item)
-                        .padding(.leading, 20)
-                        .padding(.trailing, 20)
-                        .shadow(color: Color("superiorGray"), radius: 3, x: 1, y: 3)
-                }
+                VStack {
+                    ForEach(ModelData().untisData, id: \.self) { item in
+                        untisRowPreview(untisData: item)
+                            .padding(.leading, 20)
+                            .padding(.trailing, 20)
+                            .shadow(color: Color("superiorGray"), radius: 3, x: 1, y: 3)
+                    }
+                }.padding(.bottom, 20)
                 
                 HStack {
                     Text("Hot Story 🔥")
@@ -70,9 +72,10 @@ struct home: View {
                     }
                 }
                 
-                Text("Schnitt: \(gradeAverage)")
-                    .font(.title)
-                
+                NavigationLink(destination: gradeCalc()) {
+                    Text("Schnitt: \(gradeAverage)")
+                        .font(.title)
+                }
             }
             .navigationTitle("Hallo, \(userSettings.firstName)")
             .padding()

@@ -15,6 +15,7 @@
 		F607124625AE49D9005E4647 /* EM_App.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = F607124425AE49D9005E4647 /* EM_App.xcdatamodeld */; };
 		F607125125AE49D9005E4647 /* EM_AppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F607125025AE49D9005E4647 /* EM_AppTests.swift */; };
 		F607125C25AE49D9005E4647 /* EM_AppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F607125B25AE49D9005E4647 /* EM_AppUITests.swift */; };
+		F61E8EE025E555DD00D7D999 /* gradeCalc.swift in Sources */ = {isa = PBXBuildFile; fileRef = F61E8EDF25E555DD00D7D999 /* gradeCalc.swift */; };
 		F623E3DE25B1CCB900E5D34A /* home.swift in Sources */ = {isa = PBXBuildFile; fileRef = F623E3DD25B1CCB900E5D34A /* home.swift */; };
 		F623E3E725B1CCCF00E5D34A /* news.swift in Sources */ = {isa = PBXBuildFile; fileRef = F623E3E625B1CCCF00E5D34A /* news.swift */; };
 		F623E3EC25B1CCDD00E5D34A /* settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = F623E3EB25B1CCDD00E5D34A /* settings.swift */; };
@@ -71,6 +72,7 @@
 		F607125725AE49D9005E4647 /* EM AppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "EM AppUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F607125B25AE49D9005E4647 /* EM_AppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EM_AppUITests.swift; sourceTree = "<group>"; };
 		F607125D25AE49D9005E4647 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F61E8EDF25E555DD00D7D999 /* gradeCalc.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = gradeCalc.swift; sourceTree = "<group>"; };
 		F623E3DD25B1CCB900E5D34A /* home.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = home.swift; sourceTree = "<group>"; };
 		F623E3E625B1CCCF00E5D34A /* news.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = news.swift; sourceTree = "<group>"; };
 		F623E3EB25B1CCDD00E5D34A /* settings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = settings.swift; sourceTree = "<group>"; };
@@ -213,6 +215,7 @@
 			isa = PBXGroup;
 			children = (
 				F623E3DD25B1CCB900E5D34A /* home.swift */,
+				F61E8EDF25E555DD00D7D999 /* gradeCalc.swift */,
 				F62C2C0125D2BEBC009F8459 /* hottestStory.swift */,
 				F62C2C0325D2D589009F8459 /* untisData.json */,
 				F67F66B325D32F6200D6328E /* untisList.swift */,
@@ -386,6 +389,7 @@
 				F687047325B6F197006B37B6 /* login.swift in Sources */,
 				F679088E25D5539300D71E73 /* newsArchiveDetail.swift in Sources */,
 				F62F2BFE25D5931100D4A4DC /* roadmap.swift in Sources */,
+				F61E8EE025E555DD00D7D999 /* gradeCalc.swift in Sources */,
 				F607123C25AE49D8005E4647 /* ContentView.swift in Sources */,
 				F687047825B7278E006B37B6 /* profile.swift in Sources */,
 				F623E3DE25B1CCB900E5D34A /* home.swift in Sources */,
