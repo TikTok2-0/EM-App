@@ -31,6 +31,11 @@ struct profile: View {
                         Spacer()
                         Text("\(userSettings.email)")
                     }
+                    HStack {
+                        Text("Klasse")
+                        Spacer()
+                        Text("\(userSettings.userClass)")
+                    }
                     /*HStack {
                         Text("Private Account")
                         Spacer()
@@ -53,9 +58,6 @@ struct profile: View {
                     }
                     NavigationLink(destination: Text("soon")) {
                         Label("Notenrechner", systemImage: "function")
-                    }
-                    NavigationLink(destination: newsArchive()) {
-                        Label("News Archive", systemImage: "archivebox")
                     }
                 }
                 

@@ -27,6 +27,11 @@ struct settings: View {
                     /*Toggle(isOn: $userSettings.isPrivate) {
                         Text("Private Account")
                     }*/
+                    Picker(selection: $userSettings.userClass, label: Text("Class")) {
+                        ForEach(userSettings.classes, id: \.self) { userClass in
+                            Text(userClass)
+                        }
+                    }
                     Toggle(isOn: $userSettings.prefersNotifications) {
                         Text("Notifications")
                     }

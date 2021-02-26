@@ -9,15 +9,14 @@ import Foundation
 import Combine
 
 final class ModelData: ObservableObject {
-    @Published var archiveData: [NewsData] = load("jsonArchive.json")
     @Published var untisData: [UntisData] = load("untisData.json")
     
-    var categories: [String: [NewsData]] {
+    /*var categories: [String: [NewsData]] {
         Dictionary (
             grouping: newsData,
             by: { $0.category.rawValue }
         )
-    }
+    }*/
 }
 
 class ImageLoader: ObservableObject {
@@ -70,7 +69,6 @@ class ArticlesFetcher: ObservableObject {
 }
 
 
-var newsData: [NewsData] = load("jsonExports.json")
 var untisData: [UntisData] = load("untisData.json")
 
 func load<T: Decodable>(_ filename: String) -> T {

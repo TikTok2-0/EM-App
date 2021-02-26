@@ -16,6 +16,15 @@ struct news: View {
     
     @Environment(\.colorScheme) var colorScheme
     
+    //@State var showNews = "KFU"    .filter { $0.school == showNews }
+    
+    /*private func setReaction(_ school: String, for item: ) {
+        if let index = self.fetcher.articles.firstIndex(
+            where: { $0.id ==  }) {
+            fetcher.articles[index].school = school
+        }
+    }*/
+    
     var body: some View {
         NavigationView {
             VStack {
@@ -33,47 +42,23 @@ struct news: View {
                     .listRowInsets(EdgeInsets())
                     .padding()
                 }
-                .listStyle(InsetListStyle())            }
+                .listStyle(InsetListStyle())}
             .navigationTitle("News")
             .toolbar(content: {
                 ToolbarItem(placement: .primaryAction) {
                     Menu {
                         Section {
-                            Button(action: {}) {
+                            Button(action: {  }) {
                                 Label("All", systemImage: "rectangle.stack")
                             }
                         }
                         
                         Section {
-                            Button(action: {}) {
-                                Label("Allgemein", systemImage: "gearshape")
+                            Button(action: {  }) {
+                                Label("HLG", systemImage: "house")
                             }
-                            Button(action: {}) {
-                                Label("Deutsch", systemImage: "textformat.abc")
-                            }
-                            Button(action: {}) {
-                                Label("Beobachtungsstufe", systemImage: "dot.radiowaves.left.and.right")
-                            }
-                            Button(action: {}) {
-                                Label("UNESCO", systemImage: "leaf.fill")
-                            }
-                        }
-                        
-                        Section {
-                            Button(action: {}) {
-                                Label("2021", systemImage: "21.square")
-                            }
-                            Button(action: {}) {
-                                Label("2020", systemImage: "20.square")
-                            }
-                            Button(action: {}) {
-                                Label("2019", systemImage: "19.square")
-                            }
-                        }
-                        
-                        Section {
-                            Button(action: { showArchive.toggle() }) {
-                                Label("Archive", systemImage: "archivebox")
+                            Button(action: {  }) {
+                                Label("KaiFU", systemImage: "crown")
                             }
                         }
                     }
@@ -83,12 +68,11 @@ struct news: View {
                     }
                 }
             })
-            .sheet(isPresented: $showArchive, content: {
-                newsArchive()
-            })
         }
     }
 }
+
+
 
 struct news_Previews: PreviewProvider {
     static let modelData = ModelData()
