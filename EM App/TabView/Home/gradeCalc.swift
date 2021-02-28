@@ -8,8 +8,29 @@
 import SwiftUI
 
 struct gradeCalc: View {
+    @State private var addSubject: Bool = false
+    
     var body: some View {
-        Text("Grades coming soon")
+        List {
+            ForEach(1..<51, id: \.self) { item in
+                Text("Item \(item)")
+            }
+        }
+        .navigationTitle("Grades")
+        .listStyle(InsetGroupedListStyle())
+        .navigationBarItems(trailing:
+            HStack {
+                Button(action: {
+                    addSubject.toggle()
+                }, label: {
+                    Image(systemName: "plus.circle")
+                        .imageScale(.large)
+                })
+            }
+        )
+        .sheet(isPresented: $addSubject) {
+            Text("soon")
+        }
     }
 }
 

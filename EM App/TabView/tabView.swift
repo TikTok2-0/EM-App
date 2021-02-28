@@ -9,7 +9,7 @@ import SwiftUI
 
 struct tabView: View {
     @State private var selection: Tab = .news
-    
+
     enum Tab {
         case home
         case news
