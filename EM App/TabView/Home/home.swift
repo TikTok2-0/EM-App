@@ -13,7 +13,9 @@ struct home: View {
     @ObservedObject var userSettings = UserSettings()
     @EnvironmentObject var modelData: ModelData
     @ObservedObject var fetcher = ArticlesFetcher()
+    
     @State private var showUntis: Bool = false
+    @State private var showGradecalc: Bool = false
     
     @Environment(\.colorScheme) var colorScheme
     
@@ -93,10 +95,12 @@ struct home: View {
                             }
                         }
                         Section(header: Text("Apps")) {
-                            Text("Notenrechner (coming soon)")
-                            Text("Vertretungsplan (coming soon)")
                             Button(action: { showUntis.toggle() }) {
-                                Label("Untis", systemImage: "")
+                                Label("Untis (soon)", systemImage: "")
+                            }
+                            
+                            Button(action: { showGradecalc.toggle() }) {
+                                Label("Grade Calc (soon)", systemImage: "formula")
                             }
                         }
                         Section {
@@ -114,9 +118,6 @@ struct home: View {
             })
             .sheet(isPresented: $showPage, content: {
                 Text("Notifications")
-            })
-            .sheet(isPresented: $showUntis, content: {
-                untisList()
             })
         }
     }

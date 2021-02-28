@@ -56,7 +56,7 @@ struct profile: View {
                     NavigationLink(destination: untisList()) {
                         Label("Untis", systemImage: "clock")
                     }
-                    NavigationLink(destination: Text("soon")) {
+                    NavigationLink(destination: gradeCalc()) {
                         Label("Notenrechner", systemImage: "function")
                     }
                 }
