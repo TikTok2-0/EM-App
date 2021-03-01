@@ -24,29 +24,17 @@ struct news: View {
         NavigationView {
             VStack {
                 List {
-                    Section(header: Text("\(schoolNews)")) {
-                        ForEach(fetcher.articles, id: \.self) { newsData in
-                            if newsData.school == schoolNews {
-                                newsRow(newsData: newsData)
-                                    .shadow(color: Color("superiorGray"), radius: 3, x: 1, y: 3)
-                            }
+                    ForEach(fetcher.articles, id: \.self) { newsData in
+                        if newsData.school == schoolNews {
+                            newsRow(newsData: newsData)
+                                .shadow(color: Color("superiorGray"), radius: 3, x: 1, y: 3)
                         }
-                        .listRowInsets(EdgeInsets())
-                        .padding()
                     }
-                    /*Section(header: Text("KFU")) {
-                        ForEach(fetcher.articles, id: \.self) { newsData in
-                            if newsData.school == "KFU" {
-                                newsRow(newsData: newsData)
-                                    .shadow(color: Color("superiorGray"), radius: 3, x: 1, y: 3)
-                            }
-                        }
-                        .listRowInsets(EdgeInsets())
-                        .padding()
-                    }*/
+                    .listRowInsets(EdgeInsets())
+                    .padding()
                 }
-                .listStyle(InsetGroupedListStyle())}
-            .navigationTitle("News")
+                .listStyle(InsetListStyle())}
+            .navigationTitle("\(schoolNews) News")
             .toolbar(content: {
                 ToolbarItem(placement: .primaryAction) {
                     Menu {
