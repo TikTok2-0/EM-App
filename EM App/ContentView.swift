@@ -182,6 +182,13 @@ class UserSettings: ObservableObject {
     }
     public var types = ["Student", "Teacher", "Parent", "Guest"]
     
+    @Published var school: String {
+        didSet {
+            UserDefaults.standard.set(school, forKey: "school")
+        }
+    }
+    public var schools = ["HLG", "KFU", "Both"]
+    
     init() {
         self.firstLogin = UserDefaults.standard.object(forKey: "firstLogin") as? Bool ?? true
         self.firstName = UserDefaults.standard.object(forKey: "firstName") as? String ?? ""
@@ -194,5 +201,6 @@ class UserSettings: ObservableObject {
         self.password = UserDefaults.standard.object(forKey: "password") as? String ?? ""
         self.userClass = UserDefaults.standard.object(forKey: "userClass") as? String ?? ""
         self.userType = UserDefaults.standard.object(forKey: "userType") as? String ?? ""
+        self.school = UserDefaults.standard.object(forKey: "school") as? String ?? ""
     }
 }

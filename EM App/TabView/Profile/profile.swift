@@ -32,6 +32,11 @@ struct profile: View {
                         Text("\(userSettings.email)")
                     }
                     HStack {
+                        Text("School")
+                        Spacer()
+                        Text("\(userSettings.school)")
+                    }
+                    HStack {
                         Text("Klasse")
                         Spacer()
                         Text("\(userSettings.userClass)")

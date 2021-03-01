@@ -54,6 +54,12 @@ struct login: View {
                         }*/
                         
                         Section(header: Text("School")) {
+                            Picker(selection: $userSettings.school, label: Text("School")) {
+                                ForEach(userSettings.schools, id: \.self) { school in
+                                    Text(school)
+                                }
+                            }
+                            
                             Picker(selection: $userSettings.userType, label: Text("Type")) {
                                 ForEach(userSettings.types, id: \.self) { userType in
                                     Text(userType)

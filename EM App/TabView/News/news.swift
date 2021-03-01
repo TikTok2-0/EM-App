@@ -14,6 +14,8 @@ struct news: View {
     @State private var showFavoritesOnly = false
     @State private var showArchive = false
     
+    @ObservedObject var userSettings = UserSettings()
+    
     @Environment(\.colorScheme) var colorScheme
     
     //@State var showNews = "KFU"    .filter { $0.school == showNews }
@@ -29,20 +31,28 @@ struct news: View {
         NavigationView {
             VStack {
                 List {
-                    ForEach(fetcher.articles, id: \.self) { newsData in
-                        if colorScheme == .dark {
-                            newsRow(newsData: newsData)
-                                .shadow(color: Color("superiorGray"), radius: 3, x: 1, y: 3)
+                    Section(header: Text("\(userSettings.school)")) {
+                        ForEach(fetcher.articles, id: \.self) { newsData in
+                            if newsData.school == userSettings.school {
+                                newsRow(newsData: newsData)
+                                    .shadow(color: Color("superiorGray"), radius: 3, x: 1, y: 3)
+                            }
                         }
-                        else if colorScheme == .light {
-                            newsRow(newsData: newsData)
-                                .shadow(color: Color("superiorGray"), radius: 3, x: 1, y: 3)
-                        }
+                        .listRowInsets(EdgeInsets())
+                        .padding()
                     }
-                    .listRowInsets(EdgeInsets())
-                    .padding()
+                    /*Section(header: Text("KFU")) {
+                        ForEach(fetcher.articles, id: \.self) { newsData in
+                            if newsData.school == "KFU" {
+                                newsRow(newsData: newsData)
+                                    .shadow(color: Color("superiorGray"), radius: 3, x: 1, y: 3)
+                            }
+                        }
+                        .listRowInsets(EdgeInsets())
+                        .padding()
+                    }*/
                 }
-                .listStyle(InsetListStyle())}
+                .listStyle(InsetGroupedListStyle())}
             .navigationTitle("News")
             .toolbar(content: {
                 ToolbarItem(placement: .primaryAction) {
@@ -50,14 +60,14 @@ struct news: View {
                         Section {
                             Button(action: {  }) {
                                 Label("All", systemImage: "rectangle.stack")
-                            }
+                            }.disabled(true)
                         }
                         
                         Section {
-                            Button(action: {  }) {
+                            Button(action: { userSettings.school = "HLG" }) {
                                 Label("HLG", systemImage: "house")
                             }
-                            Button(action: {  }) {
+                            Button(action: { userSettings.school = "KFU" }) {
                                 Label("KaiFU", systemImage: "crown")
                             }
                         }
