@@ -18,22 +18,15 @@ struct news: View {
     
     @Environment(\.colorScheme) var colorScheme
     
-    //@State var showNews = "KFU"    .filter { $0.school == showNews }
-    
-    /*private func setReaction(_ school: String, for item: ) {
-        if let index = self.fetcher.articles.firstIndex(
-            where: { $0.id ==  }) {
-            fetcher.articles[index].school = school
-        }
-    }*/
+    @State private var schoolNews = UserSettings().school
     
     var body: some View {
         NavigationView {
             VStack {
                 List {
-                    Section(header: Text("\(userSettings.school)")) {
+                    Section(header: Text("\(schoolNews)")) {
                         ForEach(fetcher.articles, id: \.self) { newsData in
-                            if newsData.school == userSettings.school {
+                            if newsData.school == schoolNews {
                                 newsRow(newsData: newsData)
                                     .shadow(color: Color("superiorGray"), radius: 3, x: 1, y: 3)
                             }
@@ -64,10 +57,10 @@ struct news: View {
                         }
                         
                         Section {
-                            Button(action: { userSettings.school = "HLG" }) {
+                            Button(action: { schoolNews = "HLG" }) {
                                 Label("HLG", systemImage: "house")
                             }
-                            Button(action: { userSettings.school = "KFU" }) {
+                            Button(action: { schoolNews = "KFU" }) {
                                 Label("KaiFU", systemImage: "crown")
                             }
                         }
