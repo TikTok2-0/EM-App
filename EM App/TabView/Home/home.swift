@@ -51,19 +51,14 @@ struct home: View {
                     }
                 }.padding(.leading, 20)
                 .padding(.trailing, 20)
-                    
-                if colorScheme == .dark {
-                    NavigationLink(destination: newsDetail(newsData: fetcher.articles[0])) {
-                        hottestStory(newsData: fetcher.articles[0])
-                            .shadow(color: Color("superiorGray"), radius: 3, x: 1, y: 3)
-                            .padding()
-                    }
-                }
-                else if colorScheme == .light {
-                    NavigationLink(destination: newsDetail(newsData: fetcher.articles[0])) {
-                        hottestStory(newsData: fetcher.articles[0])
-                            .shadow(color: Color("superiorGray"), radius: 3, x: 1, y: 3)
-                            .padding()
+                
+                ForEach(fetcher.articles, id: \.self) { newsData in
+                    if newsData.id == "1" {
+                        NavigationLink(destination: newsDetail(newsData: fetcher.articles[0])) {
+                            hottestStory(newsData: fetcher.articles[0])
+                                .shadow(color: Color("superiorGray"), radius: 3, x: 1, y: 3)
+                                .padding()
+                        }
                     }
                 }
                 
