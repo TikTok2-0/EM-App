@@ -29,6 +29,10 @@ struct news: View {
                             newsRow(newsData: newsData)
                                 .shadow(color: Color("superiorGray"), radius: 3, x: 1, y: 3)
                         }
+                        else if schoolNews == "" {
+                            newsRow(newsData: newsData)
+                                .shadow(color: Color("superiorGray"), radius: 3, x: 1, y: 3)
+                        }
                     }
                     .listRowInsets(EdgeInsets())
                     .padding()
@@ -38,11 +42,11 @@ struct news: View {
             .toolbar(content: {
                 ToolbarItem(placement: .primaryAction) {
                     Menu {
-                        /*Section {
-                            Button(action: {  }) {
+                        Section {
+                            Button(action: { schoolNews = "" }) {
                                 Label("All", systemImage: "rectangle.stack")
-                            }.disabled(true)
-                        }*/
+                            }
+                        }
                         
                         Section {
                             Button(action: { schoolNews = "HLG" }) {
