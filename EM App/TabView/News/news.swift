@@ -38,11 +38,11 @@ struct news: View {
             .toolbar(content: {
                 ToolbarItem(placement: .primaryAction) {
                     Menu {
-                        Section {
+                        /*Section {
                             Button(action: {  }) {
                                 Label("All", systemImage: "rectangle.stack")
                             }.disabled(true)
-                        }
+                        }*/
                         
                         Section {
                             Button(action: { schoolNews = "HLG" }) {
