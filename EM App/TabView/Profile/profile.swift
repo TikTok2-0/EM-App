@@ -11,6 +11,7 @@ struct profile: View {
     @State private var showPage: Bool = false
     
     @ObservedObject var userSettings = UserSettings()
+    @Environment(\.openURL) var openURL
     
     var body: some View {
         NavigationView {
@@ -63,6 +64,15 @@ struct profile: View {
                     }
                     NavigationLink(destination: gradeCalc()) {
                         Label("Notenrechner", systemImage: "function")
+                    }
+                }
+                
+                Section {
+                    Button(action: { openURL(URL(string: "https://www.hlg-hamburg.de")!) }) {
+                        Label("HLG Website", systemImage: "house")
+                    }
+                    Button(action: { openURL(URL(string: "https://www.kaifu-gymnasium.de")!) }) {
+                        Label("KaiFU Website", systemImage: "crown")
                     }
                 }
                 

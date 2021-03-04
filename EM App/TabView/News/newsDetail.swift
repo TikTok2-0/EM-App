@@ -30,6 +30,14 @@ struct newsDetail: View {
                 Spacer()
                 
                 Text(newsData.text)
+                    /*.contextMenu {
+                        Button(action: {
+                            UIPasteboard.general.string = newsData.text
+                        }) {
+                            Text("Copy to clipboard")
+                            Image(systemName: "doc.on.doc")
+                        }
+                    }*/
                 
                 Spacer()
                 
