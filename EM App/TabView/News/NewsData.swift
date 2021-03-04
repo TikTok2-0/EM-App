@@ -16,15 +16,7 @@ struct NewsData: Hashable, Decodable, Identifiable {
     var id: String
     var dates: String
     var school: String
-    
-    var category: Category
-    enum Category: String, CaseIterable, Codable {
-        case Allgemein = "Allgemein"
-        case Beobachtungsstufe = "Beobachtungsstufe"
-        case Deutsch = "Deutsch"
-        case UNESCO = "UNESCO"
-        case Kaifu = "Kaifu"
-    }
+    var category: String
     
     var text: String
 }
