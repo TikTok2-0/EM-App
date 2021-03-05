@@ -73,8 +73,11 @@ struct home: View {
                 .padding(.trailing, 20)
                 
                 NavigationLink(destination: gradeCalc()) {
-                    Text("Schnitt: \(gradeAverage)")
-                        .font(.title)
+                    HStack {
+                        Text("Schnitt")
+                        Spacer()
+                        Text("\(String(gradeAverage))")
+                    }.font(.title)
                 }.padding(.leading, 20)
                 .padding(.trailing, 20)
                 .padding(.bottom, 20)
