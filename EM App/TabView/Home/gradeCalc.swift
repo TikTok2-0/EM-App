@@ -8,15 +8,110 @@
 import SwiftUI
 
 struct gradeCalc: View {
+    @Environment(\.managedObjectContext) private var viewContext
+    @FetchRequest(entity: Subject.entity(), sortDescriptors: [])
+    var subject: FetchedResults<Subject>
     @State private var addSubject: Bool = false
+    
+    @ObservedObject var userSettings = UserSettings()
+    @State var schnittGes: Double = 0.0
+    
+    var sumS1: Int {
+        subject.reduce(0) { $0 + $1.s1 }
+    }
+    var sumS2: Int {
+        subject.reduce(0) { $0 + $1.s2 }
+    }
+    var sumS3: Int {
+        subject.reduce(0) { $0 + $1.s3 }
+    }
+    var sumS4: Int {
+        subject.reduce(0) { $0 + $1.s4 }
+    }
+    var sumAbi: Int {
+        subject.reduce(0) { $0 + $1.abitur }
+    }
     
     var body: some View {
         List {
-            ForEach(1..<51, id: \.self) { item in
-                Text("Item \(item)")
+            Section {
+                HStack {
+                    Text("Semester")
+                    Spacer()
+                    Text("\(sumS1 + sumS2 + sumS3 + sumS4)")
+                }
+                HStack {
+                    Text("Abi")
+                    Spacer()
+                    Text("\(sumAbi*5)")
+                }
+                HStack {
+                    Text("Gesamt")
+                        .fontWeight(.bold)
+                    Spacer()
+                    Text("\(sumS1 + sumS2 + sumS3 + sumS4 + (sumAbi * 5))")
+                        .fontWeight(.bold)
+                }
+                HStack {
+                    Text("Schnitt")
+                    Spacer()
+                    Text("\((17 / 3) - Double(sumS1 + sumS2 + sumS3 + sumS4 + (sumAbi * 5)) / 180)")
+                }
             }
+            
+            Section {
+                ForEach(subject) { item in
+                    HStack {
+                        Text("\(item.title)")
+                            .font(.title3)
+                            //.fontWeight(.bold)
+                        Spacer()
+                        Text("\(item.s1)")
+                            .frame(width: 20, height: nil, alignment: .center)
+                        Text("\(item.s2)")
+                            .frame(width: 20, height: nil, alignment: .center)
+                        Text("\(item.s3)")
+                            .frame(width: 20, height: nil, alignment: .center)
+                        Text("\(item.s4)")
+                            .frame(width: 20, height: nil, alignment: .center)
+                        if item.abiCheck {
+                            Text("\(item.abitur)")
+                                .frame(width: 20, height: nil, alignment: .center)
+                        } else {
+                            Text("-")
+                                .frame(width: 20, height: nil, alignment: .center)
+                        }
+                        Ellipse()
+                            .frame(width: 10, height: 10, alignment: .center)
+                            .foregroundColor(item.eA ? .green : .red)
+                    }
+                }
+                .onDelete { indexSet in
+                    for index in indexSet {
+                        viewContext.delete(subject[index])
+                    }
+                    do {
+                        try viewContext.save()
+                    } catch {
+                        print(error.localizedDescription)
+                    }
+                }
+            }
+            
+            /*Section(header: Text("Schnitt")) {
+                ForEach(subject) { item in
+                    let schnittSem = (item.s1 + item.s2 + item.s3 + item.s4)
+                    let schnittAbi = item.abitur * 5
+                    let schnittFach = schnittSem + schnittAbi
+                    HStack {
+                        Text("\(item.title)")
+                        Spacer()
+                        Text("\(schnittSem) + \(schnittAbi) = \(schnittFach)")
+                    }
+                }
+            }*/
         }
-        .navigationTitle("Grades")
+        .navigationTitle("Grades (\(String(userSettings.gradeAverage)))")
         .listStyle(InsetGroupedListStyle())
         .navigationBarItems(trailing:
             HStack {
@@ -29,7 +124,7 @@ struct gradeCalc: View {
             }
         )
         .sheet(isPresented: $addSubject) {
-            Text("soon")
+            newGrade()
         }
     }
 }

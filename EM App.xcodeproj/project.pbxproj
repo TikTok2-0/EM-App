@@ -12,9 +12,12 @@
 		F607123E25AE49D9005E4647 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F607123D25AE49D9005E4647 /* Assets.xcassets */; };
 		F607124125AE49D9005E4647 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F607124025AE49D9005E4647 /* Preview Assets.xcassets */; };
 		F607124325AE49D9005E4647 /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = F607124225AE49D9005E4647 /* Persistence.swift */; };
-		F607124625AE49D9005E4647 /* EM_App.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = F607124425AE49D9005E4647 /* EM_App.xcdatamodeld */; };
 		F607125125AE49D9005E4647 /* EM_AppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F607125025AE49D9005E4647 /* EM_AppTests.swift */; };
 		F607125C25AE49D9005E4647 /* EM_AppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F607125B25AE49D9005E4647 /* EM_AppUITests.swift */; };
+		F608CCAF25F2DABA00C09F07 /* Subject+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = F608CCAD25F2DABA00C09F07 /* Subject+CoreDataClass.swift */; };
+		F608CCB025F2DABA00C09F07 /* Subject+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = F608CCAE25F2DABA00C09F07 /* Subject+CoreDataProperties.swift */; };
+		F608CCB125F2DBAD00C09F07 /* EM_App.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = F607124425AE49D9005E4647 /* EM_App.xcdatamodeld */; };
+		F608CCB325F2DF8400C09F07 /* newGrade.swift in Sources */ = {isa = PBXBuildFile; fileRef = F608CCB225F2DF8400C09F07 /* newGrade.swift */; };
 		F61E8EE025E555DD00D7D999 /* gradeCalc.swift in Sources */ = {isa = PBXBuildFile; fileRef = F61E8EDF25E555DD00D7D999 /* gradeCalc.swift */; };
 		F623E3DE25B1CCB900E5D34A /* home.swift in Sources */ = {isa = PBXBuildFile; fileRef = F623E3DD25B1CCB900E5D34A /* home.swift */; };
 		F623E3E725B1CCCF00E5D34A /* news.swift in Sources */ = {isa = PBXBuildFile; fileRef = F623E3E625B1CCCF00E5D34A /* news.swift */; };
@@ -68,6 +71,9 @@
 		F607125725AE49D9005E4647 /* EM AppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "EM AppUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F607125B25AE49D9005E4647 /* EM_AppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EM_AppUITests.swift; sourceTree = "<group>"; };
 		F607125D25AE49D9005E4647 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F608CCAD25F2DABA00C09F07 /* Subject+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Subject+CoreDataClass.swift"; sourceTree = "<group>"; };
+		F608CCAE25F2DABA00C09F07 /* Subject+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Subject+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		F608CCB225F2DF8400C09F07 /* newGrade.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = newGrade.swift; sourceTree = "<group>"; };
 		F61E8EDF25E555DD00D7D999 /* gradeCalc.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = gradeCalc.swift; sourceTree = "<group>"; };
 		F623E3DD25B1CCB900E5D34A /* home.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = home.swift; sourceTree = "<group>"; };
 		F623E3E625B1CCCF00E5D34A /* news.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = news.swift; sourceTree = "<group>"; };
@@ -117,6 +123,8 @@
 		F607122D25AE49D8005E4647 = {
 			isa = PBXGroup;
 			children = (
+				F608CCAD25F2DABA00C09F07 /* Subject+CoreDataClass.swift */,
+				F608CCAE25F2DABA00C09F07 /* Subject+CoreDataProperties.swift */,
 				F607123825AE49D8005E4647 /* EM App */,
 				F607124F25AE49D9005E4647 /* EM AppTests */,
 				F607125A25AE49D9005E4647 /* EM AppUITests */,
@@ -204,6 +212,7 @@
 			children = (
 				F623E3DD25B1CCB900E5D34A /* home.swift */,
 				F61E8EDF25E555DD00D7D999 /* gradeCalc.swift */,
+				F608CCB225F2DF8400C09F07 /* newGrade.swift */,
 				F62C2C0125D2BEBC009F8459 /* hottestStory.swift */,
 				F62C2C0325D2D589009F8459 /* untisData.json */,
 				F67F66B325D32F6200D6328E /* untisList.swift */,
@@ -360,6 +369,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F608CCB125F2DBAD00C09F07 /* EM_App.xcdatamodeld in Sources */,
 				F6DF1AF425B24835000B1CC8 /* NewsData.swift in Sources */,
 				F623E3E725B1CCCF00E5D34A /* news.swift in Sources */,
 				F687046E25B6F139006B37B6 /* tabView.swift in Sources */,
@@ -369,17 +379,19 @@
 				F6FF07CD25D2D95400D40DD0 /* untisRowPreview.swift in Sources */,
 				F67F66B425D32F6200D6328E /* untisList.swift in Sources */,
 				F607124325AE49D9005E4647 /* Persistence.swift in Sources */,
-				F607124625AE49D9005E4647 /* EM_App.xcdatamodeld in Sources */,
 				F62C2C0625D2D67C009F8459 /* UntisData.swift in Sources */,
 				F687047325B6F197006B37B6 /* login.swift in Sources */,
 				F62F2BFE25D5931100D4A4DC /* roadmap.swift in Sources */,
 				F61E8EE025E555DD00D7D999 /* gradeCalc.swift in Sources */,
+				F608CCAF25F2DABA00C09F07 /* Subject+CoreDataClass.swift in Sources */,
 				F607123C25AE49D8005E4647 /* ContentView.swift in Sources */,
 				F687047825B7278E006B37B6 /* profile.swift in Sources */,
+				F608CCB025F2DABA00C09F07 /* Subject+CoreDataProperties.swift in Sources */,
 				F623E3DE25B1CCB900E5D34A /* home.swift in Sources */,
 				F6745CF825C9BBC000A3A5F1 /* newsRow.swift in Sources */,
 				F623E3EC25B1CCDD00E5D34A /* settings.swift in Sources */,
 				F607123A25AE49D8005E4647 /* EM_AppApp.swift in Sources */,
+				F608CCB325F2DF8400C09F07 /* newGrade.swift in Sources */,
 				F62C2C0225D2BEBC009F8459 /* hottestStory.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -76,7 +76,7 @@ struct home: View {
                     HStack {
                         Text("Schnitt")
                         Spacer()
-                        Text("\(String(gradeAverage))")
+                        Text("\(String(userSettings.gradeAverage))")
                     }.font(.title)
                 }.padding(.leading, 20)
                 .padding(.trailing, 20)

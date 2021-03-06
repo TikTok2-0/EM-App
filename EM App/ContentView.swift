@@ -9,7 +9,11 @@ import SwiftUI
 //import CoreData
 
 struct ContentView: View {
-    //@EnvironmentObject var viewRouter: ViewRouter
+    
+    @Environment(\.managedObjectContext) private var viewContext
+    @FetchRequest(entity: Subject.entity(), sortDescriptors: [])
+    var subject: FetchedResults<Subject>
+    
     @ObservedObject var userSettings = UserSettings()
         
     var body: some View {
@@ -108,6 +112,7 @@ struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         ContentView()
             .environmentObject(ModelData())
+            .environment(\.managedObjectContext, PersistenceController.preview.container.viewContext)
     }
 }
 
@@ -189,6 +194,12 @@ class UserSettings: ObservableObject {
     }
     public var schools = ["HLG", "KFU", "Both"]
     
+    @Published var gradeAverage: Double {
+        didSet {
+            UserDefaults.standard.set(gradeAverage, forKey: "gradeAverage")
+        }
+    }
+    
     init() {
         self.firstLogin = UserDefaults.standard.object(forKey: "firstLogin") as? Bool ?? true
         self.firstName = UserDefaults.standard.object(forKey: "firstName") as? String ?? ""
@@ -202,5 +213,7 @@ class UserSettings: ObservableObject {
         self.userClass = UserDefaults.standard.object(forKey: "userClass") as? String ?? ""
         self.userType = UserDefaults.standard.object(forKey: "userType") as? String ?? ""
         self.school = UserDefaults.standard.object(forKey: "school") as? String ?? ""
+        
+        self.gradeAverage = UserDefaults.standard.object(forKey: "gradeAverage") as? Double ?? 0.0
     }
 }
