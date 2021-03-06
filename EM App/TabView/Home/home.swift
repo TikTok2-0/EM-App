@@ -19,7 +19,25 @@ struct home: View {
     
     @Environment(\.colorScheme) var colorScheme
     
-    @State private var gradeAverage: Double = 1.4
+    @Environment(\.managedObjectContext) private var viewContext
+    @FetchRequest(entity: Subject.entity(), sortDescriptors: [])
+    var subject: FetchedResults<Subject>
+    
+    var sumS1: Int {
+        subject.reduce(0) { $0 + $1.s1 }
+    }
+    var sumS2: Int {
+        subject.reduce(0) { $0 + $1.s2 }
+    }
+    var sumS3: Int {
+        subject.reduce(0) { $0 + $1.s3 }
+    }
+    var sumS4: Int {
+        subject.reduce(0) { $0 + $1.s4 }
+    }
+    var sumAbi: Int {
+        subject.reduce(0) { $0 + $1.abitur }
+    }
     
     var body: some View {
         NavigationView {
@@ -76,7 +94,7 @@ struct home: View {
                     HStack {
                         Text("Schnitt")
                         Spacer()
-                        Text("\(String(userSettings.gradeAverage))")
+                        Text("\((17 / 3) - Double(sumS1 + sumS2 + sumS3 + sumS4 + (sumAbi * 5)) / 180)")
                     }.font(.title)
                 }.padding(.leading, 20)
                 .padding(.trailing, 20)

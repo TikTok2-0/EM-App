@@ -111,7 +111,7 @@ struct gradeCalc: View {
                 }
             }*/
         }
-        .navigationTitle("Grades (\(String(userSettings.gradeAverage)))")
+        .navigationTitle("Grades")
         .listStyle(InsetGroupedListStyle())
         .navigationBarItems(trailing:
             HStack {
