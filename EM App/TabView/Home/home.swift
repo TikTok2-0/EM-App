@@ -42,15 +42,25 @@ struct home: View {
     var body: some View {
         NavigationView {
             ScrollView(.vertical, showsIndicators: false) {
-                NavigationLink(destination: untisList()) {
+                /*NavigationLink(destination: untisList()) {
                     Text("Timetable")
                         .foregroundColor(.primary)
                     VStack {
                         Divider()
                             .background(Color.primary)
                     }
-                }.padding(.leading, 20)
-                .padding(.trailing, 20)
+                }.padding(.horizontal, 20)*/
+                Button(action: { showUntis.toggle() }) {
+                    Text("Timetable")
+                        .foregroundColor(.primary)
+                    VStack {
+                        Divider()
+                            .background(Color.primary)
+                    }
+                }.padding(.horizontal, 20)
+                .sheet(isPresented: $showUntis) {
+                    untisList()
+                }
                 
                 VStack {
                     ForEach(ModelData().untisData, id: \.self) { item in
@@ -108,7 +118,9 @@ struct home: View {
                         Section {
                             Button(action: { showPage.toggle() }) {
                                 Label("Notifications", systemImage: "bell")
-                            }
+                            }.sheet(isPresented: $showPage, content: {
+                                Text("Notifications")
+                            })
                         }
                         Section(header: Text("Apps")) {
                             Button(action: { showUntis.toggle() }) {
@@ -131,9 +143,6 @@ struct home: View {
                             .font(.title3)
                     }
                 }
-            })
-            .sheet(isPresented: $showPage, content: {
-                Text("Notifications")
             })
         }
     }

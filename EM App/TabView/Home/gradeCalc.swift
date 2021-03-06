@@ -12,6 +12,7 @@ struct gradeCalc: View {
     @FetchRequest(entity: Subject.entity(), sortDescriptors: [])
     var subject: FetchedResults<Subject>
     @State private var addSubject: Bool = false
+    @State private var info: Bool = false
     
     @ObservedObject var userSettings = UserSettings()
     @State var schnittGes: Double = 0.0
@@ -67,19 +68,19 @@ struct gradeCalc: View {
                             //.fontWeight(.bold)
                         Spacer()
                         Text("\(item.s1)")
-                            .frame(width: 20, height: nil, alignment: .center)
+                            .frame(width: 25, height: nil, alignment: .center)
                         Text("\(item.s2)")
-                            .frame(width: 20, height: nil, alignment: .center)
+                            .frame(width: 25, height: nil, alignment: .center)
                         Text("\(item.s3)")
-                            .frame(width: 20, height: nil, alignment: .center)
+                            .frame(width: 25, height: nil, alignment: .center)
                         Text("\(item.s4)")
-                            .frame(width: 20, height: nil, alignment: .center)
+                            .frame(width: 25, height: nil, alignment: .center)
                         if item.abiCheck {
                             Text("\(item.abitur)")
-                                .frame(width: 20, height: nil, alignment: .center)
+                                .frame(width: 25, height: nil, alignment: .center)
                         } else {
                             Text("-")
-                                .frame(width: 20, height: nil, alignment: .center)
+                                .frame(width: 25, height: nil, alignment: .center)
                         }
                         Ellipse()
                             .frame(width: 10, height: 10, alignment: .center)
@@ -116,16 +117,33 @@ struct gradeCalc: View {
         .navigationBarItems(trailing:
             HStack {
                 Button(action: {
+                    info.toggle()
+                }, label: {
+                    Image(systemName: "info.circle")
+                        .imageScale(.large)
+                }).padding(.trailing, 5)
+                .sheet(isPresented: $info) {
+                    gradeInfo()
+                }
+                Button(action: {
                     addSubject.toggle()
                 }, label: {
                     Image(systemName: "plus.circle")
                         .imageScale(.large)
                 })
+                .sheet(isPresented: $addSubject) {
+                    newGrade()
+                }
             }
         )
-        .sheet(isPresented: $addSubject) {
-            newGrade()
-        }
+        /*.sheet(isPresented: $addSubject) {
+            if addSubject {
+                newGrade()
+            }
+            if info {
+                gradeInfo()
+            }
+        }*/
     }
 }
 

@@ -33,6 +33,7 @@
 		F687046E25B6F139006B37B6 /* tabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F687046D25B6F139006B37B6 /* tabView.swift */; };
 		F687047325B6F197006B37B6 /* login.swift in Sources */ = {isa = PBXBuildFile; fileRef = F687047225B6F197006B37B6 /* login.swift */; };
 		F687047825B7278E006B37B6 /* profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = F687047725B7278E006B37B6 /* profile.swift */; };
+		F6CDF78E25F3DBBE00EE9B5D /* gradeInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6CDF78D25F3DBBE00EE9B5D /* gradeInfo.swift */; };
 		F6DDF77E25D32FF000019546 /* untisRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6DDF77D25D32FF000019546 /* untisRow.swift */; };
 		F6DF1AF425B24835000B1CC8 /* NewsData.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6DF1AF325B24835000B1CC8 /* NewsData.swift */; };
 		F6DF1AF925B248D9000B1CC8 /* ModelData.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6DF1AF825B248D9000B1CC8 /* ModelData.swift */; };
@@ -88,6 +89,7 @@
 		F687046D25B6F139006B37B6 /* tabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = tabView.swift; sourceTree = "<group>"; };
 		F687047225B6F197006B37B6 /* login.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = login.swift; sourceTree = "<group>"; };
 		F687047725B7278E006B37B6 /* profile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = profile.swift; sourceTree = "<group>"; };
+		F6CDF78D25F3DBBE00EE9B5D /* gradeInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = gradeInfo.swift; sourceTree = "<group>"; };
 		F6DDF77D25D32FF000019546 /* untisRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = untisRow.swift; sourceTree = "<group>"; };
 		F6DF1AF325B24835000B1CC8 /* NewsData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsData.swift; sourceTree = "<group>"; };
 		F6DF1AF825B248D9000B1CC8 /* ModelData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelData.swift; sourceTree = "<group>"; };
@@ -213,6 +215,7 @@
 				F623E3DD25B1CCB900E5D34A /* home.swift */,
 				F61E8EDF25E555DD00D7D999 /* gradeCalc.swift */,
 				F608CCB225F2DF8400C09F07 /* newGrade.swift */,
+				F6CDF78D25F3DBBE00EE9B5D /* gradeInfo.swift */,
 				F62C2C0125D2BEBC009F8459 /* hottestStory.swift */,
 				F62C2C0325D2D589009F8459 /* untisData.json */,
 				F67F66B325D32F6200D6328E /* untisList.swift */,
@@ -385,6 +388,7 @@
 				F61E8EE025E555DD00D7D999 /* gradeCalc.swift in Sources */,
 				F608CCAF25F2DABA00C09F07 /* Subject+CoreDataClass.swift in Sources */,
 				F607123C25AE49D8005E4647 /* ContentView.swift in Sources */,
+				F6CDF78E25F3DBBE00EE9B5D /* gradeInfo.swift in Sources */,
 				F687047825B7278E006B37B6 /* profile.swift in Sources */,
 				F608CCB025F2DABA00C09F07 /* Subject+CoreDataProperties.swift in Sources */,
 				F623E3DE25B1CCB900E5D34A /* home.swift in Sources */,
@@ -562,7 +566,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "physikprofil2021.EM-App";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = 1;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
@@ -584,7 +588,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "physikprofil2021.EM-App";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = 1;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};

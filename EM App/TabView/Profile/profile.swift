@@ -83,7 +83,7 @@ struct profile: View {
                 }
             }
             .navigationTitle("Profile")
-            .listStyle(GroupedListStyle())
+            .listStyle(InsetGroupedListStyle())
             .toolbar(content: {
                 Button(action: { showPage.toggle() }) {
                     Label("", systemImage: "gear")

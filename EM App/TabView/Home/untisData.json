@@ -3,11 +3,7 @@
         "subject": "Mathe",
         "room": "R102",
         "teacher": "Ho",
-        "color": {
-            "red": 255,
-            "green": 0,
-            "blue": 0
-        },
+        "color": ".red",
         "cover": ".purple",
         "id": "1"
     },
@@ -15,11 +11,7 @@
         "subject": "English",
         "room": "R303",
         "teacher": "vB",
-        "color": {
-            "red": 255,
-            "green": 255,
-            "blue": 0
-        },
+        "color": ".red",
         "cover": ".red",
         "id": "2"
     },
@@ -27,11 +19,7 @@
         "subject": "Deutsch",
         "room": "R205",
         "teacher": "Ve",
-        "color": {
-            "red": 255,
-            "green": 0,
-            "blue": 0
-        },
+        "color": ".red",
         "cover": ".systemBackground",
         "id": "3"
     },
@@ -39,11 +27,7 @@
         "subject": "Psychologie",
         "room": "R306",
         "teacher": "Do",
-        "color": {
-            "red": 255,
-            "green": 0,
-            "blue": 0
-        },
+        "color": ".red",
         "cover": ".systemBackground",
         "id": "4"
     }
