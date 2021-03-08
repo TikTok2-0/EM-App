@@ -1,5 +1,11 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="18147.2" systemVersion="20C69" minimumToolsVersion="Automatic" sourceLanguage="Swift" usedWithCloudKit="YES" userDefinedModelVersionIdentifier="">
+    <entity name="Homework" representedClassName="Homework" syncable="YES">
+        <attribute name="comment" optional="YES" attributeType="String"/>
+        <attribute name="dueDate" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="subject" optional="YES" attributeType="String"/>
+        <attribute name="title" optional="YES" attributeType="String"/>
+    </entity>
     <entity name="Subject" representedClassName="Subject" syncable="YES">
         <attribute name="abiCheck" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
         <attribute name="abitur" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
@@ -12,5 +18,6 @@
     </entity>
     <elements>
         <element name="Subject" positionX="-54" positionY="-9" width="128" height="149"/>
+        <element name="Homework" positionX="-54" positionY="54" width="128" height="89"/>
     </elements>
 </model>

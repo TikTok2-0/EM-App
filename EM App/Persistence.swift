@@ -23,6 +23,12 @@ struct PersistenceController {
             newItem.s2 = 11
             newItem.s3 = 10
             newItem.s4 = 13
+            
+            let newHW = Homework(context: viewContext)
+            newHW.title = "Text lesen"
+            newHW.subject = "Deutsch"
+            //newHW.dueDate = 10.03.2020
+            newHW.comment = "asap"
         }
         do {
             try viewContext.save()

@@ -98,19 +98,6 @@ struct gradeCalc: View {
                     }
                 }
             }
-            
-            /*Section(header: Text("Schnitt")) {
-                ForEach(subject) { item in
-                    let schnittSem = (item.s1 + item.s2 + item.s3 + item.s4)
-                    let schnittAbi = item.abitur * 5
-                    let schnittFach = schnittSem + schnittAbi
-                    HStack {
-                        Text("\(item.title)")
-                        Spacer()
-                        Text("\(schnittSem) + \(schnittAbi) = \(schnittFach)")
-                    }
-                }
-            }*/
         }
         .navigationTitle("Grades")
         .listStyle(InsetGroupedListStyle())

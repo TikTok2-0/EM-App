@@ -199,6 +199,7 @@ class UserSettings: ObservableObject {
             UserDefaults.standard.set(gradeAverage, forKey: "gradeAverage")
         }
     }
+    public var subjects = ["Band", "Biologie", "Chemie", "Chor", "Deutsch", "Englisch", "Französisch", "Geographie", "Geschichte", "Informatik", "Kunst", "Latein", "Mathe", "Musik", "NWP", "Orchester", "PGW", "Philosophie", "Physik", "Psychologie", "Religion", "Seminar", "Spanisch", "Sport", "Technik", "Theater", "Wirtschaft"]
     
     init() {
         self.firstLogin = UserDefaults.standard.object(forKey: "firstLogin") as? Bool ?? true

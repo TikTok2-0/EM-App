@@ -33,6 +33,10 @@
 		F687046E25B6F139006B37B6 /* tabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F687046D25B6F139006B37B6 /* tabView.swift */; };
 		F687047325B6F197006B37B6 /* login.swift in Sources */ = {isa = PBXBuildFile; fileRef = F687047225B6F197006B37B6 /* login.swift */; };
 		F687047825B7278E006B37B6 /* profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = F687047725B7278E006B37B6 /* profile.swift */; };
+		F6A7D6D725F64B1900DFB5CB /* homeworkPlaner.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6A7D6D625F64B1900DFB5CB /* homeworkPlaner.swift */; };
+		F6A7D6D925F64CB300DFB5CB /* newHomework.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6A7D6D825F64CB300DFB5CB /* newHomework.swift */; };
+		F6A7D6DC25F6553B00DFB5CB /* Homework+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6A7D6DA25F6553B00DFB5CB /* Homework+CoreDataClass.swift */; };
+		F6A7D6DD25F6553B00DFB5CB /* Homework+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6A7D6DB25F6553B00DFB5CB /* Homework+CoreDataProperties.swift */; };
 		F6CDF78E25F3DBBE00EE9B5D /* gradeInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6CDF78D25F3DBBE00EE9B5D /* gradeInfo.swift */; };
 		F6DDF77E25D32FF000019546 /* untisRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6DDF77D25D32FF000019546 /* untisRow.swift */; };
 		F6DF1AF425B24835000B1CC8 /* NewsData.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6DF1AF325B24835000B1CC8 /* NewsData.swift */; };
@@ -89,6 +93,10 @@
 		F687046D25B6F139006B37B6 /* tabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = tabView.swift; sourceTree = "<group>"; };
 		F687047225B6F197006B37B6 /* login.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = login.swift; sourceTree = "<group>"; };
 		F687047725B7278E006B37B6 /* profile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = profile.swift; sourceTree = "<group>"; };
+		F6A7D6D625F64B1900DFB5CB /* homeworkPlaner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = homeworkPlaner.swift; sourceTree = "<group>"; };
+		F6A7D6D825F64CB300DFB5CB /* newHomework.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = newHomework.swift; sourceTree = "<group>"; };
+		F6A7D6DA25F6553B00DFB5CB /* Homework+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Homework+CoreDataClass.swift"; sourceTree = "<group>"; };
+		F6A7D6DB25F6553B00DFB5CB /* Homework+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Homework+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		F6CDF78D25F3DBBE00EE9B5D /* gradeInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = gradeInfo.swift; sourceTree = "<group>"; };
 		F6DDF77D25D32FF000019546 /* untisRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = untisRow.swift; sourceTree = "<group>"; };
 		F6DF1AF325B24835000B1CC8 /* NewsData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsData.swift; sourceTree = "<group>"; };
@@ -125,6 +133,8 @@
 		F607122D25AE49D8005E4647 = {
 			isa = PBXGroup;
 			children = (
+				F6A7D6DA25F6553B00DFB5CB /* Homework+CoreDataClass.swift */,
+				F6A7D6DB25F6553B00DFB5CB /* Homework+CoreDataProperties.swift */,
 				F608CCAD25F2DABA00C09F07 /* Subject+CoreDataClass.swift */,
 				F608CCAE25F2DABA00C09F07 /* Subject+CoreDataProperties.swift */,
 				F607123825AE49D8005E4647 /* EM App */,
@@ -193,6 +203,7 @@
 				F6DF1AF825B248D9000B1CC8 /* ModelData.swift */,
 				F636EDE725B57D0600972C83 /* Home */,
 				F636EDE325B57CE800972C83 /* News */,
+				F6A7D6D525F64B0600DFB5CB /* Homework */,
 				F636EDE825B57D1000972C83 /* Profile */,
 			);
 			path = TabView;
@@ -234,6 +245,15 @@
 				F62F2BFD25D5931100D4A4DC /* roadmap.swift */,
 			);
 			path = Profile;
+			sourceTree = "<group>";
+		};
+		F6A7D6D525F64B0600DFB5CB /* Homework */ = {
+			isa = PBXGroup;
+			children = (
+				F6A7D6D625F64B1900DFB5CB /* homeworkPlaner.swift */,
+				F6A7D6D825F64CB300DFB5CB /* newHomework.swift */,
+			);
+			path = Homework;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -379,8 +399,11 @@
 				F6DF1AF925B248D9000B1CC8 /* ModelData.swift in Sources */,
 				F6DDF77E25D32FF000019546 /* untisRow.swift in Sources */,
 				F636EDDF25B57CD800972C83 /* newsDetail.swift in Sources */,
+				F6A7D6D925F64CB300DFB5CB /* newHomework.swift in Sources */,
 				F6FF07CD25D2D95400D40DD0 /* untisRowPreview.swift in Sources */,
 				F67F66B425D32F6200D6328E /* untisList.swift in Sources */,
+				F6A7D6D725F64B1900DFB5CB /* homeworkPlaner.swift in Sources */,
+				F6A7D6DC25F6553B00DFB5CB /* Homework+CoreDataClass.swift in Sources */,
 				F607124325AE49D9005E4647 /* Persistence.swift in Sources */,
 				F62C2C0625D2D67C009F8459 /* UntisData.swift in Sources */,
 				F687047325B6F197006B37B6 /* login.swift in Sources */,
@@ -391,6 +414,7 @@
 				F6CDF78E25F3DBBE00EE9B5D /* gradeInfo.swift in Sources */,
 				F687047825B7278E006B37B6 /* profile.swift in Sources */,
 				F608CCB025F2DABA00C09F07 /* Subject+CoreDataProperties.swift in Sources */,
+				F6A7D6DD25F6553B00DFB5CB /* Homework+CoreDataProperties.swift in Sources */,
 				F623E3DE25B1CCB900E5D34A /* home.swift in Sources */,
 				F6745CF825C9BBC000A3A5F1 /* newsRow.swift in Sources */,
 				F623E3EC25B1CCDD00E5D34A /* settings.swift in Sources */,

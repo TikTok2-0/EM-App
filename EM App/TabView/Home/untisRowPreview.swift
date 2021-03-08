@@ -43,8 +43,3 @@ struct untisRowPreview_Previews: PreviewProvider {
         untisRowPreview(untisData: untisData[0])
     }
 }
-
-
-/*
- 
- */

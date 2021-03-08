@@ -65,8 +65,6 @@ struct home: View {
                 VStack {
                     ForEach(ModelData().untisData, id: \.self) { item in
                         untisRowPreview(untisData: item)
-                            //.padding(.leading, 20)
-                            //.padding(.trailing, 20)
                             .shadow(color: Color("superiorGray"), radius: 3, x: 1, y: 3)
                     }
                 }.padding()//.bottom, 20)
@@ -122,7 +120,7 @@ struct home: View {
                                 Text("Notifications")
                             })
                         }
-                        Section(header: Text("Apps")) {
+                        Section {
                             Button(action: { showUntis.toggle() }) {
                                 Label("Untis (soon)", systemImage: "")
                             }
