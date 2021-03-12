@@ -192,13 +192,46 @@ class UserSettings: ObservableObject {
             UserDefaults.standard.set(school, forKey: "school")
         }
     }
-    public var schools = ["HLG", "KFU", "Both"]
+    public var schools = ["HLG", "KFU"]
     
     @Published var gradeAverage: Double {
         didSet {
             UserDefaults.standard.set(gradeAverage, forKey: "gradeAverage")
         }
     }
+    
+    @Published var fifthClassAverage: Double {
+        didSet {
+            UserDefaults.standard.set(fifthClassAverage, forKey: "fifthClassAverage")
+        }
+    }
+    @Published var sixthClassAverage: Double {
+        didSet {
+            UserDefaults.standard.set(sixthClassAverage, forKey: "sixthClassAverage")
+        }
+    }
+    @Published var seventhClassAverage: Double {
+        didSet {
+            UserDefaults.standard.set(seventhClassAverage, forKey: "seventhClassAverage")
+        }
+    }
+    @Published var eighthClassAverage: Double {
+        didSet {
+            UserDefaults.standard.set(eighthClassAverage, forKey: "eighthClassAverage")
+        }
+    }
+    @Published var ninethClassAverage: Double {
+        didSet {
+            UserDefaults.standard.set(ninethClassAverage, forKey: "ninethClassAverage")
+        }
+    }
+    @Published var tenthClassAverage: Double {
+        didSet {
+            UserDefaults.standard.set(tenthClassAverage, forKey: "tenthClassAverage")
+        }
+    }
+    
+    
     public var subjects = ["Band", "Biologie", "Chemie", "Chor", "Deutsch", "Englisch", "Französisch", "Geographie", "Geschichte", "Informatik", "Kunst", "Latein", "Mathe", "Musik", "NWP", "Orchester", "PGW", "Philosophie", "Physik", "Psychologie", "Religion", "Seminar", "Spanisch", "Sport", "Technik", "Theater", "Wirtschaft"]
     
     init() {
@@ -216,5 +249,12 @@ class UserSettings: ObservableObject {
         self.school = UserDefaults.standard.object(forKey: "school") as? String ?? ""
         
         self.gradeAverage = UserDefaults.standard.object(forKey: "gradeAverage") as? Double ?? 0.0
+        
+        self.fifthClassAverage = UserDefaults.standard.object(forKey: "fifthClassAverage") as? Double ?? 0.0
+        self.sixthClassAverage = UserDefaults.standard.object(forKey: "sixthClassAverage") as? Double ?? 0.0
+        self.seventhClassAverage = UserDefaults.standard.object(forKey: "seventhClassAverage") as? Double ?? 0.0
+        self.eighthClassAverage = UserDefaults.standard.object(forKey: "eighthClassAverage") as? Double ?? 0.0
+        self.ninethClassAverage = UserDefaults.standard.object(forKey: "ninethClassAverage") as? Double ?? 0.0
+        self.tenthClassAverage = UserDefaults.standard.object(forKey: "tenthClassAverage") as? Double ?? 0.0
     }
 }

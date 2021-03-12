@@ -27,7 +27,7 @@ struct untisList: View {
             ["Religion", "R111", "Red", "pink", "mustache", "xmark", "red"]
         ],
         [
-            ["Englisch", "R303", "vB", "yellow", "banknote", "checkmark", "green"],
+            ["Englisch", "R303", "vB", "yellow", "pencil.circle", "checkmark", "green"],
             ["Deutsch", "R208", "Kal", "red", "square.and.pencil", "checkmark", "green"],
             ["Geschichte", "R210", "Mc", "green", "clock.arrow.2.circlepath", "xmark", "red"]
         ],

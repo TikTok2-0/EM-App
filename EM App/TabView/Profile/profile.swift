@@ -63,7 +63,10 @@ struct profile: View {
                         Label("Untis", systemImage: "clock")
                     }
                     NavigationLink(destination: gradeCalc()) {
-                        Label("Notenrechner", systemImage: "function")
+                        Label("Abi Calc", systemImage: "function")
+                    }
+                    NavigationLink(destination: gradeCalcMittelstufe()) {
+                        Label("Grade Calc", systemImage: "function")
                     }
                 }
                 
@@ -73,12 +76,6 @@ struct profile: View {
                     }
                     Button(action: { openURL(URL(string: "https://www.kaifu-gymnasium.de")!) }) {
                         Label("KaiFU Website", systemImage: "crown")
-                    }
-                }
-                
-                Section {
-                    NavigationLink(destination: roadmap()) {
-                        Label("Roadmap", systemImage: "airplane")
                     }
                 }
             }

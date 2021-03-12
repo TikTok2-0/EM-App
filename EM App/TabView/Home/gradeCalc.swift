@@ -15,7 +15,6 @@ struct gradeCalc: View {
     @State private var info: Bool = false
     
     @ObservedObject var userSettings = UserSettings()
-    @State var schnittGes: Double = 0.0
     
     var sumS1: Int {
         subject.reduce(0) { $0 + $1.s1 }
@@ -99,7 +98,7 @@ struct gradeCalc: View {
                 }
             }
         }
-        .navigationTitle("Grades")
+        .navigationTitle("Abi Calc")
         .listStyle(InsetGroupedListStyle())
         .navigationBarItems(trailing:
             HStack {

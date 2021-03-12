@@ -24,6 +24,11 @@ struct PersistenceController {
             newItem.s3 = 10
             newItem.s4 = 13
             
+            let newGrade = Grade(context: viewContext)
+            newGrade.title = "Deutsch"
+            newGrade.grade = 13
+            newGrade.year = 5
+            
             let newHW = Homework(context: viewContext)
             newHW.title = "Text lesen"
             newHW.subject = "Deutsch"

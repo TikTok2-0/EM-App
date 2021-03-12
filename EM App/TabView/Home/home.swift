@@ -22,6 +22,8 @@ struct home: View {
     @Environment(\.managedObjectContext) private var viewContext
     @FetchRequest(entity: Subject.entity(), sortDescriptors: [])
     var subject: FetchedResults<Subject>
+    @FetchRequest(entity: Grade.entity(), sortDescriptors: [])
+    var grade: FetchedResults<Grade>
     
     var sumS1: Int {
         subject.reduce(0) { $0 + $1.s1 }
@@ -37,6 +39,25 @@ struct home: View {
     }
     var sumAbi: Int {
         subject.reduce(0) { $0 + $1.abitur }
+    }
+    
+    var sum5: Int64 {
+        grade.reduce(0) { $0 + $1.grade }
+    }
+    var sum6: Int64 {
+        grade.reduce(0) { $0 + $1.grade }
+    }
+    var sum7: Int64 {
+        grade.reduce(0) { $0 + $1.grade }
+    }
+    var sum8: Int64 {
+        grade.reduce(0) { $0 + $1.grade }
+    }
+    var sum9: Int64 {
+        grade.reduce(0) { $0 + $1.grade }
+    }
+    var sum10: Int64 {
+        grade.reduce(0) { $0 + $1.grade }
     }
     
     var body: some View {
@@ -100,17 +121,50 @@ struct home: View {
                 
                 NavigationLink(destination: gradeCalc()) {
                     HStack {
-                        Text("Schnitt")
+                        Text("Abi Schnitt")
                         Spacer()
                         Text("\((17 / 3) - Double(sumS1 + sumS2 + sumS3 + sumS4 + (sumAbi * 5)) / 180)")
                     }.font(.title)
-                }.padding(.leading, 20)
-                .padding(.trailing, 20)
+                }.padding(.horizontal, 20)
+                NavigationLink(destination: gradeCalcMittelstufe()) {
+                    VStack {
+                        HStack {
+                            Text("10. Schnitt")
+                            Spacer()
+                            Text("\(sum10)")
+                        }.font(.title)
+                        HStack {
+                            Text("9. Schnitt")
+                            Spacer()
+                            Text("\(sum9)")
+                        }.font(.title)
+                        HStack {
+                            Text("8. Schnitt")
+                            Spacer()
+                            Text("\(sum8)")
+                        }.font(.title)
+                        HStack {
+                            Text("7. Schnitt")
+                            Spacer()
+                            Text("\(sum7)")
+                        }.font(.title)
+                        HStack {
+                            Text("6. Schnitt")
+                            Spacer()
+                            Text("\(sum6)")
+                        }.font(.title)
+                        HStack {
+                            Text("5. Schnitt")
+                            Spacer()
+                            Text("\(sum5)")
+                        }.font(.title)
+                    }
+                }.padding(.horizontal, 20)
                 .padding(.bottom, 20)
             }
             .navigationTitle("Hallo, \(userSettings.firstName)")
             //.padding()
-            .toolbar(content: {
+            /*.toolbar(content: {
                 ToolbarItem(placement: .primaryAction) {
                     Menu {
                         Section {
@@ -120,7 +174,7 @@ struct home: View {
                                 Text("Notifications")
                             })
                         }
-                        Section {
+                        /*Section {
                             Button(action: { showUntis.toggle() }) {
                                 Label("Untis (soon)", systemImage: "")
                             }
@@ -128,7 +182,7 @@ struct home: View {
                             Button(action: { showGradecalc.toggle() }) {
                                 Label("Grade Calc (soon)", systemImage: "formula")
                             }
-                        }
+                        }*/
                         Section {
                             Button(action: { userSettings.firstLogin.toggle() }) {
                                 Label("Logout", systemImage: "person.crop.circle.badge.xmark")
@@ -141,7 +195,7 @@ struct home: View {
                             .font(.title3)
                     }
                 }
-            })
+            })*/
         }
     }
 }

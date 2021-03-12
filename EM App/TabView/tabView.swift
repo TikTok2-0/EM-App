@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct tabView: View {
-    @State private var selection: Tab = .homework
+    @State private var selection: Tab = .home
 
     enum Tab {
         case home

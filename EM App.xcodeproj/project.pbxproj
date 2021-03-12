@@ -30,6 +30,10 @@
 		F63DB2CF25CB47EF00BAB78C /* URLImage in Frameworks */ = {isa = PBXBuildFile; productRef = F63DB2CE25CB47EF00BAB78C /* URLImage */; };
 		F6745CF825C9BBC000A3A5F1 /* newsRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6745CF725C9BBC000A3A5F1 /* newsRow.swift */; };
 		F67F66B425D32F6200D6328E /* untisList.swift in Sources */ = {isa = PBXBuildFile; fileRef = F67F66B325D32F6200D6328E /* untisList.swift */; };
+		F6811EC525FBB89E00836767 /* gradeCalcMittelstufe.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6811EC425FBB89E00836767 /* gradeCalcMittelstufe.swift */; };
+		F6811EC725FBB8B300836767 /* newGradeMittelstufe.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6811EC625FBB8B300836767 /* newGradeMittelstufe.swift */; };
+		F6811ECA25FBB93400836767 /* Grade+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6811EC825FBB93400836767 /* Grade+CoreDataClass.swift */; };
+		F6811ECB25FBB93400836767 /* Grade+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6811EC925FBB93400836767 /* Grade+CoreDataProperties.swift */; };
 		F687046E25B6F139006B37B6 /* tabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F687046D25B6F139006B37B6 /* tabView.swift */; };
 		F687047325B6F197006B37B6 /* login.swift in Sources */ = {isa = PBXBuildFile; fileRef = F687047225B6F197006B37B6 /* login.swift */; };
 		F687047825B7278E006B37B6 /* profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = F687047725B7278E006B37B6 /* profile.swift */; };
@@ -90,6 +94,10 @@
 		F636EDDE25B57CD800972C83 /* newsDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = newsDetail.swift; sourceTree = "<group>"; };
 		F6745CF725C9BBC000A3A5F1 /* newsRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = newsRow.swift; sourceTree = "<group>"; };
 		F67F66B325D32F6200D6328E /* untisList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = untisList.swift; sourceTree = "<group>"; };
+		F6811EC425FBB89E00836767 /* gradeCalcMittelstufe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = gradeCalcMittelstufe.swift; sourceTree = "<group>"; };
+		F6811EC625FBB8B300836767 /* newGradeMittelstufe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = newGradeMittelstufe.swift; sourceTree = "<group>"; };
+		F6811EC825FBB93400836767 /* Grade+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Grade+CoreDataClass.swift"; sourceTree = "<group>"; };
+		F6811EC925FBB93400836767 /* Grade+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Grade+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		F687046D25B6F139006B37B6 /* tabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = tabView.swift; sourceTree = "<group>"; };
 		F687047225B6F197006B37B6 /* login.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = login.swift; sourceTree = "<group>"; };
 		F687047725B7278E006B37B6 /* profile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = profile.swift; sourceTree = "<group>"; };
@@ -133,6 +141,8 @@
 		F607122D25AE49D8005E4647 = {
 			isa = PBXGroup;
 			children = (
+				F6811EC825FBB93400836767 /* Grade+CoreDataClass.swift */,
+				F6811EC925FBB93400836767 /* Grade+CoreDataProperties.swift */,
 				F6A7D6DA25F6553B00DFB5CB /* Homework+CoreDataClass.swift */,
 				F6A7D6DB25F6553B00DFB5CB /* Homework+CoreDataProperties.swift */,
 				F608CCAD25F2DABA00C09F07 /* Subject+CoreDataClass.swift */,
@@ -226,6 +236,8 @@
 				F623E3DD25B1CCB900E5D34A /* home.swift */,
 				F61E8EDF25E555DD00D7D999 /* gradeCalc.swift */,
 				F608CCB225F2DF8400C09F07 /* newGrade.swift */,
+				F6811EC425FBB89E00836767 /* gradeCalcMittelstufe.swift */,
+				F6811EC625FBB8B300836767 /* newGradeMittelstufe.swift */,
 				F6CDF78D25F3DBBE00EE9B5D /* gradeInfo.swift */,
 				F62C2C0125D2BEBC009F8459 /* hottestStory.swift */,
 				F62C2C0325D2D589009F8459 /* untisData.json */,
@@ -406,17 +418,21 @@
 				F6A7D6DC25F6553B00DFB5CB /* Homework+CoreDataClass.swift in Sources */,
 				F607124325AE49D9005E4647 /* Persistence.swift in Sources */,
 				F62C2C0625D2D67C009F8459 /* UntisData.swift in Sources */,
+				F6811ECB25FBB93400836767 /* Grade+CoreDataProperties.swift in Sources */,
 				F687047325B6F197006B37B6 /* login.swift in Sources */,
+				F6811EC525FBB89E00836767 /* gradeCalcMittelstufe.swift in Sources */,
 				F62F2BFE25D5931100D4A4DC /* roadmap.swift in Sources */,
 				F61E8EE025E555DD00D7D999 /* gradeCalc.swift in Sources */,
 				F608CCAF25F2DABA00C09F07 /* Subject+CoreDataClass.swift in Sources */,
 				F607123C25AE49D8005E4647 /* ContentView.swift in Sources */,
 				F6CDF78E25F3DBBE00EE9B5D /* gradeInfo.swift in Sources */,
 				F687047825B7278E006B37B6 /* profile.swift in Sources */,
+				F6811EC725FBB8B300836767 /* newGradeMittelstufe.swift in Sources */,
 				F608CCB025F2DABA00C09F07 /* Subject+CoreDataProperties.swift in Sources */,
 				F6A7D6DD25F6553B00DFB5CB /* Homework+CoreDataProperties.swift in Sources */,
 				F623E3DE25B1CCB900E5D34A /* home.swift in Sources */,
 				F6745CF825C9BBC000A3A5F1 /* newsRow.swift in Sources */,
+				F6811ECA25FBB93400836767 /* Grade+CoreDataClass.swift in Sources */,
 				F623E3EC25B1CCDD00E5D34A /* settings.swift in Sources */,
 				F607123A25AE49D8005E4647 /* EM_AppApp.swift in Sources */,
 				F608CCB325F2DF8400C09F07 /* newGrade.swift in Sources */,
@@ -587,7 +603,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "physikprofil2021.EM-App";
+				PRODUCT_BUNDLE_IDENTIFIER = "hkrieger.EM-App";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -609,7 +625,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "physikprofil2021.EM-App";
+				PRODUCT_BUNDLE_IDENTIFIER = "hkrieger.EM-App";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
