@@ -26,16 +26,16 @@ struct newGrade: View {
                 Section(header: Text("Subject Details")) {
                     TextField("Title", text: $title)
                 }
-                Section(header: Text("Oberstufe")) {
+                Section(header: Text("Grades")) {
                     Stepper("S1: \(s1)P", value: $s1, in: 0...15)
                     Stepper("S2: \(s2)P", value: $s2, in: 0...15)
                     Stepper("S3: \(s3)P", value: $s3, in: 0...15)
                     Stepper("S4: \(s4)P", value: $s4, in: 0...15)
                 }
                 Section(header: Text("Abitur")) {
-                    Toggle("Schriftliches/Mündliches Prüfungsfach?", isOn: $abiCheck)
+                    Toggle("Written/Oral Exam", isOn: $abiCheck)
                     Stepper("Abitur: \(abitur)P", value: $abitur, in: 0...15).disabled(!abiCheck)
-                    Toggle("Erhöht?", isOn: $eA)
+                    Toggle("Higher Level", isOn: $eA)
                 }
                 Section {
                     Button(action: {

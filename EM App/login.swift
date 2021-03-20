@@ -63,7 +63,7 @@ struct login: View {
                                 }
                             }
                             
-                            Picker(selection: $userSettings.userType, label: Text("Type")) {
+                            Picker(selection: $userSettings.userType, label: Text("Role")) {
                                 ForEach(userSettings.types, id: \.self) { userType in
                                     Text(userType)
                                 }

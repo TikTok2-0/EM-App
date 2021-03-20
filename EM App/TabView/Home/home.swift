@@ -78,7 +78,8 @@ struct home: View {
                         Divider()
                             .background(Color.primary)
                     }
-                }.padding(.horizontal, 20)
+                }.disabled(true)
+                .padding(.horizontal, 20)
                 .sheet(isPresented: $showUntis) {
                     untisList()
                 }
@@ -121,40 +122,43 @@ struct home: View {
                 
                 NavigationLink(destination: gradeCalc()) {
                     HStack {
-                        Text("Abi Schnitt")
+                        Text("Abitur Average")
                         Spacer()
-                        Text("\((17 / 3) - Double(sumS1 + sumS2 + sumS3 + sumS4 + (sumAbi * 5)) / 180)")
+                        let x = (17 / 3) - Double(sumS1 + sumS2 + sumS3 + sumS4 + (sumAbi * 5)) / 180
+                        Text("\(  Double(round(1000*x)/1000), specifier: "%.2f"  )")
                     }.font(.title)
                 }.padding(.horizontal, 20)
                 NavigationLink(destination: gradeCalcMittelstufe()) {
                     VStack {
+                        let c = grade.count
+                        Text("TEST: \(c)")
                         HStack {
-                            Text("10. Schnitt")
+                            Text("10. Average")
                             Spacer()
                             Text("\(sum10)")
                         }.font(.title)
                         HStack {
-                            Text("9. Schnitt")
+                            Text("9. Average")
                             Spacer()
                             Text("\(sum9)")
                         }.font(.title)
                         HStack {
-                            Text("8. Schnitt")
+                            Text("8. Average")
                             Spacer()
                             Text("\(sum8)")
                         }.font(.title)
                         HStack {
-                            Text("7. Schnitt")
+                            Text("7. Average")
                             Spacer()
                             Text("\(sum7)")
                         }.font(.title)
                         HStack {
-                            Text("6. Schnitt")
+                            Text("6. Average")
                             Spacer()
                             Text("\(sum6)")
                         }.font(.title)
                         HStack {
-                            Text("5. Schnitt")
+                            Text("5. Average")
                             Spacer()
                             Text("\(sum5)")
                         }.font(.title)
@@ -162,7 +166,7 @@ struct home: View {
                 }.padding(.horizontal, 20)
                 .padding(.bottom, 20)
             }
-            .navigationTitle("Hallo, \(userSettings.firstName)")
+            .navigationTitle("Hello \(userSettings.firstName)")
             //.padding()
             /*.toolbar(content: {
                 ToolbarItem(placement: .primaryAction) {

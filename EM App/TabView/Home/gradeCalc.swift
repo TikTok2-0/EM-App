@@ -41,21 +41,22 @@ struct gradeCalc: View {
                     Text("\(sumS1 + sumS2 + sumS3 + sumS4)")
                 }
                 HStack {
-                    Text("Abi")
+                    Text("Abitur")
                     Spacer()
                     Text("\(sumAbi*5)")
                 }
                 HStack {
-                    Text("Gesamt")
+                    Text("Total")
                         .fontWeight(.bold)
                     Spacer()
                     Text("\(sumS1 + sumS2 + sumS3 + sumS4 + (sumAbi * 5))")
                         .fontWeight(.bold)
                 }
                 HStack {
-                    Text("Schnitt")
+                    Text("Average")
                     Spacer()
-                    Text("\((17 / 3) - Double(sumS1 + sumS2 + sumS3 + sumS4 + (sumAbi * 5)) / 180)")
+                    let x = (17 / 3) - Double(sumS1 + sumS2 + sumS3 + sumS4 + (sumAbi * 5)) / 180
+                    Text("\( Double(round(1000*x)/1000), specifier: "%.2f")")
                 }
             }
             
