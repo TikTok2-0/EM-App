@@ -48,6 +48,14 @@ struct newsDetail: View {
                 }
                 .font(.caption)
                 .foregroundColor(.secondary)
+                
+                if newsData.links != "Null" {
+                    //Link("Datei", destination: URL(string: newsData.links)!)
+                    Text("Link coming soon")
+                        //.padding(.vertical, 10)
+                        .font(.caption)
+                        .foregroundColor(.secondary)
+                }
             }.padding()
         }
         .navigationBarTitleDisplayMode(.inline)

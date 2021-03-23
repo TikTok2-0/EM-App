@@ -15,8 +15,9 @@ struct NewsData: Hashable, Decodable, Identifiable {
     var imageURL: String
     var id: String
     var dates: String
-    var school: String
     var category: String
-    
     var text: String
+    var school: String
+    
+    var links: String?
 }
