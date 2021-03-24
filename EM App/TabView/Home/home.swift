@@ -86,8 +86,12 @@ struct home: View {
                 
                 VStack {
                     ForEach(ModelData().untisData, id: \.self) { item in
-                        untisRowPreview(untisData: item)
-                            .shadow(color: Color("superiorGray"), radius: 3, x: 1, y: 3)
+                        if colorScheme == .light {
+                            untisRowPreview(untisData: item)
+                                .shadow(color: Color("superiorGray"), radius: 3, x: 1, y: 3)
+                        } else if colorScheme == .dark {
+                            untisRowPreview(untisData: item)
+                        }
                     }
                 }.padding()//.bottom, 20)
                 
