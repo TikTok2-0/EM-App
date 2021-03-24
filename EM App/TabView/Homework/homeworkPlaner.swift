@@ -26,16 +26,17 @@ struct homeworkPlaner: View {
         NavigationView {
             List {
                 ForEach(homework) { hw in
-                    let due = "\(hw.dueDate ?? Date())"
                     HStack {
                         VStack(alignment: .leading) {
                             Text("\(hw.title)")
                                 .font(.title3)
                                 .fontWeight(.bold)
                             Text("\(hw.subject)")
-                            Text("\(due)")
-                            Text("\(hw.comment)")
-                                .lineLimit(maxLines)
+                            Text("\(hw.dueDate, formatter: Self.taskDateFormat)")
+                            if hw.comment != "" {
+                                Text("\(hw.comment)")
+                                    .lineLimit(maxLines)
+                            }
                         }
                     }.padding(10)
                 }
