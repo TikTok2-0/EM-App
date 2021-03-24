@@ -59,13 +59,15 @@ struct profile: View {
                 }
                 
                 Section {
-                    NavigationLink(destination: untisList()) {
+                    NavigationLink(destination: Text("June 2021")) {
+                    //NavigationLink(destination: untisList()) {
                         Label("Untis", systemImage: "clock")
                     }
                     NavigationLink(destination: gradeCalc()) {
                         Label("Abi Calc", systemImage: "function")
                     }
-                    NavigationLink(destination: gradeCalcMittelstufe()) {
+                    NavigationLink(destination: Text("soon")) {
+                    //NavigationLink(destination: gradeCalcMittelstufe()) {
                         Label("Grade Calc", systemImage: "function")
                     }
                 }

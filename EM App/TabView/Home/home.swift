@@ -128,7 +128,7 @@ struct home: View {
                         Text("\(  Double(round(1000*x)/1000), specifier: "%.2f"  )")
                     }.font(.title)
                 }.padding(.horizontal, 20)
-                NavigationLink(destination: gradeCalcMittelstufe()) {
+                /*NavigationLink(destination: gradeCalcMittelstufe()) {
                     VStack {
                         let c = grade.count
                         Text("TEST: \(c)")
@@ -163,7 +163,7 @@ struct home: View {
                             Text("\(sum5)")
                         }.font(.title)
                     }
-                }.padding(.horizontal, 20)
+                }.padding(.horizontal, 20)*/
                 .padding(.bottom, 20)
             }
             .navigationTitle("Hello \(userSettings.firstName)")
