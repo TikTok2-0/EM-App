@@ -9,7 +9,10 @@ import SwiftUI
 
 struct homeworkPlaner: View {
     @Environment(\.managedObjectContext) private var viewContext
-    @FetchRequest(entity: Homework.entity(), sortDescriptors: [NSSortDescriptor(keyPath: \Homework.dueDate, ascending: true)])
+    @FetchRequest(entity: Homework.entity(), sortDescriptors: [
+        NSSortDescriptor(keyPath: \Homework.dueDate, ascending: true),
+        NSSortDescriptor(keyPath: \Homework.subject, ascending: true)
+    ])
     var homework: FetchedResults<Homework>
     
     @State private var newHW: Bool = false

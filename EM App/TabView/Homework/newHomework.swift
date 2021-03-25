@@ -20,7 +20,7 @@ struct newHomework: View {
     var body: some View {
         NavigationView {
             List {
-                Section {
+                Section(header: Text("General Information")) {
                     TextField("Title", text: $title)
                     Picker(selection: $subject, label: Text("Subject")) {
                         ForEach(userSettings.subjects, id: \.self) { subject in
@@ -29,7 +29,7 @@ struct newHomework: View {
                     }
                     DatePicker("Due Date", selection: $due, displayedComponents: .date)
                 }
-                Section {
+                Section(header: Text("Comment")) {
                     TextEditor(text: $comment)
                 }
                 Section {
