@@ -27,7 +27,7 @@ struct newHomework: View {
                             Text("\(subject)")
                         }
                     }
-                    DatePicker("Due Date", selection: $due, displayedComponents: .date)
+                    DatePicker("Due Date", selection: $due)//, displayedComponents: .date)
                 }
                 Section(header: Text("Comment")) {
                     TextEditor(text: $comment)

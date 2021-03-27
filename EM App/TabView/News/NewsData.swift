@@ -19,5 +19,5 @@ struct NewsData: Hashable, Decodable, Identifiable {
     var text: String
     var school: String
     
-    var links: String?
+    var links: String
 }

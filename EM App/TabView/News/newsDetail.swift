@@ -41,6 +41,17 @@ struct newsDetail: View {
                 
                 Spacer()
                 
+                //ForEach(newsData.links, id: \.self) { link in
+                    if newsData.links != "x" {
+                        Link("Link", destination: URL(string: newsData.links)!)
+                            //.padding(.vertical, 10)
+                            .font(.subheadline)
+                            //.foregroundColor(.secondary)
+                    }
+                //}
+                
+                Spacer()
+                
                 HStack {
                     Text(newsData.dates)
                     Spacer()
@@ -48,14 +59,6 @@ struct newsDetail: View {
                 }
                 .font(.caption)
                 .foregroundColor(.secondary)
-                
-                if newsData.links != "Null" {
-                    //Link("Datei", destination: URL(string: newsData.links)!)
-                    Text("Link coming soon")
-                        //.padding(.vertical, 10)
-                        .font(.caption)
-                        .foregroundColor(.secondary)
-                }
             }.padding()
         }
         .navigationBarTitleDisplayMode(.inline)
