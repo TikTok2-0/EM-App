@@ -15,11 +15,14 @@ struct homeworkPlaner: View {
     ])
     var homework: FetchedResults<Homework>
     
+    @State var editHomework = false
+    
     @State private var newHW: Bool = false
     
     static let taskDateFormat: DateFormatter = {
         let formatter = DateFormatter()
         formatter.dateStyle = .long
+        formatter.timeStyle = .short
         return formatter
     }()
     
@@ -38,10 +41,25 @@ struct homeworkPlaner: View {
                             Text("\(hw.dueDate, formatter: Self.taskDateFormat)")
                             if hw.comment != "" {
                                 Text("\(hw.comment)")
-                                    .lineLimit(maxLines)
+                                    //.lineLimit(maxLines)
                             }
+                            /*Button(action: { editHomework.toggle() }) {
+                                Label("Edit", systemImage: "pencil")
+                            }.sheet(isPresented: $editHomework) {
+                                Text("soon")
+                                //updateHomework(homework: hw)
+                            }*/
                         }
                     }.padding(10)
+                    /*.contextMenu {
+                        Button(action: { editHomework.toggle() }) {
+                            Label("Edit", systemImage: "pencil")
+                        }.disabled(false)
+                        .sheet(isPresented: $editHomework) {
+                            //updateHomework(homework: hw)
+                            Text("Soon")
+                        }
+                    }*/
                 }
                 .onDelete { indexSet in
                     for index in indexSet {
@@ -53,17 +71,20 @@ struct homeworkPlaner: View {
                         print(error.localizedDescription)
                     }
                 }
-                .onTapGesture {
+                /*.onTapGesture {
                     if maxLines == 1 {
                         maxLines = 20
                     } else {
                         maxLines = 1
                     }
-                }
+                }*/
             }
             .navigationTitle("Homework Planer")
             .listStyle(InsetGroupedListStyle())
-            .navigationBarItems(trailing:
+            .navigationBarItems(
+                leading:
+                    EditButton(),
+                trailing:
                 Button(action: { newHW.toggle() }) {
                     Image(systemName: "plus.circle")
                         .imageScale(.large)
@@ -74,6 +95,22 @@ struct homeworkPlaner: View {
         }
     }
 }
+
+/*struct updateHomework: View {
+    var homework: Homework
+    //@State var newTitle = homework.title == "2"
+    //@State var newDueDate = homework.dueDate
+    //@State var newComment = homework.comment
+    //@State var newSubject = homework.subject
+    
+    var body: some View {
+        //@State var newTitle = homework.title
+        @State var newTitle = "New Title"
+        
+        TextField("", text: $newTitle)
+        Text("test text")
+    }
+}*/
 
 struct homeworkPlaner_Previews: PreviewProvider {
     static var previews: some View {

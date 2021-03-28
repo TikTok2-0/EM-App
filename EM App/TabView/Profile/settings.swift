@@ -42,6 +42,83 @@ struct settings: View {
                     }*/
                 }
                 
+                Section(header: Text("Accent Color")) {
+                    Button(action: { userSettings.accentColor = "Default Blue" }) {
+                        HStack {
+                            Text("Default")
+                                .foregroundColor(Color("Default Blue"))
+                            Spacer()
+                            Ellipse()
+                                .frame(width: 25, height: 25, alignment: .center)
+                                .foregroundColor(Color("Default Blue"))
+                        }
+                    }
+                    Button(action: { userSettings.accentColor = "Schlaganfall Schwarz" }) {
+                        HStack {
+                            Text("Schlaganfall Schwarz")
+                                .foregroundColor(Color("Schlaganfall Schwarz"))
+                            Spacer()
+                            Ellipse()
+                                .frame(width: 25, height: 25, alignment: .center)
+                                .foregroundColor(Color("Schlaganfall Schwarz"))
+                        }
+                    }
+                    Button(action: { userSettings.accentColor = "Einhundertsiebenundachzig Grün" }) {
+                        HStack {
+                            Text("Einhundertsiebenundachzig Grün")
+                                .foregroundColor(Color("Einhundertsiebenundachzig Grün"))
+                            Spacer()
+                            Ellipse()
+                                .frame(width: 25, height: 25, alignment: .center)
+                                .foregroundColor(Color("Einhundertsiebenundachzig Grün"))
+                        }
+                    }
+                    Button(action: { userSettings.accentColor = "Prinzen Pink" }) {
+                        HStack {
+                            Text("Prinzen Pink")
+                                .foregroundColor(Color("Prinzen Pink"))
+                            Spacer()
+                            Ellipse()
+                                .frame(width: 25, height: 25, alignment: .center)
+                                .foregroundColor(Color("Prinzen Pink"))
+                        }
+                    }
+                    Button(action: { userSettings.accentColor = "Geringverdiener Grau" }) {
+                        HStack {
+                            Text("Geringverdiener Grau")
+                                .foregroundColor(Color("Geringverdiener Grau"))
+                            Spacer()
+                            Ellipse()
+                                .frame(width: 25, height: 25, alignment: .center)
+                                .foregroundColor(Color("Geringverdiener Grau"))
+                        }
+                    }
+                    Button(action: { userSettings.accentColor = "Rote Rakete" }) {
+                        HStack {
+                            Text("Rote Rakete")
+                                .foregroundColor(Color("Rote Rakete"))
+                            Spacer()
+                            Ellipse()
+                                .frame(width: 25, height: 25, alignment: .center)
+                                .foregroundColor(Color("Rote Rakete"))
+                        }
+                    }
+                    Button(action: { userSettings.accentColor = "Corona Coral" }) {
+                        HStack {
+                            Text("Corona Coral")
+                                .foregroundColor(Color("Corona Coral"))
+                            Spacer()
+                            Ellipse()
+                                .frame(width: 25, height: 25, alignment: .center)
+                                .foregroundColor(Color("Corona Coral"))
+                        }
+                    }
+                }
+                
+                Section(header: Text("App Icon")) {
+                    Text("soon")
+                }
+                
                 Section(header: Text("DANGER ZONE")) {
                     Button(action: { userSettings.firstLogin.toggle() }) {
                         Label("Logout", systemImage: "person.crop.circle.badge.xmark")

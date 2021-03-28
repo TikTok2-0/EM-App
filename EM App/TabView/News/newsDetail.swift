@@ -17,8 +17,7 @@ struct newsDetail: View {
     var body: some View {
         ScrollView {
             RemoteImage(url: newsData.imageURL)
-                .padding(.leading, -20)
-                .padding(.trailing, -20)
+                //.padding(.horizontal, -20)
                 .aspectRatio(CGSize(width: 3.6, height: 2), contentMode: .fit)
                 .ignoresSafeArea(edges: .top)
             
@@ -45,7 +44,7 @@ struct newsDetail: View {
                     if newsData.links != "x" {
                         Link("Link", destination: URL(string: newsData.links)!)
                             //.padding(.vertical, 10)
-                            .font(.subheadline)
+                            //.font(.footnote)
                             //.foregroundColor(.secondary)
                     }
                 //}

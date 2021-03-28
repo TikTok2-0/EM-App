@@ -59,7 +59,7 @@ struct profile: View {
                 }
                 
                 Section {
-                    NavigationLink(destination: Text("June 2021")) {
+                    NavigationLink(destination: Text("July 2021")) {
                     //NavigationLink(destination: untisList()) {
                         Label("Untis", systemImage: "clock")
                     }

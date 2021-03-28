@@ -101,27 +101,30 @@ struct gradeCalc: View {
         }
         .navigationTitle("Abi Calc")
         .listStyle(InsetGroupedListStyle())
-        .navigationBarItems(trailing:
-            HStack {
-                Button(action: {
-                    info.toggle()
-                }, label: {
-                    Image(systemName: "info.circle")
-                        .imageScale(.large)
-                }).padding(.trailing, 5)
-                .sheet(isPresented: $info) {
-                    gradeInfo()
+        .navigationBarItems(
+            //leading:
+                //EditButton(),
+            trailing:
+                HStack {
+                    Button(action: {
+                        info.toggle()
+                    }, label: {
+                        Image(systemName: "info.circle")
+                            .imageScale(.large)
+                    }).padding(.trailing, 5)
+                    .sheet(isPresented: $info) {
+                        gradeInfo()
+                    }
+                    Button(action: {
+                        addSubject.toggle()
+                    }, label: {
+                        Image(systemName: "plus.circle")
+                            .imageScale(.large)
+                    })
+                    .sheet(isPresented: $addSubject) {
+                        newGrade()
+                    }
                 }
-                Button(action: {
-                    addSubject.toggle()
-                }, label: {
-                    Image(systemName: "plus.circle")
-                        .imageScale(.large)
-                })
-                .sheet(isPresented: $addSubject) {
-                    newGrade()
-                }
-            }
         )
         /*.sheet(isPresented: $addSubject) {
             if addSubject {

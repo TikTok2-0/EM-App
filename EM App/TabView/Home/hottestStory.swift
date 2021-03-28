@@ -23,7 +23,8 @@ struct hottestStory: View {
         ZStack(alignment: .bottomLeading) {
             RemoteImage(url: newsData.imageURL)
             
-            //Rectangle().fill(gradient)
+            Rectangle().fill(gradient)
+            
             VStack(alignment: .leading) {
                 Text(newsData.title)
                     .font(.title3)

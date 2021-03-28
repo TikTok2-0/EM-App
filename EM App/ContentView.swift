@@ -19,8 +19,10 @@ struct ContentView: View {
     var body: some View {
         if userSettings.firstLogin {
             login()
+                .accentColor(Color(UserSettings().accentColor))
         } else {
             tabView()
+                .accentColor(Color(UserSettings().accentColor))
         }
     }
 }
@@ -234,6 +236,14 @@ class UserSettings: ObservableObject {
     
     public var subjects = ["Band", "Biologie", "Chemie", "Chor", "Deutsch", "Englisch", "Französisch", "Geographie", "Geschichte", "Informatik", "Kunst", "Latein", "Mathe", "Musik", "NWP", "Orchester", "PGW", "Philosophie", "Physik", "Psychologie", "Religion", "Seminar", "Spanisch", "Sport", "Technik", "Theater", "Wirtschaft"]
     
+    
+    @Published var accentColor: String {
+        didSet {
+            UserDefaults.standard.set(accentColor, forKey: "accentColor")
+        }
+    }
+    
+    
     init() {
         self.firstLogin = UserDefaults.standard.object(forKey: "firstLogin") as? Bool ?? true
         self.firstName = UserDefaults.standard.object(forKey: "firstName") as? String ?? ""
@@ -256,5 +266,7 @@ class UserSettings: ObservableObject {
         self.eighthClassAverage = UserDefaults.standard.object(forKey: "eighthClassAverage") as? Double ?? 0.0
         self.ninethClassAverage = UserDefaults.standard.object(forKey: "ninethClassAverage") as? Double ?? 0.0
         self.tenthClassAverage = UserDefaults.standard.object(forKey: "tenthClassAverage") as? Double ?? 0.0
+        
+        self.accentColor = UserDefaults.standard.object(forKey: "accentColor") as? String ?? "Sheeeeeeesh Schwarz"//"Default Blue"
     }
 }
