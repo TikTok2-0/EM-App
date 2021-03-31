@@ -28,6 +28,7 @@
 		F62F2BFE25D5931100D4A4DC /* roadmap.swift in Sources */ = {isa = PBXBuildFile; fileRef = F62F2BFD25D5931100D4A4DC /* roadmap.swift */; };
 		F636EDDF25B57CD800972C83 /* newsDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = F636EDDE25B57CD800972C83 /* newsDetail.swift */; };
 		F63DB2CF25CB47EF00BAB78C /* URLImage in Frameworks */ = {isa = PBXBuildFile; productRef = F63DB2CE25CB47EF00BAB78C /* URLImage */; };
+		F6708EBF26151B7D00689B4B /* aboutus.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6708EBE26151B7D00689B4B /* aboutus.swift */; };
 		F6745CF825C9BBC000A3A5F1 /* newsRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6745CF725C9BBC000A3A5F1 /* newsRow.swift */; };
 		F67F66B425D32F6200D6328E /* untisList.swift in Sources */ = {isa = PBXBuildFile; fileRef = F67F66B325D32F6200D6328E /* untisList.swift */; };
 		F6811EC525FBB89E00836767 /* gradeCalcMittelstufe.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6811EC425FBB89E00836767 /* gradeCalcMittelstufe.swift */; };
@@ -92,6 +93,7 @@
 		F62C2C0525D2D67C009F8459 /* UntisData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UntisData.swift; sourceTree = "<group>"; };
 		F62F2BFD25D5931100D4A4DC /* roadmap.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = roadmap.swift; sourceTree = "<group>"; };
 		F636EDDE25B57CD800972C83 /* newsDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = newsDetail.swift; sourceTree = "<group>"; };
+		F6708EBE26151B7D00689B4B /* aboutus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = aboutus.swift; sourceTree = "<group>"; };
 		F6745CF725C9BBC000A3A5F1 /* newsRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = newsRow.swift; sourceTree = "<group>"; };
 		F67F66B325D32F6200D6328E /* untisList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = untisList.swift; sourceTree = "<group>"; };
 		F6811EC425FBB89E00836767 /* gradeCalcMittelstufe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = gradeCalcMittelstufe.swift; sourceTree = "<group>"; };
@@ -255,6 +257,7 @@
 				F687047725B7278E006B37B6 /* profile.swift */,
 				F623E3EB25B1CCDD00E5D34A /* settings.swift */,
 				F62F2BFD25D5931100D4A4DC /* roadmap.swift */,
+				F6708EBE26151B7D00689B4B /* aboutus.swift */,
 			);
 			path = Profile;
 			sourceTree = "<group>";
@@ -425,6 +428,7 @@
 				F61E8EE025E555DD00D7D999 /* gradeCalc.swift in Sources */,
 				F608CCAF25F2DABA00C09F07 /* Subject+CoreDataClass.swift in Sources */,
 				F607123C25AE49D8005E4647 /* ContentView.swift in Sources */,
+				F6708EBF26151B7D00689B4B /* aboutus.swift in Sources */,
 				F6CDF78E25F3DBBE00EE9B5D /* gradeInfo.swift in Sources */,
 				F687047825B7278E006B37B6 /* profile.swift in Sources */,
 				F6811EC725FBB8B300836767 /* newGradeMittelstufe.swift in Sources */,

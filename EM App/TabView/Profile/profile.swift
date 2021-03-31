@@ -80,6 +80,12 @@ struct profile: View {
                         Label("KaiFU Website", systemImage: "crown")
                     }
                 }
+                
+                Section {
+                    NavigationLink(destination: aboutus()) {
+                        Label("About Us", systemImage: "info")
+                    }
+                }
             }
             .navigationTitle("Profile")
             .listStyle(InsetGroupedListStyle())
