@@ -7,6 +7,7 @@
 
 import SwiftUI
 import SafariServices
+import MessageUI
 
 struct profile: View {
     @State private var showPage: Bool = false
@@ -15,6 +16,9 @@ struct profile: View {
     @Environment(\.openURL) var openURL
     
     @State var showSafari = false
+    
+    @State var result: Result<MFMailComposeResult, Error>? = nil
+    @State var isShowingMailView = false
     
     var body: some View {
         NavigationView {
@@ -89,8 +93,14 @@ struct profile: View {
                 }
                 
                 Section {
-                    Button(action: { openURL(URL(string: "mailto:henry.krieger@me.com")!) }) {
+                    Button(action: {
+                        self.isShowingMailView.toggle()
+                    }) {
                         Label("Send Beta Feedback", systemImage: "envelope")
+                    }
+                    .disabled(!MFMailComposeViewController.canSendMail())
+                    .sheet(isPresented: $isShowingMailView) {
+                        MailView(result: self.$result)
                     }
                 }
                 

@@ -61,6 +61,7 @@ struct ImageView: View {
         }
     }
 }
+
 struct RemoteImage: View {
     private enum LoadState {
         case loading, success, failure
@@ -71,8 +72,10 @@ struct RemoteImage: View {
         var state = LoadState.loading
 
         init(url: String) {
-            guard let parsedURL = URL(string: url) else {
-                fatalError("Invalid URL: \(url)")
+            //let parsedURL = URL(string: url)!
+            guard let parsedURL = URL(string: "\(url)") else {
+                //fatalError("Invalid URL: \(url)")
+                return
             }
 
             URLSession.shared.dataTask(with: parsedURL) { data, response, error in
@@ -111,7 +114,8 @@ struct RemoteImage: View {
         case .loading:
             return loading
         case .failure:
-            return failure
+            //return failure
+            return Image(systemName: "multiply.circle")
         default:
             if let image = UIImage(data: loader.data) {
                 return Image(uiImage: image)

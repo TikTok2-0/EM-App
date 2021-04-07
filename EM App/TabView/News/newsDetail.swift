@@ -18,12 +18,12 @@ struct newsDetail: View {
     
     var body: some View {
         ScrollView {
-            if newsData.id != "7" {
-                RemoteImage(url: newsData.imageURL)
-                    //.padding(.horizontal, -20)
-                    .aspectRatio(CGSize(width: 3.6, height: 2), contentMode: .fit)
-                    .ignoresSafeArea(edges: .top)
-            }
+            
+            RemoteImage(url: newsData.imageURL)
+                //.padding(.horizontal, -20)
+                .aspectRatio(CGSize(width: 3.6, height: 2), contentMode: .fit)
+                //.aspectRatio(contentMode: .fit)
+                .ignoresSafeArea(edges: .top)
             
             VStack(alignment: .leading) {
                 Text(newsData.title)

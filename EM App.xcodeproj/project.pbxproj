@@ -46,6 +46,7 @@
 		F6DDF77E25D32FF000019546 /* untisRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6DDF77D25D32FF000019546 /* untisRow.swift */; };
 		F6DF1AF425B24835000B1CC8 /* NewsData.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6DF1AF325B24835000B1CC8 /* NewsData.swift */; };
 		F6DF1AF925B248D9000B1CC8 /* ModelData.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6DF1AF825B248D9000B1CC8 /* ModelData.swift */; };
+		F6EE59FC261E50EA00BEA758 /* MailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6EE59FB261E50EA00BEA758 /* MailView.swift */; };
 		F6FF07CD25D2D95400D40DD0 /* untisRowPreview.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6FF07CC25D2D95400D40DD0 /* untisRowPreview.swift */; };
 /* End PBXBuildFile section */
 
@@ -111,6 +112,7 @@
 		F6DDF77D25D32FF000019546 /* untisRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = untisRow.swift; sourceTree = "<group>"; };
 		F6DF1AF325B24835000B1CC8 /* NewsData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsData.swift; sourceTree = "<group>"; };
 		F6DF1AF825B248D9000B1CC8 /* ModelData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelData.swift; sourceTree = "<group>"; };
+		F6EE59FB261E50EA00BEA758 /* MailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MailView.swift; sourceTree = "<group>"; };
 		F6FF07CC25D2D95400D40DD0 /* untisRowPreview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = untisRowPreview.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -258,6 +260,7 @@
 				F623E3EB25B1CCDD00E5D34A /* settings.swift */,
 				F62F2BFD25D5931100D4A4DC /* roadmap.swift */,
 				F6708EBE26151B7D00689B4B /* aboutus.swift */,
+				F6EE59FB261E50EA00BEA758 /* MailView.swift */,
 			);
 			path = Profile;
 			sourceTree = "<group>";
@@ -425,6 +428,7 @@
 				F6811EC525FBB89E00836767 /* gradeCalcMittelstufe.swift in Sources */,
 				F62F2BFE25D5931100D4A4DC /* roadmap.swift in Sources */,
 				F61E8EE025E555DD00D7D999 /* gradeCalc.swift in Sources */,
+				F6EE59FC261E50EA00BEA758 /* MailView.swift in Sources */,
 				F608CCAF25F2DABA00C09F07 /* Subject+CoreDataClass.swift in Sources */,
 				F607123C25AE49D8005E4647 /* ContentView.swift in Sources */,
 				F6708EBF26151B7D00689B4B /* aboutus.swift in Sources */,
