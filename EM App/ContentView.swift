@@ -6,7 +6,7 @@
 //
 
 import SwiftUI
-//import CoreData
+import SafariServices
 
 struct ContentView: View {
     
@@ -24,6 +24,19 @@ struct ContentView: View {
             tabView()
                 .accentColor(Color(UserSettings().accentColor))
         }
+    }
+}
+
+struct SafariView: UIViewControllerRepresentable {
+    var url: URL
+        
+    func makeUIViewController(context: UIViewControllerRepresentableContext<SafariView>) -> SFSafariViewController {
+        let safariView = SFSafariViewController(url: url)
+        return safariView
+    }
+    
+    func updateUIViewController(_ uiViewController: SFSafariViewController, context: UIViewControllerRepresentableContext<SafariView>) {
+
     }
 }
 

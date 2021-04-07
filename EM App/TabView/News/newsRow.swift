@@ -26,8 +26,10 @@ struct newsRow: View {
             
             //ImageView(withURL: newsData.imageURL)
             
-            RemoteImage(url: newsData.imageURL)
-                .aspectRatio(contentMode: .fill)
+            if newsData.id != "7" {
+                RemoteImage(url: newsData.imageURL)
+                    .aspectRatio(contentMode: .fill)
+            }
             
             Rectangle().fill(gradient)
             VStack(alignment: .leading) {

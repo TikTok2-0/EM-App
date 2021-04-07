@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct aboutus: View {
+    @Environment(\.openURL) var openURL
+    
     var body: some View {
             List {
                 Section(header: Text("Info")) {
@@ -17,6 +19,9 @@ struct aboutus: View {
                 
                 Section(header: Text("Bugs")) {
                     Text("Found a bug? Report it to: \nhenry.krieger@me.com")
+                    Button(action: { openURL(URL(string: "mailto:henry.krieger@me.com")!) }) {
+                        Label("henry.krieger@me.com", systemImage: "envelope")
+                    }
                 }
                 
                 Section(header: Text("Open-Source Libraries")) {

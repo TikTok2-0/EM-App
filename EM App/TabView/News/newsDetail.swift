@@ -14,12 +14,16 @@ struct newsDetail: View {
     
     @Environment(\.colorScheme) var colorScheme
     
+    @State var showSafari = false
+    
     var body: some View {
         ScrollView {
-            RemoteImage(url: newsData.imageURL)
-                //.padding(.horizontal, -20)
-                .aspectRatio(CGSize(width: 3.6, height: 2), contentMode: .fit)
-                .ignoresSafeArea(edges: .top)
+            if newsData.id != "7" {
+                RemoteImage(url: newsData.imageURL)
+                    //.padding(.horizontal, -20)
+                    .aspectRatio(CGSize(width: 3.6, height: 2), contentMode: .fit)
+                    .ignoresSafeArea(edges: .top)
+            }
             
             VStack(alignment: .leading) {
                 Text(newsData.title)
@@ -42,7 +46,11 @@ struct newsDetail: View {
                 
                 //ForEach(newsData.links, id: \.self) { link in
                     if newsData.links != "x" {
-                        Link("Link", destination: URL(string: newsData.links)!)
+                        Button(action: { showSafari.toggle() }) {
+                            Text("Link").fullScreenCover(isPresented: $showSafari) {
+                                SafariView(url: URL(string: "\(newsData.links)")!).ignoresSafeArea(edges: .all)
+                            }
+                        }
                             //.padding(.vertical, 10)
                             //.font(.footnote)
                             //.foregroundColor(.secondary)

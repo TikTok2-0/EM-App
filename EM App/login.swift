@@ -76,7 +76,7 @@ struct login: View {
                             }
                         }
                         
-                        Section(header: Text("Terms and Conditions")) {
+                        /*Section(header: Text("Terms and Conditions")) {
                             NavigationLink(
                                 destination: TaC(),
                                 label: {
@@ -86,7 +86,7 @@ struct login: View {
                             Toggle(isOn: $acceptTerms, label: {
                                 Text("Accept Terms and Conditions")
                             })
-                        }
+                        }*/
                         
                         Section(header: Text("Beta")) {
                             Button(action: {
@@ -94,15 +94,15 @@ struct login: View {
                                 userSettings.firstLogin.toggle()
                                 
                             }) {
-                                Text("V0.9")
-                            }.disabled(!acceptTerms)
+                                Text("Open Beta V2")
+                            }//.disabled(!acceptTerms)
                         }
                         
-                        Section(header: Text("Start")) {
+                        /*Section(header: Text("Start")) {
                             Button(action: {}) {
                                 Text("Go")
                             }.disabled(true)
-                        }
+                        }*/
                     }
                     .navigationTitle("Hello")
                 }

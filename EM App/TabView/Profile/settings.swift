@@ -120,7 +120,7 @@ struct settings: View {
                 }
                 
                 Section(header: Text("DANGER ZONE")) {
-                    Button(action: { userSettings.firstLogin.toggle() }) {
+                    Button(action: { userSettings.firstLogin = true }) {
                         Label("Logout", systemImage: "person.crop.circle.badge.xmark")
                             .foregroundColor(.red)
                     }

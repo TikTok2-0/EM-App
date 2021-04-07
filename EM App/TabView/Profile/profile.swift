@@ -6,12 +6,15 @@
 //
 
 import SwiftUI
+import SafariServices
 
 struct profile: View {
     @State private var showPage: Bool = false
     
     @ObservedObject var userSettings = UserSettings()
     @Environment(\.openURL) var openURL
+    
+    @State var showSafari = false
     
     var body: some View {
         NavigationView {
@@ -73,11 +76,21 @@ struct profile: View {
                 }
                 
                 Section {
-                    Button(action: { openURL(URL(string: "https://www.hlg-hamburg.de")!) }) {
-                        Label("HLG Website", systemImage: "house")
+                    Button(action: { showSafari.toggle() }) {
+                        Label("HLG Website", systemImage: "house").fullScreenCover(isPresented: $showSafari) {
+                            SafariView(url: URL(string: "https://www.hlg-hamburg.de")!).ignoresSafeArea(edges: .all)
+                        }
                     }
-                    Button(action: { openURL(URL(string: "https://www.kaifu-gymnasium.de")!) }) {
-                        Label("KaiFU Website", systemImage: "crown")
+                    Button(action: { showSafari.toggle() }) {
+                        Label("KaiFU Website", systemImage: "crown").fullScreenCover(isPresented: $showSafari) {
+                            SafariView(url: URL(string: "https://www.kaifu-gymnasium.de")!).ignoresSafeArea(edges: .all)
+                        }
+                    }
+                }
+                
+                Section {
+                    Button(action: { openURL(URL(string: "mailto:henry.krieger@me.com")!) }) {
+                        Label("Send Beta Feedback", systemImage: "envelope")
                     }
                 }
                 
@@ -101,6 +114,8 @@ struct profile: View {
         }
     }
 }
+
+
 
 struct profile_Previews: PreviewProvider {
     static var previews: some View {
