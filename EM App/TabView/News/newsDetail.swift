@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import AVKit
 
 struct newsDetail: View {
     @EnvironmentObject var modelData: ModelData
@@ -44,18 +45,26 @@ struct newsDetail: View {
                 
                 Spacer()
                 
-                //ForEach(newsData.links, id: \.self) { link in
-                    if newsData.links != "x" {
-                        Button(action: { showSafari.toggle() }) {
-                            Text("Link").fullScreenCover(isPresented: $showSafari) {
-                                SafariView(url: URL(string: "\(newsData.links)")!).ignoresSafeArea(edges: .all)
-                            }
+                if newsData.links != "x" {
+                    Button(action: { showSafari.toggle() }) {
+                        Text("Link").fullScreenCover(isPresented: $showSafari) {
+                            SafariView(url: URL(string: "\(newsData.links)")!).ignoresSafeArea(edges: .all)
                         }
-                            //.padding(.vertical, 10)
-                            //.font(.footnote)
-                            //.foregroundColor(.secondary)
                     }
-                //}
+                }
+                
+                if newsData.videos != "x" {
+                    Button(action: { showSafari.toggle() }) {
+                        Text("Video").fullScreenCover(isPresented: $showSafari) {
+                            SafariView(url: URL(string: "\(newsData.videos)")!).ignoresSafeArea(edges: .all)
+                        }
+                    }
+                }
+                
+                if newsData.videos != "x" {
+                    VideoPlayer(player: AVPlayer(url:  URL(string: "\(newsData.videos)")!))
+                        .frame(width: 400, height: 300)
+                }
                 
                 Spacer()
                 

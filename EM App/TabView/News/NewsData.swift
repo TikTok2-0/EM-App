@@ -20,4 +20,5 @@ struct NewsData: Hashable, Decodable, Identifiable {
     var school: String
     
     var links: String
+    var videos: String
 }
