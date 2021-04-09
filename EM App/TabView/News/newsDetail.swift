@@ -22,7 +22,7 @@ struct newsDetail: View {
             
             RemoteImage(url: newsData.imageURL)
                 //.padding(.horizontal, -20)
-                .aspectRatio(CGSize(width: 3.6, height: 2), contentMode: .fit)
+                .aspectRatio(contentMode: .fit) //CGSize(width: 3.6, height: 2),
                 //.aspectRatio(contentMode: .fit)
                 .ignoresSafeArea(edges: .top)
             
@@ -53,17 +53,18 @@ struct newsDetail: View {
                     }
                 }
                 
-                if newsData.videos != "x" {
+                /*if newsData.videos != "x" {
                     Button(action: { showSafari.toggle() }) {
                         Text("Video").fullScreenCover(isPresented: $showSafari) {
                             SafariView(url: URL(string: "\(newsData.videos)")!).ignoresSafeArea(edges: .all)
                         }
                     }
-                }
+                }*/
                 
-                if newsData.videos != "x" {
+                if newsData.videos != "x" && URL(string: "\(newsData.videos)") != nil {
                     VideoPlayer(player: AVPlayer(url:  URL(string: "\(newsData.videos)")!))
-                        .frame(width: 400, height: 300)
+                        .aspectRatio(contentMode: .fill)
+                        //.frame(width: 400, height: 300)
                 }
                 
                 Spacer()

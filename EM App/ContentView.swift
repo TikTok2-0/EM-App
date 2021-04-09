@@ -7,6 +7,7 @@
 
 import SwiftUI
 import SafariServices
+import AVKit
 
 struct ContentView: View {
     
