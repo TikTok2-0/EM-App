@@ -24,7 +24,7 @@ struct aboutus: View {
                 }
                 
                 Section(header: Text("Bugs")) {
-                    Text("Found a bug? Report it to:")
+                    Text("Found a bug? Tell us!")
                     Button(action: {
                         self.isShowingMailView.toggle()
                     }) {

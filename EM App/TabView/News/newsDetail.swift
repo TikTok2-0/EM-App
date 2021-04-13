@@ -9,6 +9,19 @@ import SwiftUI
 import AVKit
 
 struct newsDetail: View {
+    @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
+    var btnBack : some View { Button(action: {
+        self.presentationMode.wrappedValue.dismiss()
+        }) {
+            HStack {
+            Image(systemName: "chevron.backward")
+                .aspectRatio(contentMode: .fit)
+                //.foregroundColor(.white)
+            Text("Back")
+            }
+        }
+    }
+    
     @EnvironmentObject var modelData: ModelData
     @ObservedObject var fetcher = ArticlesFetcher()
     var newsData: NewsData
@@ -63,7 +76,7 @@ struct newsDetail: View {
                 
                 if newsData.videos != "x" && URL(string: "\(newsData.videos)") != nil {
                     VideoPlayer(player: AVPlayer(url:  URL(string: "\(newsData.videos)")!))
-                        .aspectRatio(contentMode: .fill)
+                        .aspectRatio(CGSize(width: 16, height: 9), contentMode: .fill)
                         //.frame(width: 400, height: 300)
                 }
                 
@@ -79,6 +92,8 @@ struct newsDetail: View {
             }.padding()
         }
         .navigationBarTitleDisplayMode(.inline)
+        //.navigationBarBackButtonHidden(true)
+        //.navigationBarItems(leading: btnBack)
     }
 }
 

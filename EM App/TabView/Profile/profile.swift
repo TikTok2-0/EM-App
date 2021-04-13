@@ -90,6 +90,16 @@ struct profile: View {
                             SafariView(url: URL(string: "https://www.kaifu-gymnasium.de")!).ignoresSafeArea(edges: .all)
                         }
                     }
+                    Button(action: { showSafari.toggle() }) {
+                        Label("Moodle", systemImage: "link").fullScreenCover(isPresented: $showSafari) {
+                            SafariView(url: URL(string: "https://lms.lernen.hamburg")!).ignoresSafeArea(edges: .all)
+                        }
+                    }
+                    Button(action: { showSafari.toggle() }) {
+                        Label("itslearning", systemImage: "link").fullScreenCover(isPresented: $showSafari) {
+                            SafariView(url: URL(string: "https://kaifu.itslearning.com")!).ignoresSafeArea(edges: .all)
+                        }
+                    }
                 }
                 
                 Section {

@@ -285,6 +285,6 @@ class UserSettings: ObservableObject {
         self.ninethClassAverage = UserDefaults.standard.object(forKey: "ninethClassAverage") as? Double ?? 0.0
         self.tenthClassAverage = UserDefaults.standard.object(forKey: "tenthClassAverage") as? Double ?? 0.0
         
-        self.accentColor = UserDefaults.standard.object(forKey: "accentColor") as? String ?? "Sheeeeeeesh Schwarz"//"Default Blue"
+        self.accentColor = UserDefaults.standard.object(forKey: "accentColor") as? String ?? "Default Blue"
     }
 }
