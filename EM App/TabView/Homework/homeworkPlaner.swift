@@ -17,6 +17,7 @@ struct homeworkPlaner: View {
     
     @State var editHomework = false
     
+    let createHW: [Any] = ["", "", Date(), ""]
     @State private var newHW: Bool = false
     
     static let taskDateFormat: DateFormatter = {
@@ -51,15 +52,23 @@ struct homeworkPlaner: View {
                             }*/
                         }
                     }.padding(10)
-                    /*.contextMenu {
+                    .contextMenu {
                         Button(action: { editHomework.toggle() }) {
                             Label("Edit", systemImage: "pencil")
-                        }.disabled(false)
-                        .sheet(isPresented: $editHomework) {
-                            //updateHomework(homework: hw)
-                            Text("Soon")
                         }
-                    }*/
+                        Button(action: {
+                            if let index = self.homework.firstIndex(of: hw) {
+                                viewContext.delete(homework[index])
+                            }
+                            do {
+                                try viewContext.save()
+                            } catch {
+                                print(error.localizedDescription)
+                            }
+                        }) {
+                            Label("Delete", systemImage: "trash")
+                        }
+                    }
                 }
                 .onDelete { indexSet in
                     for index in indexSet {
