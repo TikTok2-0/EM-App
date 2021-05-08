@@ -36,6 +36,60 @@ struct gradeCalcMittelstufe: View {
         grade.reduce(0) { $0 + $1.grade }
     }
     
+    func gradeChange(input: Int) -> String {
+        var output: String = ""
+        if input == 15 {
+            output = "1+ / 15"
+            return output
+        }
+        else if input == 14 {
+            output = "1 / 14"
+        }
+        else if input == 13 {
+            output = "1- / 13"
+        }
+        else if input == 12 {
+            output = "2+ / 12"
+        }
+        else if input == 11 {
+            output = "1 / 11"
+        }
+        else if input == 10 {
+            output = "2- / 10"
+        }
+        else if input == 13 {
+            output = "3+ / 9"
+        }
+        else if input == 13 {
+            output = "1 / 8"
+        }
+        else if input == 13 {
+            output = "3- / 7"
+        }
+        else if input == 13 {
+            output = "4+ / 6"
+        }
+        else if input == 13 {
+            output = "4 / 5"
+        }
+        else if input == 13 {
+            output = "4- / 4"
+        }
+        else if input == 13 {
+            output = "5+ / 3"
+        }
+        else if input == 13 {
+            output = "5 / 2"
+        }
+        else if input == 13 {
+            output = "5- / 1"
+        }
+        else if input == 13 {
+            output = "6 / 0"
+        }
+        return output
+    }
+    
     var body: some View {
         List {
             Section(header: Text("5th Class")) {
@@ -51,10 +105,10 @@ struct gradeCalcMittelstufe: View {
                         HStack {
                             Text("\(item.title)")
                             Spacer()
-                            Text("\(item.grade)")
+                            let changedGrade = gradeChange(input: Int(item.grade))
+                            Text("\(changedGrade)")
                         }
                     }
-                    Text("\(sum5)")
                 }
                 .onDelete { indexSet in
                     for index in indexSet {
@@ -80,7 +134,8 @@ struct gradeCalcMittelstufe: View {
                         HStack {
                             Text("\(item.title)")
                             Spacer()
-                            Text("\(item.grade)")
+                            let changedGrade = gradeChange(input: Int(item.grade))
+                            Text("\(changedGrade)")
                         }
                     }
                 }
@@ -108,7 +163,8 @@ struct gradeCalcMittelstufe: View {
                         HStack {
                             Text("\(item.title)")
                             Spacer()
-                            Text("\(item.grade)")
+                            let changedGrade = gradeChange(input: Int(item.grade))
+                            Text("\(changedGrade)")
                         }
                     }
                 }
@@ -136,7 +192,8 @@ struct gradeCalcMittelstufe: View {
                         HStack {
                             Text("\(item.title)")
                             Spacer()
-                            Text("\(item.grade)")
+                            let changedGrade = gradeChange(input: Int(item.grade))
+                            Text("\(changedGrade)")
                         }
                     }
                 }
@@ -164,7 +221,8 @@ struct gradeCalcMittelstufe: View {
                         HStack {
                             Text("\(item.title)")
                             Spacer()
-                            Text("\(item.grade)")
+                            let changedGrade = gradeChange(input: Int(item.grade))
+                            Text("\(changedGrade)")
                         }
                     }
                 }
@@ -192,7 +250,8 @@ struct gradeCalcMittelstufe: View {
                         HStack {
                             Text("\(item.title)")
                             Spacer()
-                            Text("\(item.grade)")
+                            let changedGrade = gradeChange(input: Int(item.grade))
+                            Text("\(changedGrade)")
                         }
                     }
                 }

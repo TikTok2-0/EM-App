@@ -73,8 +73,8 @@ struct profile: View {
                     NavigationLink(destination: gradeCalc()) {
                         Label("Abi Calc", systemImage: "function")
                     }
-                    NavigationLink(destination: Text("soon")) {
-                    //NavigationLink(destination: gradeCalcMittelstufe()) {
+                    //NavigationLink(destination: Text("soon")) {
+                    NavigationLink(destination: gradeCalcMittelstufe()) {
                         Label("Grade Calc", systemImage: "function")
                     }
                 }
