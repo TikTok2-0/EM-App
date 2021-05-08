@@ -112,6 +112,12 @@ struct profile: View {
                     .sheet(isPresented: $isShowingMailView) {
                         MailView(result: self.$result)
                     }
+                    
+                    Button(action: { showSafari.toggle() }) {
+                        Label("Insights", systemImage: "link").fullScreenCover(isPresented: $showSafari) {
+                            SafariView(url: URL(string: "https://www.notion.so/EM-App-abfb7af218ea43b4baed5ece1f8144e3")!).ignoresSafeArea(edges: .all)
+                        }
+                    }
                 }
                 
                 Section {

@@ -94,7 +94,7 @@ struct login: View {
                                 userSettings.firstLogin.toggle()
                                 
                             }) {
-                                Text("Open Beta V2")
+                                Text("Open Beta")
                             }//.disabled(!acceptTerms)
                         }
                         
