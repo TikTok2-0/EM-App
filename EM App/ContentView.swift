@@ -10,7 +10,6 @@ import SafariServices
 import AVKit
 
 struct ContentView: View {
-    
     @Environment(\.managedObjectContext) private var viewContext
     @FetchRequest(entity: Subject.entity(), sortDescriptors: [])
     var subject: FetchedResults<Subject>

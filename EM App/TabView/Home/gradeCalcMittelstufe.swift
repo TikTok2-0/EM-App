@@ -9,7 +9,7 @@ import SwiftUI
 
 struct gradeCalcMittelstufe: View {
     @Environment(\.managedObjectContext) private var viewContext
-    @FetchRequest(entity: Grade.entity(), sortDescriptors: [])
+    @FetchRequest(entity: Grade.entity(), sortDescriptors: [ NSSortDescriptor(keyPath: \Grade.title, ascending: true) ])
     var grade: FetchedResults<Grade>
     @State private var addSubject: Bool = false
     @State private var info: Bool = false
@@ -39,53 +39,53 @@ struct gradeCalcMittelstufe: View {
     func gradeChange(input: Int) -> String {
         var output: String = ""
         if input == 15 {
-            output = "1+ / 15"
+            output = "1+ / 15P"
             return output
         }
         else if input == 14 {
-            output = "1 / 14"
+            output = "1 / 14P"
         }
         else if input == 13 {
-            output = "1- / 13"
+            output = "1- / 13P"
         }
         else if input == 12 {
-            output = "2+ / 12"
+            output = "2+ / 12P"
         }
         else if input == 11 {
-            output = "1 / 11"
+            output = "2 / 11P"
         }
         else if input == 10 {
-            output = "2- / 10"
+            output = "2- / 10P"
         }
-        else if input == 13 {
-            output = "3+ / 9"
+        else if input == 9 {
+            output = "3+ / 9P"
         }
-        else if input == 13 {
-            output = "1 / 8"
+        else if input == 8 {
+            output = "3 / 8P"
         }
-        else if input == 13 {
-            output = "3- / 7"
+        else if input == 7 {
+            output = "3- / 7P"
         }
-        else if input == 13 {
-            output = "4+ / 6"
+        else if input == 6 {
+            output = "4+ / 6P"
         }
-        else if input == 13 {
-            output = "4 / 5"
+        else if input == 5 {
+            output = "4 / 5P"
         }
-        else if input == 13 {
-            output = "4- / 4"
+        else if input == 4 {
+            output = "4- / 4P"
         }
-        else if input == 13 {
-            output = "5+ / 3"
+        else if input == 3 {
+            output = "5+ / 3P"
         }
-        else if input == 13 {
-            output = "5 / 2"
+        else if input == 2 {
+            output = "5 / 2P"
         }
-        else if input == 13 {
-            output = "5- / 1"
+        else if input == 1 {
+            output = "5- / 1P"
         }
-        else if input == 13 {
-            output = "6 / 0"
+        else if input == 0 {
+            output = "6 / 0P"
         }
         return output
     }
@@ -121,7 +121,7 @@ struct gradeCalcMittelstufe: View {
                     }
                 }
             }
-            Section(header: Text("6th Class")) {
+            /*Section(header: Text("6th Class")) {
                 HStack {
                     Text("6th Grade Average")
                         .fontWeight(.bold)
@@ -265,7 +265,7 @@ struct gradeCalcMittelstufe: View {
                         print(error.localizedDescription)
                     }
                 }
-            }
+            }*/
         }
         .navigationTitle("Grades")
         .listStyle(InsetGroupedListStyle())
