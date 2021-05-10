@@ -43,14 +43,7 @@ struct homeworkPlaner: View {
                                 Text("\(hw.dueDate, formatter: Self.taskDateFormat)")
                                 if hw.comment != "" {
                                     Text("\(hw.comment)")
-                                        //.lineLimit(maxLines)
                                 }
-                                /*Button(action: { editHomework.toggle() }) {
-                                    Label("Edit", systemImage: "pencil")
-                                }.sheet(isPresented: $editHomework) {
-                                    Text("soon")
-                                    //updateHomework(homework: hw)
-                                }*/
                             }
                         }.padding(10)
                     }
@@ -65,13 +58,6 @@ struct homeworkPlaner: View {
                         print(error.localizedDescription)
                     }
                 }
-                /*.onTapGesture {
-                    if maxLines == 1 {
-                        maxLines = 20
-                    } else {
-                        maxLines = 1
-                    }
-                }*/
             }
             .navigationTitle("Homework Planer")
             .listStyle(InsetGroupedListStyle())
@@ -91,8 +77,6 @@ struct homeworkPlaner: View {
                             }
                         }
                         label: {
-                            //Label("Filters", systemImage: "slider.horizontal.3")
-                                //.font(.title3)
                             Image(systemName: "slider.horizontal.3")
                                 .imageScale(.large)
                         }.padding(.trailing, 5)
