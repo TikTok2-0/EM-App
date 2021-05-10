@@ -29,6 +29,7 @@ struct newsDetail: View {
     @Environment(\.colorScheme) var colorScheme
     
     @State var showSafari = false
+    @State var fullScreen = false
     
     var body: some View {
         ScrollView {
@@ -75,9 +76,19 @@ struct newsDetail: View {
                 }*/
                 
                 if newsData.videos != "x" && URL(string: "\(newsData.videos)") != nil {
-                    VideoPlayer(player: AVPlayer(url:  URL(string: "\(newsData.videos)")!))
-                        .aspectRatio(CGSize(width: 16, height: 9), contentMode: .fill)
-                        //.frame(width: 400, height: 300)
+                    Button(action: {
+                        fullScreen = true
+                    }) {
+                        Label("Play Video", systemImage: "play")
+                    }
+                    .fullScreenCover(isPresented: $fullScreen) {
+                        let player = AVPlayer(url: URL(string: "\(newsData.videos)")!)
+                        VideoPlayer(player: player)
+                            .edgesIgnoringSafeArea(.all)
+                            .onAppear {
+                                player.playImmediately(atRate: 1.0)
+                            }
+                    }
                 }
                 
                 Spacer()
