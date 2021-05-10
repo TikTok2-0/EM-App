@@ -28,6 +28,8 @@
 		F62F2BFE25D5931100D4A4DC /* roadmap.swift in Sources */ = {isa = PBXBuildFile; fileRef = F62F2BFD25D5931100D4A4DC /* roadmap.swift */; };
 		F636EDDF25B57CD800972C83 /* newsDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = F636EDDE25B57CD800972C83 /* newsDetail.swift */; };
 		F63DB2CF25CB47EF00BAB78C /* URLImage in Frameworks */ = {isa = PBXBuildFile; productRef = F63DB2CE25CB47EF00BAB78C /* URLImage */; };
+		F64EA19A264935E900DEE699 /* EditHomework.swift in Sources */ = {isa = PBXBuildFile; fileRef = F64EA199264935E900DEE699 /* EditHomework.swift */; };
+		F64EA19C2649360D00DEE699 /* HomeworkData.swift in Sources */ = {isa = PBXBuildFile; fileRef = F64EA19B2649360D00DEE699 /* HomeworkData.swift */; };
 		F6708EBF26151B7D00689B4B /* aboutus.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6708EBE26151B7D00689B4B /* aboutus.swift */; };
 		F6745CF825C9BBC000A3A5F1 /* newsRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6745CF725C9BBC000A3A5F1 /* newsRow.swift */; };
 		F67F66B425D32F6200D6328E /* untisList.swift in Sources */ = {isa = PBXBuildFile; fileRef = F67F66B325D32F6200D6328E /* untisList.swift */; };
@@ -94,6 +96,8 @@
 		F62C2C0525D2D67C009F8459 /* UntisData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UntisData.swift; sourceTree = "<group>"; };
 		F62F2BFD25D5931100D4A4DC /* roadmap.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = roadmap.swift; sourceTree = "<group>"; };
 		F636EDDE25B57CD800972C83 /* newsDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = newsDetail.swift; sourceTree = "<group>"; };
+		F64EA199264935E900DEE699 /* EditHomework.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditHomework.swift; sourceTree = "<group>"; };
+		F64EA19B2649360D00DEE699 /* HomeworkData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeworkData.swift; sourceTree = "<group>"; };
 		F6708EBE26151B7D00689B4B /* aboutus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = aboutus.swift; sourceTree = "<group>"; };
 		F6745CF725C9BBC000A3A5F1 /* newsRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = newsRow.swift; sourceTree = "<group>"; };
 		F67F66B325D32F6200D6328E /* untisList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = untisList.swift; sourceTree = "<group>"; };
@@ -269,6 +273,8 @@
 			isa = PBXGroup;
 			children = (
 				F6A7D6D625F64B1900DFB5CB /* homeworkPlaner.swift */,
+				F64EA199264935E900DEE699 /* EditHomework.swift */,
+				F64EA19B2649360D00DEE699 /* HomeworkData.swift */,
 				F6A7D6D825F64CB300DFB5CB /* newHomework.swift */,
 			);
 			path = Homework;
@@ -422,6 +428,7 @@
 				F67F66B425D32F6200D6328E /* untisList.swift in Sources */,
 				F6A7D6D725F64B1900DFB5CB /* homeworkPlaner.swift in Sources */,
 				F6A7D6DC25F6553B00DFB5CB /* Homework+CoreDataClass.swift in Sources */,
+				F64EA19C2649360D00DEE699 /* HomeworkData.swift in Sources */,
 				F607124325AE49D9005E4647 /* Persistence.swift in Sources */,
 				F62C2C0625D2D67C009F8459 /* UntisData.swift in Sources */,
 				F6811ECB25FBB93400836767 /* Grade+CoreDataProperties.swift in Sources */,
@@ -441,6 +448,7 @@
 				F623E3DE25B1CCB900E5D34A /* home.swift in Sources */,
 				F6745CF825C9BBC000A3A5F1 /* newsRow.swift in Sources */,
 				F6811ECA25FBB93400836767 /* Grade+CoreDataClass.swift in Sources */,
+				F64EA19A264935E900DEE699 /* EditHomework.swift in Sources */,
 				F623E3EC25B1CCDD00E5D34A /* settings.swift in Sources */,
 				F607123A25AE49D8005E4647 /* EM_AppApp.swift in Sources */,
 				F608CCB325F2DF8400C09F07 /* newGrade.swift in Sources */,

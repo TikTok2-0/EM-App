@@ -33,41 +33,26 @@ struct homeworkPlaner: View {
         NavigationView {
             List {
                 ForEach(homework) { hw in
-                    HStack {
-                        VStack(alignment: .leading) {
-                            Text("\(hw.title)")
-                                .font(.title3)
-                                .fontWeight(.bold)
-                            Text("\(hw.subject)")
-                            Text("\(hw.dueDate, formatter: Self.taskDateFormat)")
-                            if hw.comment != "" {
-                                Text("\(hw.comment)")
-                                    //.lineLimit(maxLines)
+                    NavigationLink(destination: EditHomework(homeworkData: hw)) {
+                        HStack {
+                            VStack(alignment: .leading) {
+                                Text("\(hw.title)")
+                                    .font(.title3)
+                                    .fontWeight(.bold)
+                                Text("\(hw.subject)")
+                                Text("\(hw.dueDate, formatter: Self.taskDateFormat)")
+                                if hw.comment != "" {
+                                    Text("\(hw.comment)")
+                                        //.lineLimit(maxLines)
+                                }
+                                /*Button(action: { editHomework.toggle() }) {
+                                    Label("Edit", systemImage: "pencil")
+                                }.sheet(isPresented: $editHomework) {
+                                    Text("soon")
+                                    //updateHomework(homework: hw)
+                                }*/
                             }
-                            /*Button(action: { editHomework.toggle() }) {
-                                Label("Edit", systemImage: "pencil")
-                            }.sheet(isPresented: $editHomework) {
-                                Text("soon")
-                                //updateHomework(homework: hw)
-                            }*/
-                        }
-                    }.padding(10)
-                    .contextMenu {
-                        Button(action: { editHomework.toggle() }) {
-                            Label("Edit", systemImage: "pencil")
-                        }
-                        Button(action: {
-                            if let index = self.homework.firstIndex(of: hw) {
-                                viewContext.delete(homework[index])
-                            }
-                            do {
-                                try viewContext.save()
-                            } catch {
-                                print(error.localizedDescription)
-                            }
-                        }) {
-                            Label("Delete", systemImage: "trash")
-                        }
+                        }.padding(10)
                     }
                 }
                 .onDelete { indexSet in
