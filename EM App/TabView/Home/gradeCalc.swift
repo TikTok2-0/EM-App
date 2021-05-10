@@ -65,7 +65,7 @@ struct gradeCalc: View {
                     Text("Average")
                     Spacer()
                     let x = (17 / 3) - Double(sumS1 + sumS2 + sumS3 + sumS4 + (sumAbi * 5)) / 180
-                    Text("\( Double(round(1000*x)/1000), specifier: "%.2f")")
+                    Text("\( Double(round(1000*x)/1000), specifier: "%.1f")")
                 }
             }
             
