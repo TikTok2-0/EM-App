@@ -92,12 +92,15 @@ struct gradeCalcMittelstufe: View {
     
     var body: some View {
         List {
-            Section(header: Text("5th Class")) {
+            Section { //}(header: Text("5th Class")) {
+                let average = Double( Double(sum5) / Double(grade.count) )
+                let schnitt = Double( (17 - average) / 3 )
                 HStack {
-                    Text("5th Grade Average")
+                    //Text("5th Grade Average")
+                    Text("Average")
                         .fontWeight(.bold)
                     Spacer()
-                    Text("\(sum5)")
+                    Text("\(Double(round(100*schnitt)/100), specifier: "%.1f")")
                         .fontWeight(.bold)
                 }
                 ForEach(grade) { item in
