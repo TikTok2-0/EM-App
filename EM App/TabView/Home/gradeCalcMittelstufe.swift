@@ -276,10 +276,10 @@ struct gradeCalcMittelstufe: View {
                 Image(systemName: "plus.circle")
                     .imageScale(.large)
             })
-            .sheet(isPresented: $addSubject) {
-                newGradeMittelstufe()
-            }
         )
+        .sheet(isPresented: $addSubject) {
+            newGradeMittelstufe()
+        }
     }
 }
 
