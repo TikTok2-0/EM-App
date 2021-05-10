@@ -7,71 +7,90 @@
 
 import SwiftUI
 
-struct homeworkPlaner: View {
-    @Environment(\.managedObjectContext) private var viewContext
-    @FetchRequest(entity: Homework.entity(), sortDescriptors: [
-        NSSortDescriptor(keyPath: \Homework.dueDate, ascending: true),
-        NSSortDescriptor(keyPath: \Homework.subject, ascending: true)
-    ])
-    var homework: FetchedResults<Homework>
-    
-    @State var editHomework = false
-    
-    let createHW: [Any] = ["", "", Date(), ""]
-    @State private var newHW: Bool = false
-    
+struct ItemListView: View {
     static let taskDateFormat: DateFormatter = {
         let formatter = DateFormatter()
         formatter.dateStyle = .long
         formatter.timeStyle = .short
         return formatter
     }()
+
+    @Environment(\.managedObjectContext) private var viewContext
+    @Environment(\.managedObjectContext) private var managedObjectContext
+    @FetchRequest var items: FetchedResults<Homework>
     
-    @State private var maxLines: Int = 1
+    init(sortMethod: homeworkPlaner.SortMethod) {
+        let sortDescriptor: NSSortDescriptor
+        switch sortMethod {
+        case .byName:
+            sortDescriptor = NSSortDescriptor(keyPath: \Homework.subject, ascending: true)
+        case .byDateAdded:
+            sortDescriptor = NSSortDescriptor(keyPath: \Homework.dueDate, ascending: true)
+        }
+        _items = .init(
+            entity: Homework.entity(),
+            sortDescriptors: [sortDescriptor],
+            predicate: nil,
+            animation: .default
+        )
+    }
+    
+    var body: some View {
+        List {
+            ForEach(items) { hw in
+                NavigationLink(destination: EditHomework(homeworkData: hw)) {
+                    HStack {
+                        VStack(alignment: .leading) {
+                            Text("\(hw.title)")
+                                .font(.title3)
+                                .fontWeight(.bold)
+                            Text("\(hw.subject)")
+                            Text("\(hw.dueDate, formatter: Self.taskDateFormat)")
+                            if hw.comment != "" {
+                                Text("\(hw.comment)")
+                            }
+                        }
+                    }.padding(10)
+                }
+            }
+            .onDelete { indexSet in
+                for index in indexSet {
+                    viewContext.delete(items[index])
+                }
+                do {
+                    try viewContext.save()
+                } catch {
+                    print(error.localizedDescription)
+                }
+            }
+        }
+        .listStyle(InsetGroupedListStyle())
+    }
+}
+
+struct homeworkPlaner: View {
+    enum SortMethod: String, CaseIterable, Identifiable {
+        var id: Self { self }
+        
+        case byName = "Name"
+        case byDateAdded = "Date Added"
+    }
+    @State private var currentSortMethod = SortMethod.byName
+    
+    @State private var newHW: Bool = false
     
     var body: some View {
         NavigationView {
-            List {
-                ForEach(homework) { hw in
-                    NavigationLink(destination: EditHomework(homeworkData: hw)) {
-                        HStack {
-                            VStack(alignment: .leading) {
-                                Text("\(hw.title)")
-                                    .font(.title3)
-                                    .fontWeight(.bold)
-                                Text("\(hw.subject)")
-                                Text("\(hw.dueDate, formatter: Self.taskDateFormat)")
-                                if hw.comment != "" {
-                                    Text("\(hw.comment)")
-                                }
-                            }
-                        }.padding(10)
-                    }
-                }
-                .onDelete { indexSet in
-                    for index in indexSet {
-                        viewContext.delete(homework[index])
-                    }
-                    do {
-                        try viewContext.save()
-                    } catch {
-                        print(error.localizedDescription)
-                    }
-                }
-            }
-            .navigationTitle("Homework Planer")
-            .listStyle(InsetGroupedListStyle())
-            .navigationBarItems(
-                leading:
-                    EditButton(),
-                trailing:
+            ItemListView(sortMethod: currentSortMethod)
+                .navigationTitle("Homework")
+                .navigationBarItems(trailing:
                     HStack {
                         Menu {
                             Section {
-                                Button(action: {  }) {
+                                Button(action: { currentSortMethod = .byDateAdded }) {
                                     Label("Date", systemImage: "calendar")
                                 }
-                                Button(action: {  }) {
+                                Button(action: { currentSortMethod = .byName }) {
                                     Label("Subject", systemImage: "textformat")
                                 }
                             }
@@ -86,8 +105,9 @@ struct homeworkPlaner: View {
                                 .imageScale(.large)
                         }
                     }
-            )
-        }.sheet(isPresented: $newHW) {
+                )
+        }
+        .sheet(isPresented: $newHW) {
             newHomework()
         }
     }
