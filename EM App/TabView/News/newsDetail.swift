@@ -87,6 +87,7 @@ struct newsDetail: View {
                             .edgesIgnoringSafeArea(.all)
                             .onAppear {
                                 player.playImmediately(atRate: 1.0)
+                                //player.externalPlaybackVideoGravity = AVLayerVideoGravity.resize
                             }
                     }
                 }

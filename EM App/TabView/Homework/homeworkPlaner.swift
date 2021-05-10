@@ -79,32 +79,35 @@ struct homeworkPlaner: View {
                 leading:
                     EditButton(),
                 trailing:
-                Button(action: { newHW.toggle() }) {
-                    Image(systemName: "plus.circle")
-                        .imageScale(.large)
-                }
+                    HStack {
+                        Menu {
+                            Section {
+                                Button(action: {  }) {
+                                    Label("Date", systemImage: "calendar")
+                                }
+                                Button(action: {  }) {
+                                    Label("Subject", systemImage: "textformat")
+                                }
+                            }
+                        }
+                        label: {
+                            //Label("Filters", systemImage: "slider.horizontal.3")
+                                //.font(.title3)
+                            Image(systemName: "slider.horizontal.3")
+                                .imageScale(.large)
+                        }.padding(.trailing, 5)
+                        
+                        Button(action: { newHW.toggle() }) {
+                            Image(systemName: "plus.circle")
+                                .imageScale(.large)
+                        }
+                    }
             )
         }.sheet(isPresented: $newHW) {
             newHomework()
         }
     }
 }
-
-/*struct updateHomework: View {
-    var homework: Homework
-    //@State var newTitle = homework.title == "2"
-    //@State var newDueDate = homework.dueDate
-    //@State var newComment = homework.comment
-    //@State var newSubject = homework.subject
-    
-    var body: some View {
-        //@State var newTitle = homework.title
-        @State var newTitle = "New Title"
-        
-        TextField("", text: $newTitle)
-        Text("test text")
-    }
-}*/
 
 struct homeworkPlaner_Previews: PreviewProvider {
     static var previews: some View {

@@ -39,15 +39,13 @@ struct news: View {
                 }
                 .listStyle(InsetListStyle())}
             .navigationTitle("\(schoolNews) News")
-            .toolbar(content: {
-                ToolbarItem(placement: .primaryAction) {
+                .navigationBarItems(trailing:
                     Menu {
                         Section {
                             Button(action: { schoolNews = "" }) {
                                 Label("All", systemImage: "rectangle.stack")
                             }
                         }
-                        
                         Section {
                             Button(action: { schoolNews = "HLG" }) {
                                 Label("HLG", systemImage: "house")
@@ -58,11 +56,12 @@ struct news: View {
                         }
                     }
                     label: {
-                        Label("Filters", systemImage: "slider.horizontal.3")
-                            .font(.title3)
+                        //Label("Filters", systemImage: "slider.horizontal.3")
+                            //.font(.title3)
+                        Image(systemName: "slider.horizontal.3")
+                            .imageScale(.large)
                     }
-                }
-            })
+                )
         }
     }
 }
