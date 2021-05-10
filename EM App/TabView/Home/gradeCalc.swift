@@ -62,29 +62,31 @@ struct gradeCalc: View {
             
             Section {
                 ForEach(subject) { item in
-                    HStack {
-                        Text("\(item.title)")
-                            .font(.title3)
-                            //.fontWeight(.bold)
-                        Spacer()
-                        Text("\(item.s1)")
-                            .frame(width: 25, height: nil, alignment: .center)
-                        Text("\(item.s2)")
-                            .frame(width: 25, height: nil, alignment: .center)
-                        Text("\(item.s3)")
-                            .frame(width: 25, height: nil, alignment: .center)
-                        Text("\(item.s4)")
-                            .frame(width: 25, height: nil, alignment: .center)
-                        if item.abiCheck {
-                            Text("\(item.abitur)")
+                    NavigationLink(destination: EditGrade(gradeData: item)) {
+                        HStack {
+                            Text("\(item.title)")
+                                .font(.title3)
+                                //.fontWeight(.bold)
+                            Spacer()
+                            Text("\(item.s1)")
                                 .frame(width: 25, height: nil, alignment: .center)
-                        } else {
-                            Text("-")
+                            Text("\(item.s2)")
                                 .frame(width: 25, height: nil, alignment: .center)
+                            Text("\(item.s3)")
+                                .frame(width: 25, height: nil, alignment: .center)
+                            Text("\(item.s4)")
+                                .frame(width: 25, height: nil, alignment: .center)
+                            if item.abiCheck {
+                                Text("\(item.abitur)")
+                                    .frame(width: 25, height: nil, alignment: .center)
+                            } else {
+                                Text("-")
+                                    .frame(width: 25, height: nil, alignment: .center)
+                            }
+                            Ellipse()
+                                .frame(width: 10, height: 10, alignment: .center)
+                                .foregroundColor(item.eA ? .green : .red)
                         }
-                        Ellipse()
-                            .frame(width: 10, height: 10, alignment: .center)
-                            .foregroundColor(item.eA ? .green : .red)
                     }
                 }
                 .onDelete { indexSet in

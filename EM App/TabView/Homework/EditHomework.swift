@@ -20,7 +20,7 @@ struct EditHomework: View {
     @State private var comment: String = ""
     
     var body: some View {
-        NavigationView {
+        //NavigationView {
             List {
                 Section(header: Text("General Information")) {
                     TextField("Title", text: $title)
@@ -51,7 +51,7 @@ struct EditHomework: View {
                 }
             }.navigationTitle("Edit Homework")
             .listStyle(InsetGroupedListStyle())
-        }
+        //}
         .onAppear {
             self.title = homeworkData.title
             self.due = homeworkData.dueDate
