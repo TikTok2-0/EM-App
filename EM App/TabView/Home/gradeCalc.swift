@@ -7,12 +7,21 @@
 
 import SwiftUI
 
+enum ActiveSheet: Identifiable {
+    case addGrade
+    case info
+    
+    var id: Int {
+        hashValue
+    }
+}
+
 struct gradeCalc: View {
     @Environment(\.managedObjectContext) private var viewContext
     @FetchRequest(entity: Subject.entity(), sortDescriptors: [])
     var subject: FetchedResults<Subject>
-    @State private var addSubject: Bool = false
-    @State private var info: Bool = false
+    
+    @State var activeSheet: ActiveSheet?
     
     @ObservedObject var userSettings = UserSettings()
     
@@ -104,38 +113,32 @@ struct gradeCalc: View {
         .navigationTitle("Abi Calc")
         .listStyle(InsetGroupedListStyle())
         .navigationBarItems(
-            //leading:
-                //EditButton(),
             trailing:
                 HStack {
                     Button(action: {
-                        info.toggle()
+                        activeSheet = .info
                     }, label: {
                         Image(systemName: "info.circle")
                             .imageScale(.large)
                     }).padding(.trailing, 5)
-                    .sheet(isPresented: $info) {
-                        gradeInfo()
-                    }
+                    
                     Button(action: {
-                        addSubject.toggle()
+                        activeSheet = .addGrade
                     }, label: {
                         Image(systemName: "plus.circle")
                             .imageScale(.large)
                     })
-                    .sheet(isPresented: $addSubject) {
-                        newGrade()
-                    }
+                    
                 }
         )
-        /*.sheet(isPresented: $addSubject) {
-            if addSubject {
+        .sheet(item: $activeSheet) { item in
+            switch item {
+            case .addGrade:
                 newGrade()
-            }
-            if info {
+            case .info:
                 gradeInfo()
             }
-        }*/
+        }
     }
 }
 
