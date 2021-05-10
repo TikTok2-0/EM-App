@@ -17,6 +17,10 @@ struct newHomework: View {
     @State private var due = Date()
     @State private var comment: String = ""
     
+    @State private var week: Bool = false
+    @State private var day: Bool = false
+    @State private var hours: Bool = false
+    
     var body: some View {
         NavigationView {
             List {
@@ -32,6 +36,17 @@ struct newHomework: View {
                 Section(header: Text("Comment")) {
                     TextEditor(text: $comment)
                 }
+                Section(header: Text("Notifications")) {
+                    Toggle(isOn: $week) {
+                        Text("1 week before")
+                    }
+                    Toggle(isOn: $day) {
+                        Text("1 day before")
+                    }
+                    Toggle(isOn: $hours) {
+                        Text("2 hours before")
+                    }
+                }
                 Section {
                     Button(action: {
                         let newHW = Homework(context: viewContext)
@@ -46,6 +61,33 @@ struct newHomework: View {
                         } catch {
                             print(error.localizedDescription)
                         }
+                        
+                        let manager = LocalNotificationManager()
+                        if self.week {
+                            let messageDate = self.due.addingTimeInterval(-604800)
+                            //let messageDate = self.due.addingTimeInterval(-60)
+                            let dateComponents = Calendar.current.dateComponents([.hour, .minute], from: messageDate)
+                            manager.notifications = [
+                                Notification(id: "reminder-\(self.title)-\(self.due)", title: "Homework Reminder", datetime: dateComponents, body: "\(self.title) in \(self.subject) due next week")
+                            ]
+                        }
+                        if self.day {
+                            let messageDate = self.due.addingTimeInterval(-86400)
+                            //let messageDate = self.due.addingTimeInterval(-60)
+                            let dateComponents = Calendar.current.dateComponents([.hour, .minute], from: messageDate)
+                            manager.notifications = [
+                                Notification(id: "reminder-\(self.title)-\(self.due)", title: "Homework Reminder", datetime: dateComponents, body: "\(self.title) in \(self.subject) due tomorrow")
+                            ]
+                        }
+                        if self.hours {
+                            let messageDate = self.due.addingTimeInterval(-7200)
+                            //let messageDate = self.due.addingTimeInterval(-60)
+                            let dateComponents = Calendar.current.dateComponents([.hour, .minute], from: messageDate)
+                            manager.notifications = [
+                                Notification(id: "reminder-\(self.title)-\(self.due)", title: "Homework Reminder", datetime: dateComponents, body: "\(self.title) in \(self.subject) due in 2 hours")
+                            ]
+                        }
+                        manager.schedule()
                     }) {
                         Text("Add Homework")
                     }

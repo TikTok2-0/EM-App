@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import UserNotifications
 
 struct ItemListView: View {
     static let taskDateFormat: DateFormatter = {
@@ -37,6 +38,12 @@ struct ItemListView: View {
     
     var body: some View {
         List {
+            Button(action: {
+                let manager = LocalNotificationManager()
+                manager.listScheduledNotifications()
+            }) {
+                Text("All notifications")
+            }
             ForEach(items) { hw in
                 NavigationLink(destination: EditHomework(homeworkData: hw)) {
                     HStack {
@@ -56,6 +63,8 @@ struct ItemListView: View {
             .onDelete { indexSet in
                 for index in indexSet {
                     viewContext.delete(items[index])
+                    UNUserNotificationCenter.current().removeDeliveredNotifications(withIdentifiers: ["reminder-\(items[index].title)-\(items[index].dueDate)"])
+                    UNUserNotificationCenter.current().removePendingNotificationRequests(withIdentifiers: ["reminder-\(items[index].title)-\(items[index].dueDate)"])
                 }
                 do {
                     try viewContext.save()

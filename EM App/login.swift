@@ -15,6 +15,8 @@ struct login: View {
     @State private var confirmPass: String = ""
     @State private var passConfirmed: Bool = false
     
+    @State var allowNotifications: Bool = false
+    
     @ObservedObject var userSettings = UserSettings()
     
     var body: some View {
@@ -37,9 +39,16 @@ struct login: View {
                             /*Toggle(isOn: $userSettings.isPrivate) {
                                 Text("Private Account")
                             }*/
+                            Button(action: {
+                                allowNotifications = true
+                                let manager = LocalNotificationManager()
+                                manager.requestAuthorization()
+                            }) {
+                                Label("Allow Notifications", systemImage: "exclamationmark.circle")
+                            }
                             Toggle(isOn: $userSettings.prefersNotifications) {
                                 Text("Notifications")
-                            }
+                            }.disabled(!allowNotifications)
                             /*Picker(selection: $userSettings.ringtone, label: Text("Ringtone")) {
                                 ForEach(userSettings.ringtones, id: \.self) { ringtone in
                                     Text(ringtone)
