@@ -25,8 +25,9 @@
 		F62C2C0225D2BEBC009F8459 /* hottestStory.swift in Sources */ = {isa = PBXBuildFile; fileRef = F62C2C0125D2BEBC009F8459 /* hottestStory.swift */; };
 		F62C2C0425D2D589009F8459 /* untisData.json in Resources */ = {isa = PBXBuildFile; fileRef = F62C2C0325D2D589009F8459 /* untisData.json */; };
 		F62C2C0625D2D67C009F8459 /* UntisData.swift in Sources */ = {isa = PBXBuildFile; fileRef = F62C2C0525D2D67C009F8459 /* UntisData.swift */; };
-		F62CE75F264C34C8009DB608 /* Logo_orangepink.jpg in Resources */ = {isa = PBXBuildFile; fileRef = F62CE75D264C34C8009DB608 /* Logo_orangepink.jpg */; };
-		F62CE760264C34C8009DB608 /* Logo_orangepink@2x.jpg in Resources */ = {isa = PBXBuildFile; fileRef = F62CE75E264C34C8009DB608 /* Logo_orangepink@2x.jpg */; };
+		F62CE75F264C34C8009DB608 /* Logo_orangepink@2x.jpg in Resources */ = {isa = PBXBuildFile; fileRef = F62CE75D264C34C8009DB608 /* Logo_orangepink@2x.jpg */; };
+		F62CE760264C34C8009DB608 /* Logo_orangepink@3x.jpg in Resources */ = {isa = PBXBuildFile; fileRef = F62CE75E264C34C8009DB608 /* Logo_orangepink@3x.jpg */; };
+		F62CE762264C4DB9009DB608 /* Logo_orangepink.png in Resources */ = {isa = PBXBuildFile; fileRef = F62CE761264C4DB9009DB608 /* Logo_orangepink.png */; };
 		F62F2BFE25D5931100D4A4DC /* roadmap.swift in Sources */ = {isa = PBXBuildFile; fileRef = F62F2BFD25D5931100D4A4DC /* roadmap.swift */; };
 		F636EDDF25B57CD800972C83 /* newsDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = F636EDDE25B57CD800972C83 /* newsDetail.swift */; };
 		F63DB2CF25CB47EF00BAB78C /* URLImage in Frameworks */ = {isa = PBXBuildFile; productRef = F63DB2CE25CB47EF00BAB78C /* URLImage */; };
@@ -98,8 +99,9 @@
 		F62C2C0125D2BEBC009F8459 /* hottestStory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = hottestStory.swift; sourceTree = "<group>"; };
 		F62C2C0325D2D589009F8459 /* untisData.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = untisData.json; sourceTree = "<group>"; };
 		F62C2C0525D2D67C009F8459 /* UntisData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UntisData.swift; sourceTree = "<group>"; };
-		F62CE75D264C34C8009DB608 /* Logo_orangepink.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Logo_orangepink.jpg; sourceTree = "<group>"; };
-		F62CE75E264C34C8009DB608 /* Logo_orangepink@2x.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Logo_orangepink@2x.jpg"; sourceTree = "<group>"; };
+		F62CE75D264C34C8009DB608 /* Logo_orangepink@2x.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Logo_orangepink@2x.jpg"; sourceTree = "<group>"; };
+		F62CE75E264C34C8009DB608 /* Logo_orangepink@3x.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Logo_orangepink@3x.jpg"; sourceTree = "<group>"; };
+		F62CE761264C4DB9009DB608 /* Logo_orangepink.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Logo_orangepink.png; sourceTree = "<group>"; };
 		F62F2BFD25D5931100D4A4DC /* roadmap.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = roadmap.swift; sourceTree = "<group>"; };
 		F636EDDE25B57CD800972C83 /* newsDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = newsDetail.swift; sourceTree = "<group>"; };
 		F64EA199264935E900DEE699 /* EditHomework.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditHomework.swift; sourceTree = "<group>"; };
@@ -158,7 +160,9 @@
 		F607122D25AE49D8005E4647 = {
 			isa = PBXGroup;
 			children = (
-				F6C3585B2649CBA1009E1880 /* Logo Lightmode */,
+				F62CE75D264C34C8009DB608 /* Logo_orangepink@2x.jpg */,
+				F62CE75E264C34C8009DB608 /* Logo_orangepink@3x.jpg */,
+				F62CE761264C4DB9009DB608 /* Logo_orangepink.png */,
 				F6811EC825FBB93400836767 /* Grade+CoreDataClass.swift */,
 				F6811EC925FBB93400836767 /* Grade+CoreDataProperties.swift */,
 				F6A7D6DA25F6553B00DFB5CB /* Homework+CoreDataClass.swift */,
@@ -293,15 +297,6 @@
 			path = Homework;
 			sourceTree = "<group>";
 		};
-		F6C3585B2649CBA1009E1880 /* Logo Lightmode */ = {
-			isa = PBXGroup;
-			children = (
-				F62CE75D264C34C8009DB608 /* Logo_orangepink.jpg */,
-				F62CE75E264C34C8009DB608 /* Logo_orangepink@2x.jpg */,
-			);
-			path = "Logo Lightmode";
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -411,10 +406,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F62CE75F264C34C8009DB608 /* Logo_orangepink.jpg in Resources */,
-				F62CE760264C34C8009DB608 /* Logo_orangepink@2x.jpg in Resources */,
+				F62CE75F264C34C8009DB608 /* Logo_orangepink@2x.jpg in Resources */,
+				F62CE760264C34C8009DB608 /* Logo_orangepink@3x.jpg in Resources */,
 				F607124125AE49D9005E4647 /* Preview Assets.xcassets in Resources */,
 				F62C2C0425D2D589009F8459 /* untisData.json in Resources */,
+				F62CE762264C4DB9009DB608 /* Logo_orangepink.png in Resources */,
 				F607123E25AE49D9005E4647 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -638,7 +634,7 @@
 				CODE_SIGN_ENTITLEMENTS = "EM App/EM App.entitlements";
 				CODE_SIGN_IDENTITY = "iPhone Distribution";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 59;
+				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"EM App/Preview Content\"";
 				DEVELOPMENT_TEAM = C5QRJG42M7;
 				ENABLE_PREVIEWS = YES;
@@ -648,7 +644,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 0.9;
+				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.EM-App.kaifu";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "HLG-KAIFU App";
@@ -665,7 +661,7 @@
 				CODE_SIGN_ENTITLEMENTS = "EM App/EM App.entitlements";
 				CODE_SIGN_IDENTITY = "iPhone Distribution";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 59;
+				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"EM App/Preview Content\"";
 				DEVELOPMENT_TEAM = C5QRJG42M7;
 				ENABLE_PREVIEWS = YES;
@@ -675,7 +671,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 0.9;
+				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.EM-App.kaifu";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "HLG-KAIFU App";
