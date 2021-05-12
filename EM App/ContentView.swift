@@ -8,7 +8,6 @@
 import SwiftUI
 import SafariServices
 import AVKit
-import UserNotifications
 
 struct ContentView: View {
     @Environment(\.managedObjectContext) private var viewContext

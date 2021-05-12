@@ -38,12 +38,12 @@ struct ItemListView: View {
     
     var body: some View {
         List {
-            Button(action: {
+            /*Button(action: {
                 let manager = LocalNotificationManager()
                 manager.listScheduledNotifications()
             }) {
                 Text("All notifications")
-            }
+            }*/
             ForEach(items) { hw in
                 NavigationLink(destination: EditHomework(homeworkData: hw)) {
                     HStack {
@@ -84,7 +84,7 @@ struct homeworkPlaner: View {
         case byName = "Name"
         case byDateAdded = "Date Added"
     }
-    @State private var currentSortMethod = SortMethod.byName
+    @State private var currentSortMethod = SortMethod.byDateAdded
     
     @State private var newHW: Bool = false
     

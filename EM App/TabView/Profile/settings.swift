@@ -10,6 +10,8 @@ import SwiftUI
 struct settings: View {
     @ObservedObject var userSettings = UserSettings()
     
+    @Environment(\.colorScheme) var colorScheme
+    
     var body: some View {
         NavigationView {
             Form {
@@ -116,7 +118,40 @@ struct settings: View {
                 }
                 
                 Section(header: Text("App Icon")) {
-                    Text("soon")
+                    Button(action: { UIApplication.shared.setAlternateIconName(nil) }) {
+                        HStack {
+                            if colorScheme == .dark {
+                                Text("Dark Logo")
+                                    .foregroundColor(.white)
+                            } else {
+                                Text("Dark Logo")
+                                    .foregroundColor(.black)
+                            }
+                            Spacer()
+                            Image("Logo_bluegreen")
+                                .resizable()
+                                .frame(width: 48, height: 48, alignment: .center)
+                                .cornerRadius(12.0)
+                        }
+                    }
+                    Button(action: {
+                        UIApplication.shared.setAlternateIconName("AppIcon-2")
+                    }) {
+                        HStack {
+                            if colorScheme == .dark {
+                                Text("Light Logo")
+                                    .foregroundColor(.white)
+                            } else {
+                                Text("Light Logo")
+                                    .foregroundColor(.black)
+                            }
+                            Spacer()
+                            Image("Logo_orangepink")
+                                .resizable()
+                                .frame(width: 48, height: 48, alignment: .center)
+                                .cornerRadius(12.0)
+                        }
+                    }
                 }
                 
                 Section(header: Text("DANGER ZONE")) {

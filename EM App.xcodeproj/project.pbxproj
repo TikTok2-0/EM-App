@@ -25,6 +25,8 @@
 		F62C2C0225D2BEBC009F8459 /* hottestStory.swift in Sources */ = {isa = PBXBuildFile; fileRef = F62C2C0125D2BEBC009F8459 /* hottestStory.swift */; };
 		F62C2C0425D2D589009F8459 /* untisData.json in Resources */ = {isa = PBXBuildFile; fileRef = F62C2C0325D2D589009F8459 /* untisData.json */; };
 		F62C2C0625D2D67C009F8459 /* UntisData.swift in Sources */ = {isa = PBXBuildFile; fileRef = F62C2C0525D2D67C009F8459 /* UntisData.swift */; };
+		F62CE75F264C34C8009DB608 /* Logo_orangepink.jpg in Resources */ = {isa = PBXBuildFile; fileRef = F62CE75D264C34C8009DB608 /* Logo_orangepink.jpg */; };
+		F62CE760264C34C8009DB608 /* Logo_orangepink@2x.jpg in Resources */ = {isa = PBXBuildFile; fileRef = F62CE75E264C34C8009DB608 /* Logo_orangepink@2x.jpg */; };
 		F62F2BFE25D5931100D4A4DC /* roadmap.swift in Sources */ = {isa = PBXBuildFile; fileRef = F62F2BFD25D5931100D4A4DC /* roadmap.swift */; };
 		F636EDDF25B57CD800972C83 /* newsDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = F636EDDE25B57CD800972C83 /* newsDetail.swift */; };
 		F63DB2CF25CB47EF00BAB78C /* URLImage in Frameworks */ = {isa = PBXBuildFile; productRef = F63DB2CE25CB47EF00BAB78C /* URLImage */; };
@@ -96,6 +98,8 @@
 		F62C2C0125D2BEBC009F8459 /* hottestStory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = hottestStory.swift; sourceTree = "<group>"; };
 		F62C2C0325D2D589009F8459 /* untisData.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = untisData.json; sourceTree = "<group>"; };
 		F62C2C0525D2D67C009F8459 /* UntisData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UntisData.swift; sourceTree = "<group>"; };
+		F62CE75D264C34C8009DB608 /* Logo_orangepink.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Logo_orangepink.jpg; sourceTree = "<group>"; };
+		F62CE75E264C34C8009DB608 /* Logo_orangepink@2x.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Logo_orangepink@2x.jpg"; sourceTree = "<group>"; };
 		F62F2BFD25D5931100D4A4DC /* roadmap.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = roadmap.swift; sourceTree = "<group>"; };
 		F636EDDE25B57CD800972C83 /* newsDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = newsDetail.swift; sourceTree = "<group>"; };
 		F64EA199264935E900DEE699 /* EditHomework.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditHomework.swift; sourceTree = "<group>"; };
@@ -121,6 +125,7 @@
 		F6DF1AF325B24835000B1CC8 /* NewsData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsData.swift; sourceTree = "<group>"; };
 		F6DF1AF825B248D9000B1CC8 /* ModelData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelData.swift; sourceTree = "<group>"; };
 		F6EE59FB261E50EA00BEA758 /* MailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MailView.swift; sourceTree = "<group>"; };
+		F6FD89E8264B1FDB00888C25 /* EM App.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "EM App.entitlements"; sourceTree = "<group>"; };
 		F6FF07CC25D2D95400D40DD0 /* untisRowPreview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = untisRowPreview.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -153,6 +158,7 @@
 		F607122D25AE49D8005E4647 = {
 			isa = PBXGroup;
 			children = (
+				F6C3585B2649CBA1009E1880 /* Logo Lightmode */,
 				F6811EC825FBB93400836767 /* Grade+CoreDataClass.swift */,
 				F6811EC925FBB93400836767 /* Grade+CoreDataProperties.swift */,
 				F6A7D6DA25F6553B00DFB5CB /* Homework+CoreDataClass.swift */,
@@ -179,6 +185,7 @@
 		F607123825AE49D8005E4647 /* EM App */ = {
 			isa = PBXGroup;
 			children = (
+				F6FD89E8264B1FDB00888C25 /* EM App.entitlements */,
 				F607123925AE49D8005E4647 /* EM_AppApp.swift */,
 				F607123B25AE49D8005E4647 /* ContentView.swift */,
 				F687047225B6F197006B37B6 /* login.swift */,
@@ -284,6 +291,15 @@
 				F64EA19B2649360D00DEE699 /* HomeworkData.swift */,
 			);
 			path = Homework;
+			sourceTree = "<group>";
+		};
+		F6C3585B2649CBA1009E1880 /* Logo Lightmode */ = {
+			isa = PBXGroup;
+			children = (
+				F62CE75D264C34C8009DB608 /* Logo_orangepink.jpg */,
+				F62CE75E264C34C8009DB608 /* Logo_orangepink@2x.jpg */,
+			);
+			path = "Logo Lightmode";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -395,6 +411,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F62CE75F264C34C8009DB608 /* Logo_orangepink.jpg in Resources */,
+				F62CE760264C34C8009DB608 /* Logo_orangepink@2x.jpg in Resources */,
 				F607124125AE49D9005E4647 /* Preview Assets.xcassets in Resources */,
 				F62C2C0425D2D589009F8459 /* untisData.json in Resources */,
 				F607123E25AE49D9005E4647 /* Assets.xcassets in Resources */,
@@ -617,10 +635,12 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_ENTITLEMENTS = "EM App/EM App.entitlements";
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
+				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 59;
 				DEVELOPMENT_ASSET_PATHS = "\"EM App/Preview Content\"";
-				DEVELOPMENT_TEAM = 2Q47C6R257;
+				DEVELOPMENT_TEAM = C5QRJG42M7;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = "EM App/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 14.3;
@@ -629,10 +649,11 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 0.9;
-				PRODUCT_BUNDLE_IDENTIFIER = "henrykrieger.EM-App";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.EM-App.kaifu";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "HLG-KAIFU App";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -641,10 +662,12 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_ENTITLEMENTS = "EM App/EM App.entitlements";
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
+				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 59;
 				DEVELOPMENT_ASSET_PATHS = "\"EM App/Preview Content\"";
-				DEVELOPMENT_TEAM = 2Q47C6R257;
+				DEVELOPMENT_TEAM = C5QRJG42M7;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = "EM App/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 14.3;
@@ -653,10 +676,11 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 0.9;
-				PRODUCT_BUNDLE_IDENTIFIER = "henrykrieger.EM-App";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.EM-App.kaifu";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "HLG-KAIFU App";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

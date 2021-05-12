@@ -1,109 +1,109 @@
 {
   "images" : [
     {
-      "filename" : "Logo 10%iPhoNot@2x.jpg",
+      "filename" : "Logo_orangePurp 10%@1x-3.png",
       "idiom" : "iphone",
       "scale" : "2x",
       "size" : "20x20"
     },
     {
-      "filename" : "Logo 10%iPhoNot@3x.jpg",
+      "filename" : "Logo_orangePurp 10%@3x.png",
       "idiom" : "iphone",
       "scale" : "3x",
       "size" : "20x20"
     },
     {
-      "filename" : "Logo 10%iPhoSet@2x.jpg",
+      "filename" : "Logo_greenBlue@2x-2.png",
       "idiom" : "iphone",
       "scale" : "2x",
       "size" : "29x29"
     },
     {
-      "filename" : "Logo 10%iPhoSet@3x.jpg",
+      "filename" : "Logo_greenBlue@3x-1.png",
       "idiom" : "iphone",
       "scale" : "3x",
       "size" : "29x29"
     },
     {
-      "filename" : "Logo 10%iPhoSpot@2x.jpg",
+      "filename" : "Logo_orangePurp 10%@2x-3.png",
       "idiom" : "iphone",
       "scale" : "2x",
       "size" : "40x40"
     },
     {
-      "filename" : "Logo 10%iPhoSpot@3x.jpg",
+      "filename" : "Logo_orangepink@2x-1.png",
       "idiom" : "iphone",
       "scale" : "3x",
       "size" : "40x40"
     },
     {
-      "filename" : "Logo 10%iPhoApp@2x.jpg",
+      "filename" : "Logo_orangepink@2x.png",
       "idiom" : "iphone",
       "scale" : "2x",
       "size" : "60x60"
     },
     {
-      "filename" : "Logo 10%iPhoApp@3x.jpg",
+      "filename" : "Logo_orangepink@3x.png",
       "idiom" : "iphone",
       "scale" : "3x",
       "size" : "60x60"
     },
     {
-      "filename" : "Logo 10%iPadNotifs@1x.jpg",
+      "filename" : "Logo_orangePurp 10%@1x-4.png",
       "idiom" : "ipad",
       "scale" : "1x",
       "size" : "20x20"
     },
     {
-      "filename" : "Logo 10%iPadNotifs@2x.jpg",
+      "filename" : "Logo_orangePurp 10%@1x-2.png",
       "idiom" : "ipad",
       "scale" : "2x",
       "size" : "20x20"
     },
     {
-      "filename" : "Logo 10%iPadSet@1x.jpg",
+      "filename" : "Logo_orangePurp 10%@1x-1.png",
       "idiom" : "ipad",
       "scale" : "1x",
       "size" : "29x29"
     },
     {
-      "filename" : "Logo 10%iPadSet@2x.jpg",
+      "filename" : "Logo_orangePurp 10%@2x-1.png",
       "idiom" : "ipad",
       "scale" : "2x",
       "size" : "29x29"
     },
     {
-      "filename" : "Logo 10%iPadSpot@1x.jpg",
+      "filename" : "Logo_orangePurp 10%@2x.png",
       "idiom" : "ipad",
       "scale" : "1x",
       "size" : "40x40"
     },
     {
-      "filename" : "Logo 10%iPadSpot@2x.jpg",
+      "filename" : "Logo_orangePurp 10%@2x-2.png",
       "idiom" : "ipad",
       "scale" : "2x",
       "size" : "40x40"
     },
     {
-      "filename" : "Logo_greenBlueiPadApp@1x.jpg",
+      "filename" : "Logo_orangePurp 10%@1x.png",
       "idiom" : "ipad",
       "scale" : "1x",
       "size" : "76x76"
     },
     {
-      "filename" : "Logo_greenBlueiPadApp@2x.jpg",
+      "filename" : "Logo_orangePurp 10%@2x-4.png",
       "idiom" : "ipad",
       "scale" : "2x",
       "size" : "76x76"
     },
     {
-      "filename" : "Logo_greenBluepro129@2x.jpg",
+      "filename" : "Logo_orangePurp@2x.png",
       "idiom" : "ipad",
       "scale" : "2x",
       "size" : "83.5x83.5"
     },
     {
-      "filename" : "Logo_greenBlueAppStore.jpg",
+      "filename" : "Logo_orangePurp@1x-1.png",
       "idiom" : "ios-marketing",
       "scale" : "1x",
       "size" : "1024x1024"
@@ -154,6 +154,7 @@
       "size" : "512x512"
     },
     {
+      "filename" : "Logo_orangePurp@1x.png",
       "idiom" : "mac",
       "scale" : "2x",
       "size" : "512x512"
