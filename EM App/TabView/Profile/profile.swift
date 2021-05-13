@@ -45,7 +45,7 @@ struct profile: View {
                         Text("\(userSettings.school)")
                     }
                     HStack {
-                        Text("Klasse")
+                        Text("Class")
                         Spacer()
                         Text("\(userSettings.userClass)")
                     }
