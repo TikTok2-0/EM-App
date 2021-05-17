@@ -85,7 +85,7 @@ struct home: View {
                 }
                 
                 VStack {
-                    Text("Coming in July 2021")
+                    //Text("Coming in July 2021")
                     ForEach(ModelData().untisData, id: \.self) { item in
                         if colorScheme == .light {
                             untisRowPreview(untisData: item)

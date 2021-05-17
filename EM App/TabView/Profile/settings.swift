@@ -29,6 +29,7 @@ struct settings: View {
                     TextField("E-Mail", text: $userSettings.email)
                         .autocapitalization(.none)
                         .keyboardType(.emailAddress)
+                        .disableAutocorrection(true)
                     /*Toggle(isOn: $userSettings.isPrivate) {
                         Text("Private Account")
                     }*/

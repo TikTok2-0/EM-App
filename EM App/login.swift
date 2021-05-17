@@ -37,9 +37,11 @@ struct login: View {
                             TextField("Last Name", text: $userSettings.lastName)
                             TextField("Username", text: $userSettings.username)
                                 .autocapitalization(.none)
+                                .disableAutocorrection(true)
                             TextField("E-Mail", text: $userSettings.email)
                                 .autocapitalization(.none)
                                 .keyboardType(.emailAddress)
+                                .disableAutocorrection(true)
                             /*Toggle(isOn: $userSettings.isPrivate) {
                                 Text("Private Account")
                             }*/
