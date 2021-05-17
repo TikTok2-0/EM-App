@@ -634,12 +634,12 @@
 				CODE_SIGN_ENTITLEMENTS = "EM App/EM App.entitlements";
 				CODE_SIGN_IDENTITY = "iPhone Distribution";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_ASSET_PATHS = "\"EM App/Preview Content\"";
 				DEVELOPMENT_TEAM = C5QRJG42M7;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = "EM App/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 14.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -661,12 +661,12 @@
 				CODE_SIGN_ENTITLEMENTS = "EM App/EM App.entitlements";
 				CODE_SIGN_IDENTITY = "iPhone Distribution";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_ASSET_PATHS = "\"EM App/Preview Content\"";
 				DEVELOPMENT_TEAM = C5QRJG42M7;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = "EM App/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 14.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

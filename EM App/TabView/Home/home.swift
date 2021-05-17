@@ -85,6 +85,7 @@ struct home: View {
                 }
                 
                 VStack {
+                    Text("Coming in July 2021")
                     ForEach(ModelData().untisData, id: \.self) { item in
                         if colorScheme == .light {
                             untisRowPreview(untisData: item)
@@ -170,40 +171,7 @@ struct home: View {
                 }.padding(.horizontal, 20)*/
                 .padding(.bottom, 20)
             }
-            .navigationTitle("Hello \(userSettings.firstName)")
-            //.padding()
-            /*.toolbar(content: {
-                ToolbarItem(placement: .primaryAction) {
-                    Menu {
-                        Section {
-                            Button(action: { showPage.toggle() }) {
-                                Label("Notifications", systemImage: "bell")
-                            }.sheet(isPresented: $showPage, content: {
-                                Text("Notifications")
-                            })
-                        }
-                        /*Section {
-                            Button(action: { showUntis.toggle() }) {
-                                Label("Untis (soon)", systemImage: "")
-                            }
-                            
-                            Button(action: { showGradecalc.toggle() }) {
-                                Label("Grade Calc (soon)", systemImage: "formula")
-                            }
-                        }*/
-                        Section {
-                            Button(action: { userSettings.firstLogin.toggle() }) {
-                                Label("Logout", systemImage: "person.crop.circle.badge.xmark")
-                                    //.foregroundColor(.red)
-                            }
-                        }
-                    }
-                    label: {
-                        Label("Menu", systemImage: "line.horizontal.3")
-                            .font(.title3)
-                    }
-                }
-            })*/
+            .navigationTitle("Hello, \(userSettings.firstName)")
         }
     }
 }

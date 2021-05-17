@@ -51,7 +51,7 @@ struct news: View {
                                 Label("HLG", systemImage: "house")
                             }
                             Button(action: { schoolNews = "KFU" }) {
-                                Label("KaiFU", systemImage: "crown")
+                                Label("KFU", systemImage: "crown")
                             }
                         }
                     }

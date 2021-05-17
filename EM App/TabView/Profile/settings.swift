@@ -25,7 +25,10 @@ struct settings: View {
                     TextField("First Name", text: $userSettings.firstName)
                     TextField("Last Name", text: $userSettings.lastName)
                     TextField("Username", text: $userSettings.username)
+                        .autocapitalization(.none)
                     TextField("E-Mail", text: $userSettings.email)
+                        .autocapitalization(.none)
+                        .keyboardType(.emailAddress)
                     /*Toggle(isOn: $userSettings.isPrivate) {
                         Text("Private Account")
                     }*/

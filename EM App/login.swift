@@ -19,6 +19,10 @@ struct login: View {
     
     @ObservedObject var userSettings = UserSettings()
     
+    @State var required: Bool = (
+        UserSettings().school != "" && UserSettings().userClass != ""
+    )
+    
     var body: some View {
         VStack {
             if showLoginView {
@@ -34,8 +38,8 @@ struct login: View {
                             TextField("Username", text: $userSettings.username)
                                 .autocapitalization(.none)
                             TextField("E-Mail", text: $userSettings.email)
-                                .keyboardType(.emailAddress)
                                 .autocapitalization(.none)
+                                .keyboardType(.emailAddress)
                             /*Toggle(isOn: $userSettings.isPrivate) {
                                 Text("Private Account")
                             }*/
@@ -66,7 +70,7 @@ struct login: View {
                         }*/
                         
                         Section(header: Text("School")) {
-                            Picker(selection: $userSettings.school, label: Text("School")) {
+                            Picker(selection: $userSettings.school, label: Text("School *")) {
                                 ForEach(userSettings.schools, id: \.self) { school in
                                     Text(school)
                                 }
@@ -78,7 +82,7 @@ struct login: View {
                                 }
                             }
                             
-                            Picker(selection: $userSettings.userClass, label: Text("Class")) {
+                            Picker(selection: $userSettings.userClass, label: Text("Class *")) {
                                 ForEach(userSettings.classes, id: \.self) { userClass in
                                     Text(userClass)
                                 }
@@ -104,7 +108,9 @@ struct login: View {
                                 
                             }) {
                                 Text("Open Beta")
-                            }//.disabled(!acceptTerms)
+                            }.disabled(
+                                UserSettings().school == "" || UserSettings().userClass == ""
+                            )
                         }
                         
                         /*Section(header: Text("Start")) {
