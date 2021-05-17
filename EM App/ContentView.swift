@@ -197,7 +197,7 @@ class UserSettings: ObservableObject {
             UserDefaults.standard.set(userClass, forKey: "userClass")
         }
     }
-    public var classes = ["5a", "5b", "5c", "5d", "5e", "6a", "6b", "6c", "6d", "6e", "7", "8", "9", "10", "11", "12"]
+    public var classes = ["5a", "5b", "5c", "5d", "5e", "6a", "6b", "6c", "6d", "6e", "7a", "7b", "7c", "7d", "7e", "8a", "8b", "8c", "8d", "8e", "9a", "9b", "9c", "9d", "10a", "10b", "10d", "10d", "10e", "11", "12"]
     
     @Published var userType: String {
         didSet {
