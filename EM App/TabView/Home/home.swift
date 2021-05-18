@@ -85,7 +85,7 @@ struct home: View {
                 }
                 
                 VStack {
-                    //Text("Coming in July 2021")
+                    Text("Coming in July 2021")
                     ForEach(ModelData().untisData, id: \.self) { item in
                         if colorScheme == .light {
                             untisRowPreview(untisData: item)
@@ -171,7 +171,7 @@ struct home: View {
                 }.padding(.horizontal, 20)*/
                 .padding(.bottom, 20)
             }
-            .navigationTitle("Hello, \(userSettings.firstName)")
+            .navigationTitle("Hello, \(UserSettings()   .firstName)")
         }
     }
 }

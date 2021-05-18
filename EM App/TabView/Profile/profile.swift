@@ -27,27 +27,27 @@ struct profile: View {
                     HStack {
                         Text("Username")
                         Spacer()
-                        Text("\(userSettings.username)")
+                        Text("\(UserSettings().username)")
                     }
                     HStack {
                         Text("Name")
                         Spacer()
-                        Text("\(userSettings.firstName) \(userSettings.lastName)")
+                        Text("\(UserSettings().firstName) \(UserSettings().lastName)")
                     }
                     HStack {
                         Text("E-Mail")
                         Spacer()
-                        Text("\(userSettings.email)")
+                        Text("\(UserSettings().email)")
                     }
                     HStack {
                         Text("School")
                         Spacer()
-                        Text("\(userSettings.school)")
+                        Text("\(UserSettings().school)")
                     }
                     HStack {
                         Text("Class")
                         Spacer()
-                        Text("\(userSettings.userClass)")
+                        Text("\(UserSettings().userClass)")
                     }
                     /*HStack {
                         Text("Private Account")
@@ -61,7 +61,7 @@ struct profile: View {
                         Spacer()
                         Ellipse()
                             .frame(width: 25, height: 25, alignment: .center)
-                            .foregroundColor(userSettings.prefersNotifications ? .green : .red)
+                            .foregroundColor(UserSettings().prefersNotifications ? .green : .red)
                     }
                 }
                 
@@ -113,11 +113,11 @@ struct profile: View {
                         MailView(result: self.$result)
                     }
                     
-                    Button(action: { showSafari.toggle() }) {
+                    /*Button(action: { showSafari.toggle() }) {
                         Label("Insights", systemImage: "link").fullScreenCover(isPresented: $showSafari) {
                             SafariView(url: URL(string: "https://www.notion.so/EM-App-abfb7af218ea43b4baed5ece1f8144e3")!).ignoresSafeArea(edges: .all)
                         }
-                    }
+                    }*/
                 }
                 
                 Section {
