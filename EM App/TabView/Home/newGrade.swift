@@ -69,11 +69,11 @@ struct newGrade: View {
                                 print(error.localizedDescription)
                             }
                     }) {
-                        Text("Save Subject")
+                        Text("Add Subject")
                     }
                 }
             }
-            .navigationTitle("New Subject")
+            .navigationTitle("Add Subject")
             .listStyle(InsetGroupedListStyle())
         }
     }
