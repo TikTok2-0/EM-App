@@ -26,8 +26,27 @@ struct PersistenceController {
             
             let newGrade = Grade(context: viewContext)
             newGrade.title = "Deutsch"
-            newGrade.grade = 13
-            newGrade.year = 5
+            newGrade.grade = 5
+            
+            let newGradeSix = GradeSix(context: viewContext)
+            newGradeSix.title = "Deutsch"
+            newGradeSix.grade = 6
+            
+            let newGradeSeven = GradeSeven(context: viewContext)
+            newGradeSeven.title = "Deutsch"
+            newGradeSeven.grade = 7
+            
+            let newGradeEight = GradeEight(context: viewContext)
+            newGradeEight.title = "Deutsch"
+            newGradeEight.grade = 8
+            
+            let newGradeNine = GradeNine(context: viewContext)
+            newGradeNine.title = "Deutsch"
+            newGradeNine.grade = 9
+            
+            let newGradeTen = GradeTen(context: viewContext)
+            newGradeTen.title = "Deutsch"
+            newGradeTen.grade = 10
             
             let newHW = Homework(context: viewContext)
             newHW.title = "Text lesen"

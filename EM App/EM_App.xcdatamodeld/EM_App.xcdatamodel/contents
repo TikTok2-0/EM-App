@@ -1,9 +1,28 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="18147.2" systemVersion="20C69" minimumToolsVersion="Automatic" sourceLanguage="Swift" usedWithCloudKit="YES" userDefinedModelVersionIdentifier="">
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="18154" systemVersion="20C69" minimumToolsVersion="Automatic" sourceLanguage="Swift" usedWithCloudKit="YES" userDefinedModelVersionIdentifier="">
     <entity name="Grade" representedClassName="Grade" syncable="YES">
         <attribute name="grade" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="title" optional="YES" attributeType="String"/>
-        <attribute name="year" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+    </entity>
+    <entity name="GradeEight" representedClassName="GradeEight" syncable="YES">
+        <attribute name="grade" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="title" optional="YES" attributeType="String"/>
+    </entity>
+    <entity name="GradeNine" representedClassName="GradeNine" syncable="YES">
+        <attribute name="grade" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="title" optional="YES" attributeType="String"/>
+    </entity>
+    <entity name="GradeSeven" representedClassName="GradeSeven" syncable="YES">
+        <attribute name="grade" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="title" optional="YES" attributeType="String"/>
+    </entity>
+    <entity name="GradeSix" representedClassName="GradeSix" syncable="YES">
+        <attribute name="grade" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="title" optional="YES" attributeType="String"/>
+    </entity>
+    <entity name="GradeTen" representedClassName="GradeTen" syncable="YES">
+        <attribute name="grade" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="title" optional="YES" attributeType="String"/>
     </entity>
     <entity name="Homework" representedClassName="Homework" syncable="YES">
         <attribute name="comment" optional="YES" attributeType="String"/>
@@ -22,8 +41,13 @@
         <attribute name="title" optional="YES" attributeType="String"/>
     </entity>
     <elements>
+        <element name="Grade" positionX="-54" positionY="54" width="128" height="59"/>
         <element name="Homework" positionX="-54" positionY="54" width="128" height="89"/>
         <element name="Subject" positionX="-54" positionY="-9" width="128" height="149"/>
-        <element name="Grade" positionX="-54" positionY="54" width="128" height="74"/>
+        <element name="GradeSix" positionX="-54" positionY="54" width="128" height="59"/>
+        <element name="GradeSeven" positionX="-45" positionY="63" width="128" height="59"/>
+        <element name="GradeEight" positionX="-27" positionY="72" width="128" height="59"/>
+        <element name="GradeNine" positionX="-9" positionY="81" width="128" height="59"/>
+        <element name="GradeTen" positionX="9" positionY="90" width="128" height="59"/>
     </elements>
 </model>

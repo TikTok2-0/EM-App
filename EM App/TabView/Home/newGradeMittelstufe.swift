@@ -23,6 +23,16 @@ struct newGradeMittelstufe: View {
                     TextField("Title", text: $title)
                     //Stepper("\(year). Klasse", value: $year, in: 5...10)
                 }
+                Section(header: Text("Class")) {
+                    Picker("Class", selection: $year) {
+                        Text("5").tag(5)
+                        Text("6").tag(6)
+                        Text("7").tag(7)
+                        Text("8").tag(8)
+                        Text("9").tag(9)
+                        Text("10").tag(10)
+                    }.pickerStyle(WheelPickerStyle())
+                }
                 Section(header: Text("Grade")) {
                     Picker(selection: $selectedGrade, label: Text("Final Grade:")) {
                         ForEach(grade, id: \.self) { grade in
@@ -32,43 +42,31 @@ struct newGradeMittelstufe: View {
                 }
                 Section {
                     Button(action: {
-                        //guard self.comment != "" else {return}
+                        if self.year == 5 {
                             let newGrade = Grade(context: viewContext)
                             newGrade.title = self.title
-                            newGrade.year = Int64(self.year)
-                            if selectedGrade == "1+ / 15P" {
-                                newGrade.grade = 15
-                            } else if selectedGrade == "1 / 14P" {
-                                newGrade.grade = 14
-                            } else if selectedGrade == "1- / 13P" {
-                                newGrade.grade = 13
-                            } else if selectedGrade == "2+ / 12P" {
-                                newGrade.grade = 12
-                            } else if selectedGrade == "2 / 11P" {
-                                newGrade.grade = 11
-                            } else if selectedGrade == "2- / 10P" {
-                                newGrade.grade = 10
-                            } else if selectedGrade == "3+ / 9P" {
-                                newGrade.grade = 9
-                            } else if selectedGrade == "3 / 8P" {
-                                newGrade.grade = 8
-                            } else if selectedGrade == "3- / 7P" {
-                                newGrade.grade = 7
-                            } else if selectedGrade == "4+ / 6P" {
-                                newGrade.grade = 6
-                            } else if selectedGrade == "4 / 5P" {
-                                newGrade.grade = 5
-                            } else if selectedGrade == "4- / 4P" {
-                                newGrade.grade = 4
-                            } else if selectedGrade == "5+ / 3P" {
-                                newGrade.grade = 3
-                            } else if selectedGrade == "5 / 2P" {
-                                newGrade.grade = 2
-                            } else if selectedGrade == "5- / 1P" {
-                                newGrade.grade = 1
-                            } else if selectedGrade == "6 / 0P" {
-                                newGrade.grade = 0
-                            }
+                            newGrade.grade = Int64(gradeChange(input: self.selectedGrade))
+                        } else if self.year == 6 {
+                            let newGrade = GradeSix(context: viewContext)
+                            newGrade.title = self.title
+                            newGrade.grade = Int64(gradeChange(input: self.selectedGrade))
+                        } else if self.year == 7 {
+                            let newGrade = GradeSeven(context: viewContext)
+                            newGrade.title = self.title
+                            newGrade.grade = Int64(gradeChange(input: self.selectedGrade))
+                        } else if self.year == 8 {
+                            let newGrade = GradeEight(context: viewContext)
+                            newGrade.title = self.title
+                            newGrade.grade = Int64(gradeChange(input: self.selectedGrade))
+                        } else if self.year == 9 {
+                            let newGrade = GradeNine(context: viewContext)
+                            newGrade.title = self.title
+                            newGrade.grade = Int64(gradeChange(input: self.selectedGrade))
+                        } else if self.year == 10 {
+                            let newGrade = GradeTen(context: viewContext)
+                            newGrade.title = self.title
+                            newGrade.grade = Int64(gradeChange(input: self.selectedGrade))
+                        }
                         
                             do {
                                 try viewContext.save()
@@ -86,6 +84,44 @@ struct newGradeMittelstufe: View {
             .listStyle(InsetGroupedListStyle())
         }
     }
+}
+
+func gradeChange(input: String) -> Int {
+    var output: Int = 0
+    if input == "1+ / 15P" {
+        output = 15
+    } else if input == "1 / 14P" {
+        output = 14
+    } else if input == "1- / 13P" {
+        output = 13
+    } else if input == "2+ / 12P" {
+        output = 12
+    } else if input == "2 / 11P" {
+        output = 11
+    } else if input == "2- / 10P" {
+        output = 10
+    } else if input == "3+ / 9P" {
+        output = 9
+    } else if input == "3 / 8P" {
+        output = 8
+    } else if input == "3- / 7P" {
+        output = 7
+    } else if input == "4+ / 6P" {
+        output = 6
+    } else if input == "4 / 5P" {
+        output = 5
+    } else if input == "4- / 4P" {
+        output = 4
+    } else if input == "5+ / 3P" {
+        output = 3
+    } else if input == "5 / 2P" {
+        output = 2
+    } else if input == "5- / 1P" {
+        output = 1
+    } else if input == "6 / 0P" {
+        output = 0
+    }
+    return output
 }
 
 struct newGradeMittelstufe_Previews: PreviewProvider {
