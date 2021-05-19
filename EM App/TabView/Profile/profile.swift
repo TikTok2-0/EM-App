@@ -86,7 +86,7 @@ struct profile: View {
                         }
                     }
                     Button(action: { showSafari.toggle() }) {
-                        Label("KaiFU Website", systemImage: "crown").fullScreenCover(isPresented: $showSafari) {
+                        Label("KFU Website", systemImage: "crown").fullScreenCover(isPresented: $showSafari) {
                             SafariView(url: URL(string: "https://www.kaifu-gymnasium.de")!).ignoresSafeArea(edges: .all)
                         }
                     }
@@ -150,8 +150,15 @@ struct PrivacyPolicy: View {
     var body: some View {
         List {
             Button(action: { showSafari.toggle() }) {
-                Label("Privacy Policy", systemImage: "link").fullScreenCover(isPresented: $showSafari) {
-                    SafariView(url: URL(string: "https://www.privacypolicies.com/live/a3287839-794c-4c4a-b883-f18a6e586f6f")!).ignoresSafeArea(edges: .all)
+                Label("Privacy Policy (EN)", systemImage: "link").fullScreenCover(isPresented: $showSafari) {
+                    SafariView(url: URL(string: "https://www.notion.so/Privacy-Policy-42958243373341adbbe9cba0100a75f8")!).ignoresSafeArea(edges: .all)
+                    // Long Privacy Policy Version: https://www.privacypolicies.com/live/a3287839-794c-4c4a-b883-f18a6e586f6f
+                }
+            }
+            Button(action: { showSafari.toggle() }) {
+                Label("Privacy Policy (DE)", systemImage: "link").fullScreenCover(isPresented: $showSafari) {
+                    SafariView(url: URL(string: "https://www.notion.so/Datenschutz-Erkl-rung-ae1e1e020ef64e4fa672264ecbfb2271")!).ignoresSafeArea(edges: .all)
+                    // Long Privacy Policy Version: https://www.privacypolicies.com/live/a3287839-794c-4c4a-b883-f18a6e586f6f
                 }
             }
             

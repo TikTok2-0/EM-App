@@ -34,7 +34,7 @@ struct gradeInfo: View {
                         }
                     }
                 }
-            }.padding()
+            }
             .navigationTitle("Information")
             .listStyle(InsetGroupedListStyle())
         }

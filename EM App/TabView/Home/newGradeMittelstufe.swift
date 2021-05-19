@@ -12,7 +12,7 @@ struct newGradeMittelstufe: View {
     @Environment (\.presentationMode) var presentationMode
     
     @State var title = ""
-    @State var year: Int = 5
+    @State var year: Int
     @State var selectedGrade = ""
     @State var grade = ["1+ / 15P", "1 / 14P", "1- / 13P", "2+ / 12P", "2 / 11P", "2- / 10P", "3+ / 9P", "3 / 8P", "3- / 7P", "4+ / 6P", "4 / 5P", "4- / 4P", "5+ / 3P", "5 / 2P", "5- / 1P", "6 / 0P"]
     
@@ -31,7 +31,7 @@ struct newGradeMittelstufe: View {
                         Text("8").tag(8)
                         Text("9").tag(9)
                         Text("10").tag(10)
-                    }.pickerStyle(WheelPickerStyle())
+                    }.pickerStyle(SegmentedPickerStyle())
                 }
                 Section(header: Text("Grade")) {
                     Picker(selection: $selectedGrade, label: Text("Final Grade:")) {

@@ -99,180 +99,202 @@ struct gradeCalcMittelstufe: View {
         }
         return output
     }
+    @State var selectedYear: Int = 5
     
     var body: some View {
         List {
-            Section(header: Text("5th Class")) {
-                let average = Double( Double(sum5) / Double(gradeFive.count) )
-                let schnitt = Double( (17 - average) / 3 )
-                HStack {
-                    Text("5th Grade Average")
-                        .fontWeight(.bold)
-                    Spacer()
-                    Text("\(Double(round(100*schnitt)/100), specifier: "%.1f")")
-                        .fontWeight(.bold)
-                }
-                ForEach(gradeFive) { item in
+            Picker("Year", selection: $selectedYear) {
+                Text("5").tag(5)
+                Text("6").tag(6)
+                Text("7").tag(7)
+                Text("8").tag(8)
+                Text("9").tag(9)
+                Text("10").tag(10)
+            }.pickerStyle(SegmentedPickerStyle())
+            
+            if self.selectedYear == 5 {
+                Section(header: Text("5th Grade")) {
+                    let average = Double( Double(sum5) / Double(gradeFive.count) )
+                    let schnitt = Double( (17 - average) / 3 )
                     HStack {
-                        Text("\(item.title)")
+                        Text("Average")
+                            .fontWeight(.bold)
                         Spacer()
-                        let changedGrade = gradeChange(input: Int(item.grade))
-                        Text("\(changedGrade)")
+                        Text("\(Double(round(100*schnitt)/100), specifier: "%.1f")")
+                            .fontWeight(.bold)
                     }
-                }
-                .onDelete { indexSet in
-                    for index in indexSet {
-                        viewContext.delete(gradeFive[index])
+                    ForEach(gradeFive) { item in
+                        HStack {
+                            Text("\(item.title)")
+                            Spacer()
+                            let changedGrade = gradeChange(input: Int(item.grade))
+                            Text("\(changedGrade)")
+                        }
                     }
-                    do {
-                        try viewContext.save()
-                    } catch {
-                        print(error.localizedDescription)
+                    .onDelete { indexSet in
+                        for index in indexSet {
+                            viewContext.delete(gradeFive[index])
+                        }
+                        do {
+                            try viewContext.save()
+                        } catch {
+                            print(error.localizedDescription)
+                        }
                     }
                 }
             }
-            Section(header: Text("6th Class")) {
-                let average = Double( Double(sum6) / Double(gradeSix.count) )
-                let schnitt = Double( (17 - average) / 3 )
-                HStack {
-                    Text("6th Grade Average")
-                        .fontWeight(.bold)
-                    Spacer()
-                    Text("\(Double(round(100*schnitt)/100), specifier: "%.1f")")
-                        .fontWeight(.bold)
-                }
-                ForEach(gradeSix) { item in
+            else if self.selectedYear == 6 {
+                Section(header: Text("6th Grade")) {
+                    let average = Double( Double(sum6) / Double(gradeSix.count) )
+                    let schnitt = Double( (17 - average) / 3 )
                     HStack {
-                        Text("\(item.title)")
+                        Text("Average")
+                            .fontWeight(.bold)
                         Spacer()
-                        let changedGrade = gradeChange(input: Int(item.grade))
-                        Text("\(changedGrade)")
+                        Text("\(Double(round(100*schnitt)/100), specifier: "%.1f")")
+                            .fontWeight(.bold)
                     }
-                }
-                .onDelete { indexSet in
-                    for index in indexSet {
-                        viewContext.delete(gradeSix[index])
+                    ForEach(gradeSix) { item in
+                        HStack {
+                            Text("\(item.title)")
+                            Spacer()
+                            let changedGrade = gradeChange(input: Int(item.grade))
+                            Text("\(changedGrade)")
+                        }
                     }
-                    do {
-                        try viewContext.save()
-                    } catch {
-                        print(error.localizedDescription)
+                    .onDelete { indexSet in
+                        for index in indexSet {
+                            viewContext.delete(gradeSix[index])
+                        }
+                        do {
+                            try viewContext.save()
+                        } catch {
+                            print(error.localizedDescription)
+                        }
                     }
                 }
             }
-            Section(header: Text("7th Class")) {
-                let average = Double( Double(sum7) / Double(gradeSeven.count) )
-                let schnitt = Double( (17 - average) / 3 )
-                HStack {
-                    Text("7th Grade Average")
-                        .fontWeight(.bold)
-                    Spacer()
-                    Text("\(Double(round(100*schnitt)/100), specifier: "%.1f")")
-                        .fontWeight(.bold)
-                }
-                ForEach(gradeSeven) { item in
+            else if self.selectedYear == 7 {
+                Section(header: Text("7th Grade")) {
+                    let average = Double( Double(sum7) / Double(gradeSeven.count) )
+                    let schnitt = Double( (17 - average) / 3 )
                     HStack {
-                        Text("\(item.title)")
+                        Text("Average")
+                            .fontWeight(.bold)
                         Spacer()
-                        let changedGrade = gradeChange(input: Int(item.grade))
-                        Text("\(changedGrade)")
+                        Text("\(Double(round(100*schnitt)/100), specifier: "%.1f")")
+                            .fontWeight(.bold)
                     }
-                }
-                .onDelete { indexSet in
-                    for index in indexSet {
-                        viewContext.delete(gradeSeven[index])
+                    ForEach(gradeSeven) { item in
+                        HStack {
+                            Text("\(item.title)")
+                            Spacer()
+                            let changedGrade = gradeChange(input: Int(item.grade))
+                            Text("\(changedGrade)")
+                        }
                     }
-                    do {
-                        try viewContext.save()
-                    } catch {
-                        print(error.localizedDescription)
+                    .onDelete { indexSet in
+                        for index in indexSet {
+                            viewContext.delete(gradeSeven[index])
+                        }
+                        do {
+                            try viewContext.save()
+                        } catch {
+                            print(error.localizedDescription)
+                        }
                     }
                 }
             }
-            Section(header: Text("8th Class")) {
-                let average = Double( Double(sum8) / Double(gradeEight.count) )
-                let schnitt = Double( (17 - average) / 3 )
-                HStack {
-                    Text("8th Grade Average")
-                        .fontWeight(.bold)
-                    Spacer()
-                    Text("\(Double(round(100*schnitt)/100), specifier: "%.1f")")
-                        .fontWeight(.bold)
-                }
-                ForEach(gradeEight) { item in
+            else if self.selectedYear == 8 {
+                Section(header: Text("8th Grade")) {
+                    let average = Double( Double(sum8) / Double(gradeEight.count) )
+                    let schnitt = Double( (17 - average) / 3 )
                     HStack {
-                        Text("\(item.title)")
+                        Text("Average")
+                            .fontWeight(.bold)
                         Spacer()
-                        let changedGrade = gradeChange(input: Int(item.grade))
-                        Text("\(changedGrade)")
+                        Text("\(Double(round(100*schnitt)/100), specifier: "%.1f")")
+                            .fontWeight(.bold)
                     }
-                }
-                .onDelete { indexSet in
-                    for index in indexSet {
-                        viewContext.delete(gradeEight[index])
+                    ForEach(gradeEight) { item in
+                        HStack {
+                            Text("\(item.title)")
+                            Spacer()
+                            let changedGrade = gradeChange(input: Int(item.grade))
+                            Text("\(changedGrade)")
+                        }
                     }
-                    do {
-                        try viewContext.save()
-                    } catch {
-                        print(error.localizedDescription)
+                    .onDelete { indexSet in
+                        for index in indexSet {
+                            viewContext.delete(gradeEight[index])
+                        }
+                        do {
+                            try viewContext.save()
+                        } catch {
+                            print(error.localizedDescription)
+                        }
                     }
                 }
             }
-            Section(header: Text("9th Class")) {
-                let average = Double( Double(sum9) / Double(gradeNine.count) )
-                let schnitt = Double( (17 - average) / 3 )
-                HStack {
-                    Text("9th Grade Average")
-                        .fontWeight(.bold)
-                    Spacer()
-                    Text("\(Double(round(100*schnitt)/100), specifier: "%.1f")")
-                        .fontWeight(.bold)
-                }
-                ForEach(gradeNine) { item in
+            else if self.selectedYear == 9 {
+                Section(header: Text("9th Grade")) {
+                    let average = Double( Double(sum9) / Double(gradeNine.count) )
+                    let schnitt = Double( (17 - average) / 3 )
                     HStack {
-                        Text("\(item.title)")
+                        Text("Average")
+                            .fontWeight(.bold)
                         Spacer()
-                        let changedGrade = gradeChange(input: Int(item.grade))
-                        Text("\(changedGrade)")
+                        Text("\(Double(round(100*schnitt)/100), specifier: "%.1f")")
+                            .fontWeight(.bold)
                     }
-                }
-                .onDelete { indexSet in
-                    for index in indexSet {
-                        viewContext.delete(gradeNine[index])
+                    ForEach(gradeNine) { item in
+                        HStack {
+                            Text("\(item.title)")
+                            Spacer()
+                            let changedGrade = gradeChange(input: Int(item.grade))
+                            Text("\(changedGrade)")
+                        }
                     }
-                    do {
-                        try viewContext.save()
-                    } catch {
-                        print(error.localizedDescription)
+                    .onDelete { indexSet in
+                        for index in indexSet {
+                            viewContext.delete(gradeNine[index])
+                        }
+                        do {
+                            try viewContext.save()
+                        } catch {
+                            print(error.localizedDescription)
+                        }
                     }
                 }
             }
-            Section(header: Text("10th Class")) {
-                let average = Double( Double(sum10) / Double(gradeTen.count) )
-                let schnitt = Double( (17 - average) / 3 )
-                HStack {
-                    Text("10th Grade Average")
-                        .fontWeight(.bold)
-                    Spacer()
-                    Text("\(Double(round(100*schnitt)/100), specifier: "%.1f")")
-                        .fontWeight(.bold)
-                }
-                ForEach(gradeTen) { item in
+            else if self.selectedYear == 10 {
+                Section(header: Text("10th Grade")) {
+                    let average = Double( Double(sum10) / Double(gradeTen.count) )
+                    let schnitt = Double( (17 - average) / 3 )
                     HStack {
-                        Text("\(item.title)")
+                        Text("Average")
+                            .fontWeight(.bold)
                         Spacer()
-                        let changedGrade = gradeChange(input: Int(item.grade))
-                        Text("\(changedGrade)")
+                        Text("\(Double(round(100*schnitt)/100), specifier: "%.1f")")
+                            .fontWeight(.bold)
                     }
-                }
-                .onDelete { indexSet in
-                    for index in indexSet {
-                        viewContext.delete(gradeTen[index])
+                    ForEach(gradeTen) { item in
+                        HStack {
+                            Text("\(item.title)")
+                            Spacer()
+                            let changedGrade = gradeChange(input: Int(item.grade))
+                            Text("\(changedGrade)")
+                        }
                     }
-                    do {
-                        try viewContext.save()
-                    } catch {
-                        print(error.localizedDescription)
+                    .onDelete { indexSet in
+                        for index in indexSet {
+                            viewContext.delete(gradeTen[index])
+                        }
+                        do {
+                            try viewContext.save()
+                        } catch {
+                            print(error.localizedDescription)
+                        }
                     }
                 }
             }
@@ -288,7 +310,7 @@ struct gradeCalcMittelstufe: View {
             })
         )
         .sheet(isPresented: $addSubject) {
-            newGradeMittelstufe()
+            newGradeMittelstufe(year: selectedYear)
         }
     }
 }
