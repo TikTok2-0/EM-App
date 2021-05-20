@@ -27,6 +27,9 @@
     <entity name="Homework" representedClassName="Homework" syncable="YES">
         <attribute name="comment" optional="YES" attributeType="String"/>
         <attribute name="dueDate" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="notifyDay" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
+        <attribute name="notifyHour" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
+        <attribute name="notifyWeek" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
         <attribute name="subject" optional="YES" attributeType="String"/>
         <attribute name="title" optional="YES" attributeType="String"/>
     </entity>
@@ -42,12 +45,12 @@
     </entity>
     <elements>
         <element name="Grade" positionX="-54" positionY="54" width="128" height="59"/>
-        <element name="Homework" positionX="-54" positionY="54" width="128" height="89"/>
-        <element name="Subject" positionX="-54" positionY="-9" width="128" height="149"/>
-        <element name="GradeSix" positionX="-54" positionY="54" width="128" height="59"/>
-        <element name="GradeSeven" positionX="-45" positionY="63" width="128" height="59"/>
         <element name="GradeEight" positionX="-27" positionY="72" width="128" height="59"/>
         <element name="GradeNine" positionX="-9" positionY="81" width="128" height="59"/>
+        <element name="GradeSeven" positionX="-45" positionY="63" width="128" height="59"/>
+        <element name="GradeSix" positionX="-54" positionY="54" width="128" height="59"/>
         <element name="GradeTen" positionX="9" positionY="90" width="128" height="59"/>
+        <element name="Homework" positionX="-54" positionY="54" width="128" height="134"/>
+        <element name="Subject" positionX="-54" positionY="-9" width="128" height="149"/>
     </elements>
 </model>

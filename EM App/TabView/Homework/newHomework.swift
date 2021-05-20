@@ -37,13 +37,17 @@ struct newHomework: View {
                     TextEditor(text: $comment)
                 }
                 Section(header: Text("Notifications")) {
-                    Toggle(isOn: $week) {
+                    let weekOn = Binding<Bool>(get: { self.week }, set: { self.week = $0; self.day = false; self.hours = false })
+                    let dayOn = Binding<Bool>(get: { self.day }, set: { self.week = false; self.day = $0; self.hours = false })
+                    let hoursOn = Binding<Bool>(get: { self.hours }, set: { self.week = false; self.day = false; self.hours = $0 })
+                    
+                    Toggle(isOn: weekOn) {
                         Text("1 week before")
                     }
-                    Toggle(isOn: $day) {
+                    Toggle(isOn: dayOn) {
                         Text("1 day before")
                     }
-                    Toggle(isOn: $hours) {
+                    Toggle(isOn: hoursOn) {
                         Text("2 hours before")
                     }
                 }
@@ -54,6 +58,10 @@ struct newHomework: View {
                         newHW.subject = self.subject
                         newHW.dueDate = self.due
                         newHW.comment = self.comment
+                        
+                        newHW.notifyWeek = self.week
+                        newHW.notifyDay = self.day
+                        newHW.notifyHour = self.hours
                     
                         do {
                             try viewContext.save()
@@ -68,7 +76,7 @@ struct newHomework: View {
                             //let messageDate = self.due.addingTimeInterval(-60)
                             let dateComponents = Calendar.current.dateComponents([.hour, .minute], from: messageDate)
                             manager.notifications = [
-                                Notification(id: "reminder-\(self.title)-\(self.due)", title: "Homework Reminder", datetime: dateComponents, body: "\(self.title) in \(self.subject) due next week")
+                                Notification(id: "reminder-\(self.title)-1", title: "Homework Reminder", datetime: dateComponents, body: "\(self.title) in \(self.subject) due next week")
                             ]
                         }
                         if self.day {
@@ -76,7 +84,7 @@ struct newHomework: View {
                             //let messageDate = self.due.addingTimeInterval(-60)
                             let dateComponents = Calendar.current.dateComponents([.hour, .minute], from: messageDate)
                             manager.notifications = [
-                                Notification(id: "reminder-\(self.title)-\(self.due)", title: "Homework Reminder", datetime: dateComponents, body: "\(self.title) in \(self.subject) due tomorrow")
+                                Notification(id: "reminder-\(self.title)-2", title: "Homework Reminder", datetime: dateComponents, body: "\(self.title) in \(self.subject) due tomorrow")
                             ]
                         }
                         if self.hours {
@@ -84,7 +92,7 @@ struct newHomework: View {
                             //let messageDate = self.due.addingTimeInterval(-60)
                             let dateComponents = Calendar.current.dateComponents([.hour, .minute], from: messageDate)
                             manager.notifications = [
-                                Notification(id: "reminder-\(self.title)-\(self.due)", title: "Homework Reminder", datetime: dateComponents, body: "\(self.title) in \(self.subject) due in 2 hours")
+                                Notification(id: "reminder-\(self.title)-3", title: "Homework Reminder", datetime: dateComponents, body: "\(self.title) in \(self.subject) due in 2 hours")
                             ]
                         }
                         manager.schedule()

@@ -63,8 +63,12 @@ struct ItemListView: View {
             .onDelete { indexSet in
                 for index in indexSet {
                     viewContext.delete(items[index])
-                    UNUserNotificationCenter.current().removeDeliveredNotifications(withIdentifiers: ["reminder-\(items[index].title)-\(items[index].dueDate)"])
-                    UNUserNotificationCenter.current().removePendingNotificationRequests(withIdentifiers: ["reminder-\(items[index].title)-\(items[index].dueDate)"])
+                    UNUserNotificationCenter.current().removeDeliveredNotifications(withIdentifiers: ["reminder-\(items[index].title)-1"])
+                    UNUserNotificationCenter.current().removePendingNotificationRequests(withIdentifiers: ["reminder-\(items[index].title)-1"])
+                    UNUserNotificationCenter.current().removeDeliveredNotifications(withIdentifiers: ["reminder-\(items[index].title)-2"])
+                    UNUserNotificationCenter.current().removePendingNotificationRequests(withIdentifiers: ["reminder-\(items[index].title)-2"])
+                    UNUserNotificationCenter.current().removeDeliveredNotifications(withIdentifiers: ["reminder-\(items[index].title)-3"])
+                    UNUserNotificationCenter.current().removePendingNotificationRequests(withIdentifiers: ["reminder-\(items[index].title)-3"])
                 }
                 do {
                     try viewContext.save()
