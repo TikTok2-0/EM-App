@@ -25,7 +25,7 @@ struct ContentView: View {
                 tabView()
                     .accentColor(Color(UserSettings().accentColor))
             }
-        } else if UIDevice.current.userInterfaceIdiom == .pad {
+        } else if UIDevice.current.userInterfaceIdiom == .pad || UIDevice.current.userInterfaceIdiom == .mac {
             if userSettings.firstLogin {
                 loginPad()
                     .accentColor(Color(UserSettings().accentColor))

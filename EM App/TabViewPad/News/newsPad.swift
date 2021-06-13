@@ -25,12 +25,16 @@ struct newsPad: View {
             List {
                 ForEach(fetcher.articles, id: \.self) { newsData in
                     if newsData.school == schoolNews {
-                        newsRowPad(newsData: newsData)
-                            .shadow(color: Color("superiorGray"), radius: 3, x: 1, y: 3)
+                        NavigationLink(destination: newsDetail(newsData: newsData)) {
+                            newsRowPad(newsData: newsData)
+                                .shadow(color: Color("superiorGray"), radius: 3, x: 1, y: 3)
+                        }
                     }
                     else if schoolNews == "" {
-                        newsRowPad(newsData: newsData)
-                            .shadow(color: Color("superiorGray"), radius: 3, x: 1, y: 3)
+                        NavigationLink(destination: newsDetail(newsData: newsData)) {
+                            newsRowPad(newsData: newsData)
+                                .shadow(color: Color("superiorGray"), radius: 3, x: 1, y: 3)
+                        }
                     }
                 }
                 .listRowInsets(EdgeInsets())

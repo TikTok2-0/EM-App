@@ -21,9 +21,6 @@ struct newsRowPad: View {
     
     var body: some View {
         HStack {
-            NavigationLink(destination: newsDetail(newsData: newsData)) {
-            }.hidden()
-            
             RemoteImage(url: newsData.imageURL)
                 .frame(width: UIScreen.main.bounds.width/5, height: UIScreen.main.bounds.height/5, alignment: .leading)
                 .aspectRatio(CGSize(width: 16.0, height: 9.0), contentMode: .fit)
