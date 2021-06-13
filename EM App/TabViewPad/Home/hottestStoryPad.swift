@@ -1,13 +1,13 @@
 //
-//  hottestStory.swift
+//  hottestStoryPad.swift
 //  EM App
 //
-//  Created by Henry Krieger on 09.02.21.
+//  Created by Henry Krieger on 13.06.21.
 //
 
 import SwiftUI
 
-struct hottestStory: View {
+struct hottestStoryPad: View {
     @ObservedObject var fetcher = ArticlesFetcher()
     var newsData: NewsData
     
@@ -20,10 +20,11 @@ struct hottestStory: View {
     }
     
     var body: some View {
-        ZStack(alignment: .bottomLeading) {
+        HStack {
             RemoteImage(url: newsData.imageURL)
-            
-            Rectangle().fill(gradient)
+                .frame(width: nil, height: UIScreen.main.bounds.width/3, alignment: .leading)
+                .aspectRatio(CGSize(width: 16.0, height: 9.0), contentMode: .fit)
+                .cornerRadius(15)
             
             VStack(alignment: .leading) {
                 Text(newsData.title)
@@ -33,20 +34,18 @@ struct hottestStory: View {
                 Text(newsData.dates)
                     .font(.subheadline)
                     .lineLimit(1)
-            }
-            .padding()
+            }.padding(.horizontal, 20)
+            
+            Spacer()
         }
-        .foregroundColor(.white)
-        .cornerRadius(15)
-        //.aspectRatio(CGSize(width: 3.6, height: 2), contentMode: .fill)
     }
 }
 
-struct hottestStory_Previews: PreviewProvider {
+struct hottestStoryPad_Previews: PreviewProvider {
     static var newsData = ArticlesFetcher().articles
     
     static var previews: some View {
-        hottestStory(newsData: newsData[5])
+        hottestStoryPad(newsData: newsData[5])
             //.environmentObject(ModelData())
     }
 }

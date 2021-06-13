@@ -17,12 +17,22 @@ struct ContentView: View {
     @ObservedObject var userSettings = UserSettings()
         
     var body: some View {
-        if userSettings.firstLogin {
-            login()
-                .accentColor(Color(UserSettings().accentColor))
-        } else {
-            tabView()
-                .accentColor(Color(UserSettings().accentColor))
+        if UIDevice.current.userInterfaceIdiom == .phone {
+            if userSettings.firstLogin {
+                login()
+                    .accentColor(Color(UserSettings().accentColor))
+            } else {
+                tabView()
+                    .accentColor(Color(UserSettings().accentColor))
+            }
+        } else if UIDevice.current.userInterfaceIdiom == .pad {
+            if userSettings.firstLogin {
+                loginPad()
+                    .accentColor(Color(UserSettings().accentColor))
+            } else {
+                tabViewPad()
+                    .accentColor(Color(UserSettings().accentColor))
+            }
         }
     }
 }

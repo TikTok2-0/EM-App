@@ -51,6 +51,11 @@
 		F6811EC725FBB8B300836767 /* newGradeMittelstufe.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6811EC625FBB8B300836767 /* newGradeMittelstufe.swift */; };
 		F6811ECA25FBB93400836767 /* Grade+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6811EC825FBB93400836767 /* Grade+CoreDataClass.swift */; };
 		F6811ECB25FBB93400836767 /* Grade+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6811EC925FBB93400836767 /* Grade+CoreDataProperties.swift */; };
+		F683F541267648EB00F4FACB /* tabViewPad.swift in Sources */ = {isa = PBXBuildFile; fileRef = F683F540267648EB00F4FACB /* tabViewPad.swift */; };
+		F683F5442676496B00F4FACB /* homePad.swift in Sources */ = {isa = PBXBuildFile; fileRef = F683F5432676496B00F4FACB /* homePad.swift */; };
+		F683F54626764B6D00F4FACB /* loginPad.swift in Sources */ = {isa = PBXBuildFile; fileRef = F683F54526764B6D00F4FACB /* loginPad.swift */; };
+		F683F5482676500800F4FACB /* SidebarPad.swift in Sources */ = {isa = PBXBuildFile; fileRef = F683F5472676500800F4FACB /* SidebarPad.swift */; };
+		F683F54A2676541900F4FACB /* hottestStoryPad.swift in Sources */ = {isa = PBXBuildFile; fileRef = F683F5492676541900F4FACB /* hottestStoryPad.swift */; };
 		F687046E25B6F139006B37B6 /* tabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F687046D25B6F139006B37B6 /* tabView.swift */; };
 		F687047325B6F197006B37B6 /* login.swift in Sources */ = {isa = PBXBuildFile; fileRef = F687047225B6F197006B37B6 /* login.swift */; };
 		F687047825B7278E006B37B6 /* profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = F687047725B7278E006B37B6 /* profile.swift */; };
@@ -134,6 +139,11 @@
 		F6811EC625FBB8B300836767 /* newGradeMittelstufe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = newGradeMittelstufe.swift; sourceTree = "<group>"; };
 		F6811EC825FBB93400836767 /* Grade+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Grade+CoreDataClass.swift"; sourceTree = "<group>"; };
 		F6811EC925FBB93400836767 /* Grade+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Grade+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		F683F540267648EB00F4FACB /* tabViewPad.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = tabViewPad.swift; sourceTree = "<group>"; };
+		F683F5432676496B00F4FACB /* homePad.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = homePad.swift; sourceTree = "<group>"; };
+		F683F54526764B6D00F4FACB /* loginPad.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = loginPad.swift; sourceTree = "<group>"; };
+		F683F5472676500800F4FACB /* SidebarPad.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SidebarPad.swift; sourceTree = "<group>"; };
+		F683F5492676541900F4FACB /* hottestStoryPad.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = hottestStoryPad.swift; sourceTree = "<group>"; };
 		F687046D25B6F139006B37B6 /* tabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = tabView.swift; sourceTree = "<group>"; };
 		F687047225B6F197006B37B6 /* login.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = login.swift; sourceTree = "<group>"; };
 		F687047725B7278E006B37B6 /* profile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = profile.swift; sourceTree = "<group>"; };
@@ -223,8 +233,10 @@
 				F607123925AE49D8005E4647 /* EM_AppApp.swift */,
 				F607123B25AE49D8005E4647 /* ContentView.swift */,
 				F687047225B6F197006B37B6 /* login.swift */,
+				F683F54526764B6D00F4FACB /* loginPad.swift */,
 				F6D767602649829700FBE697 /* Notifications.swift */,
 				F623E3E225B1CCC000E5D34A /* TabView */,
+				F683F53F267648AB00F4FACB /* TabViewPad */,
 				F607123D25AE49D9005E4647 /* Assets.xcassets */,
 				F607124225AE49D9005E4647 /* Persistence.swift */,
 				F607124725AE49D9005E4647 /* Info.plist */,
@@ -314,6 +326,25 @@
 				F6EE59FB261E50EA00BEA758 /* MailView.swift */,
 			);
 			path = Profile;
+			sourceTree = "<group>";
+		};
+		F683F53F267648AB00F4FACB /* TabViewPad */ = {
+			isa = PBXGroup;
+			children = (
+				F683F540267648EB00F4FACB /* tabViewPad.swift */,
+				F683F5472676500800F4FACB /* SidebarPad.swift */,
+				F683F5422676495900F4FACB /* Home */,
+			);
+			path = TabViewPad;
+			sourceTree = "<group>";
+		};
+		F683F5422676495900F4FACB /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				F683F5432676496B00F4FACB /* homePad.swift */,
+				F683F5492676541900F4FACB /* hottestStoryPad.swift */,
+			);
+			path = Home;
 			sourceTree = "<group>";
 		};
 		F6A7D6D525F64B0600DFB5CB /* Homework */ = {
@@ -487,10 +518,13 @@
 				F64EA19E264938F600DEE699 /* EditGrade.swift in Sources */,
 				F607124325AE49D9005E4647 /* Persistence.swift in Sources */,
 				F66226B72654707A003D19DB /* GradeNine+CoreDataClass.swift in Sources */,
+				F683F54A2676541900F4FACB /* hottestStoryPad.swift in Sources */,
 				F62C2C0625D2D67C009F8459 /* UntisData.swift in Sources */,
+				F683F541267648EB00F4FACB /* tabViewPad.swift in Sources */,
 				F66226BB2654707A003D19DB /* GradeEight+CoreDataClass.swift in Sources */,
 				F66226BE2654707A003D19DB /* GradeSeven+CoreDataProperties.swift in Sources */,
 				F6811ECB25FBB93400836767 /* Grade+CoreDataProperties.swift in Sources */,
+				F683F5482676500800F4FACB /* SidebarPad.swift in Sources */,
 				F687047325B6F197006B37B6 /* login.swift in Sources */,
 				F6D767612649829700FBE697 /* Notifications.swift in Sources */,
 				F6811EC525FBB89E00836767 /* gradeCalcMittelstufe.swift in Sources */,
@@ -500,6 +534,7 @@
 				F6EE59FC261E50EA00BEA758 /* MailView.swift in Sources */,
 				F608CCAF25F2DABA00C09F07 /* Subject+CoreDataClass.swift in Sources */,
 				F607123C25AE49D8005E4647 /* ContentView.swift in Sources */,
+				F683F54626764B6D00F4FACB /* loginPad.swift in Sources */,
 				F6708EBF26151B7D00689B4B /* aboutus.swift in Sources */,
 				F6CDF78E25F3DBBE00EE9B5D /* gradeInfo.swift in Sources */,
 				F687047825B7278E006B37B6 /* profile.swift in Sources */,
@@ -513,6 +548,7 @@
 				F623E3EC25B1CCDD00E5D34A /* settings.swift in Sources */,
 				F607123A25AE49D8005E4647 /* EM_AppApp.swift in Sources */,
 				F608CCB325F2DF8400C09F07 /* newGrade.swift in Sources */,
+				F683F5442676496B00F4FACB /* homePad.swift in Sources */,
 				F66226BC2654707A003D19DB /* GradeEight+CoreDataProperties.swift in Sources */,
 				F62C2C0225D2BEBC009F8459 /* hottestStory.swift in Sources */,
 			);
@@ -689,7 +725,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "HLG-KAIFU App";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = 1;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
@@ -716,7 +752,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "HLG-KAIFU App";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = 1;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};
