@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct SidebarPad: View {
+    @State private var showSafari: Bool = false
     
     var body: some View {
         List {
@@ -15,25 +16,50 @@ struct SidebarPad: View {
                 NavigationLink(destination: homePad()) {
                     Label("Home", systemImage: "house")
                 }
-                NavigationLink(destination: news()) {
-                    Label("News", systemImage: "gear")
+                NavigationLink(destination: newsPad()) {
+                    Label("News", systemImage: "tray")
                 }
-                NavigationLink(destination: homeworkPlaner()) {
-                    Label("Homework", systemImage: "gear")
+                NavigationLink(destination: Text("Untis coming soon")) {
+                    Label("Untis", systemImage: "tablecells")
+                }
+                NavigationLink(destination: homeworkPlanerPad()) {
+                    Label("Homework", systemImage: "checkmark.square")
                 }
                 NavigationLink(destination: gradeCalc()) {
-                    Label("Abi Calc", systemImage: "gear")
+                    Label("Abi Calc", systemImage: "function")
                 }
                 NavigationLink(destination: gradeCalcMittelstufe()) {
-                    Label("Grade Calc", systemImage: "gear")
+                    Label("Grade Calc", systemImage: "function")
                 }
             }
             Section(header: Text("Other")) {
-                NavigationLink(destination: profile()) {
-                    Label("Profile", systemImage: "gear")
+                NavigationLink(destination: profilePad()) {
+                    Label("Profile", systemImage: "person.circle")
                 }
-                NavigationLink(destination: settings()) {
+                NavigationLink(destination: settingsPad()) {
                     Label("Settings", systemImage: "gear")
+                }
+            }
+            Section(header: Text("Links")) {
+                Button(action: { showSafari.toggle() }) {
+                    Label("HLG Website", systemImage: "house").fullScreenCover(isPresented: $showSafari) {
+                        SafariView(url: URL(string: "https://www.hlg-hamburg.de")!).ignoresSafeArea(edges: .all)
+                    }
+                }
+                Button(action: { showSafari.toggle() }) {
+                    Label("KFU Website", systemImage: "crown").fullScreenCover(isPresented: $showSafari) {
+                        SafariView(url: URL(string: "https://www.kaifu-gymnasium.de")!).ignoresSafeArea(edges: .all)
+                    }
+                }
+                Button(action: { showSafari.toggle() }) {
+                    Label("Moodle", systemImage: "link").fullScreenCover(isPresented: $showSafari) {
+                        SafariView(url: URL(string: "https://lms.lernen.hamburg")!).ignoresSafeArea(edges: .all)
+                    }
+                }
+                Button(action: { showSafari.toggle() }) {
+                    Label("itslearning", systemImage: "link").fullScreenCover(isPresented: $showSafari) {
+                        SafariView(url: URL(string: "https://kaifu.itslearning.com")!).ignoresSafeArea(edges: .all)
+                    }
                 }
             }
         }.listStyle(SidebarListStyle())

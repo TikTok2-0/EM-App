@@ -56,6 +56,11 @@
 		F683F54626764B6D00F4FACB /* loginPad.swift in Sources */ = {isa = PBXBuildFile; fileRef = F683F54526764B6D00F4FACB /* loginPad.swift */; };
 		F683F5482676500800F4FACB /* SidebarPad.swift in Sources */ = {isa = PBXBuildFile; fileRef = F683F5472676500800F4FACB /* SidebarPad.swift */; };
 		F683F54A2676541900F4FACB /* hottestStoryPad.swift in Sources */ = {isa = PBXBuildFile; fileRef = F683F5492676541900F4FACB /* hottestStoryPad.swift */; };
+		F683F54D26765CF700F4FACB /* newsPad.swift in Sources */ = {isa = PBXBuildFile; fileRef = F683F54C26765CF700F4FACB /* newsPad.swift */; };
+		F683F54F26765D5700F4FACB /* newsRowPad.swift in Sources */ = {isa = PBXBuildFile; fileRef = F683F54E26765D5700F4FACB /* newsRowPad.swift */; };
+		F683F55226765EBC00F4FACB /* homeworkPlanerPad.swift in Sources */ = {isa = PBXBuildFile; fileRef = F683F55126765EBC00F4FACB /* homeworkPlanerPad.swift */; };
+		F683F5552676630300F4FACB /* profilePad.swift in Sources */ = {isa = PBXBuildFile; fileRef = F683F5542676630300F4FACB /* profilePad.swift */; };
+		F683F5572676640A00F4FACB /* settingsPad.swift in Sources */ = {isa = PBXBuildFile; fileRef = F683F5562676640A00F4FACB /* settingsPad.swift */; };
 		F687046E25B6F139006B37B6 /* tabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F687046D25B6F139006B37B6 /* tabView.swift */; };
 		F687047325B6F197006B37B6 /* login.swift in Sources */ = {isa = PBXBuildFile; fileRef = F687047225B6F197006B37B6 /* login.swift */; };
 		F687047825B7278E006B37B6 /* profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = F687047725B7278E006B37B6 /* profile.swift */; };
@@ -144,6 +149,11 @@
 		F683F54526764B6D00F4FACB /* loginPad.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = loginPad.swift; sourceTree = "<group>"; };
 		F683F5472676500800F4FACB /* SidebarPad.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SidebarPad.swift; sourceTree = "<group>"; };
 		F683F5492676541900F4FACB /* hottestStoryPad.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = hottestStoryPad.swift; sourceTree = "<group>"; };
+		F683F54C26765CF700F4FACB /* newsPad.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = newsPad.swift; sourceTree = "<group>"; };
+		F683F54E26765D5700F4FACB /* newsRowPad.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = newsRowPad.swift; sourceTree = "<group>"; };
+		F683F55126765EBC00F4FACB /* homeworkPlanerPad.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = homeworkPlanerPad.swift; sourceTree = "<group>"; };
+		F683F5542676630300F4FACB /* profilePad.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = profilePad.swift; sourceTree = "<group>"; };
+		F683F5562676640A00F4FACB /* settingsPad.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = settingsPad.swift; sourceTree = "<group>"; };
 		F687046D25B6F139006B37B6 /* tabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = tabView.swift; sourceTree = "<group>"; };
 		F687047225B6F197006B37B6 /* login.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = login.swift; sourceTree = "<group>"; };
 		F687047725B7278E006B37B6 /* profile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = profile.swift; sourceTree = "<group>"; };
@@ -334,6 +344,9 @@
 				F683F540267648EB00F4FACB /* tabViewPad.swift */,
 				F683F5472676500800F4FACB /* SidebarPad.swift */,
 				F683F5422676495900F4FACB /* Home */,
+				F683F54B26765CEA00F4FACB /* News */,
+				F683F55026765EA500F4FACB /* Homework */,
+				F683F553267662F300F4FACB /* Other */,
 			);
 			path = TabViewPad;
 			sourceTree = "<group>";
@@ -345,6 +358,32 @@
 				F683F5492676541900F4FACB /* hottestStoryPad.swift */,
 			);
 			path = Home;
+			sourceTree = "<group>";
+		};
+		F683F54B26765CEA00F4FACB /* News */ = {
+			isa = PBXGroup;
+			children = (
+				F683F54C26765CF700F4FACB /* newsPad.swift */,
+				F683F54E26765D5700F4FACB /* newsRowPad.swift */,
+			);
+			path = News;
+			sourceTree = "<group>";
+		};
+		F683F55026765EA500F4FACB /* Homework */ = {
+			isa = PBXGroup;
+			children = (
+				F683F55126765EBC00F4FACB /* homeworkPlanerPad.swift */,
+			);
+			path = Homework;
+			sourceTree = "<group>";
+		};
+		F683F553267662F300F4FACB /* Other */ = {
+			isa = PBXGroup;
+			children = (
+				F683F5542676630300F4FACB /* profilePad.swift */,
+				F683F5562676640A00F4FACB /* settingsPad.swift */,
+			);
+			path = Other;
 			sourceTree = "<group>";
 		};
 		F6A7D6D525F64B0600DFB5CB /* Homework */ = {
@@ -499,6 +538,7 @@
 			files = (
 				F608CCB125F2DBAD00C09F07 /* EM_App.xcdatamodeld in Sources */,
 				F66226B82654707A003D19DB /* GradeNine+CoreDataProperties.swift in Sources */,
+				F683F55226765EBC00F4FACB /* homeworkPlanerPad.swift in Sources */,
 				F6DF1AF425B24835000B1CC8 /* NewsData.swift in Sources */,
 				F623E3E725B1CCCF00E5D34A /* news.swift in Sources */,
 				F687046E25B6F139006B37B6 /* tabView.swift in Sources */,
@@ -508,6 +548,7 @@
 				F636EDDF25B57CD800972C83 /* newsDetail.swift in Sources */,
 				F6A7D6D925F64CB300DFB5CB /* newHomework.swift in Sources */,
 				F66226B92654707A003D19DB /* GradeSix+CoreDataClass.swift in Sources */,
+				F683F5572676640A00F4FACB /* settingsPad.swift in Sources */,
 				F6FF07CD25D2D95400D40DD0 /* untisRowPreview.swift in Sources */,
 				F67F66B425D32F6200D6328E /* untisList.swift in Sources */,
 				F6A7D6D725F64B1900DFB5CB /* homeworkPlaner.swift in Sources */,
@@ -519,6 +560,7 @@
 				F607124325AE49D9005E4647 /* Persistence.swift in Sources */,
 				F66226B72654707A003D19DB /* GradeNine+CoreDataClass.swift in Sources */,
 				F683F54A2676541900F4FACB /* hottestStoryPad.swift in Sources */,
+				F683F5552676630300F4FACB /* profilePad.swift in Sources */,
 				F62C2C0625D2D67C009F8459 /* UntisData.swift in Sources */,
 				F683F541267648EB00F4FACB /* tabViewPad.swift in Sources */,
 				F66226BB2654707A003D19DB /* GradeEight+CoreDataClass.swift in Sources */,
@@ -550,6 +592,8 @@
 				F608CCB325F2DF8400C09F07 /* newGrade.swift in Sources */,
 				F683F5442676496B00F4FACB /* homePad.swift in Sources */,
 				F66226BC2654707A003D19DB /* GradeEight+CoreDataProperties.swift in Sources */,
+				F683F54F26765D5700F4FACB /* newsRowPad.swift in Sources */,
+				F683F54D26765CF700F4FACB /* newsPad.swift in Sources */,
 				F62C2C0225D2BEBC009F8459 /* hottestStory.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -710,7 +754,7 @@
 				CODE_SIGN_ENTITLEMENTS = "EM App/EM App.entitlements";
 				CODE_SIGN_IDENTITY = "iPhone Distribution";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 6;
+				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"EM App/Preview Content\"";
 				DEVELOPMENT_TEAM = C5QRJG42M7;
 				ENABLE_PREVIEWS = YES;
@@ -720,7 +764,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 2.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.EM-App.kaifu";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "HLG-KAIFU App";
@@ -737,7 +781,7 @@
 				CODE_SIGN_ENTITLEMENTS = "EM App/EM App.entitlements";
 				CODE_SIGN_IDENTITY = "iPhone Distribution";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 6;
+				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"EM App/Preview Content\"";
 				DEVELOPMENT_TEAM = C5QRJG42M7;
 				ENABLE_PREVIEWS = YES;
@@ -747,7 +791,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 2.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.EM-App.kaifu";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "HLG-KAIFU App";

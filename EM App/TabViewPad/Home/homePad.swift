@@ -104,11 +104,18 @@ struct homePad: View {
             .padding(.trailing, 20)
             
             ForEach(fetcher.articles, id: \.self) { newsData in
-                if newsData.id == "1" {
-                    NavigationLink(destination: newsDetail(newsData: fetcher.articles[0])) {
-                        hottestStoryPad(newsData: fetcher.articles[0])
-                            .shadow(color: Color("superiorGray"), radius: 3, x: 1, y: 3)
-                            .padding()
+                HStack {
+                    if newsData.id == "1" {
+                        NavigationLink(destination: newsDetail(newsData: fetcher.articles[0])) {
+                            hottestStoryPad(newsData: fetcher.articles[0])
+                                .shadow(color: Color("superiorGray"), radius: 3, x: 1, y: 3)
+                                .padding()
+                        }
+                        NavigationLink(destination: newsDetail(newsData: fetcher.articles[1])) {
+                            hottestStoryPad(newsData: fetcher.articles[1])
+                                .shadow(color: Color("superiorGray"), radius: 3, x: 1, y: 3)
+                                .padding()
+                        }
                     }
                 }
             }
